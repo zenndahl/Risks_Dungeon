@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Planejamento.unity
+    guid: a7bf33a25b5ec75409c31ea1dcad598c
   m_configObjects: {}
