@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: "Ger\xEAncia Inadequada"
+  m_EditorClassIdentifier: 
+  id: 1
+  type: 1
+  project: 0
+  riskName: "Ger\xEAncia Inadequada"
+  riskDescription: "Ger\xEAncia Inadequada: o gerente do projeto n\xE3o possu\xED
+    conhecimento ou experi\xEAncia necess\xE1rios para o projeto"
+  impactLevel: 5
+  probLevel: 4
+  probability: 0.7
+  reincidence: 0.3
+  scopeCost: 5
+  moneyCost: 5
+  timeCost: 5
+  consequences: []
+  image: {fileID: 0}
