@@ -34,13 +34,13 @@ public class GameManager : MonoBehaviour
     public void ERPProject(){
         project = 1;
         projectName = "Desenvolvimento de Sistema ERP";
-        SceneManager.LoadScene("Identification");
+        SceneManager.LoadScene("Identificação");
     }
 
     public void AppProject(){
         project = 2;
         projectName = "Desenvolvimento de App";
-        SceneManager.LoadScene("Identification");
+        SceneManager.LoadScene("Identificação");
     }
 
     public void LoadNextScene(){
