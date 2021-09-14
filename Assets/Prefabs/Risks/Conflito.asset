@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
-  m_Name: Ferramentas Inapropriadas
+  m_Name: Conflito
   m_EditorClassIdentifier: 
-  id: 3
+  id: 5
   type: 2
   project: 0
-  riskName: Ferramentas Inapropriadas
-  riskDescription: "Ferramentas para desenvolvimento n\xE3o s\xE3o \xFAteis ou eficientes"
-  impactLevel: 0
-  probLevel: 0
-  probability: 0
-  reincidence: 0
-  scopeCost: 0
-  moneyCost: 0
-  timeCost: 0
+  riskName: Conflito na Equipe
+  riskDescription: "Conflito na equipe: conflito e falta de coopera\xE7\xE3o entremembros
+    da equipe"
+  impactLevel: 4
+  probLevel: 3
+  probability: 0.5
+  reincidence: 0.3
+  scopeCost: 4
+  moneyCost: 4
+  timeCost: 4
   consequences: []
   image: {fileID: 0}
