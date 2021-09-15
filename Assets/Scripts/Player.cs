@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+[CreateAssetMenu(fileName = "Player", menuName = "Risks Dungeon/Player", order = 0)]
+public class Player : ScriptableObject
 {
     public int scope;
     public int time;
@@ -10,15 +11,11 @@ public class Player : MonoBehaviour
     public Skill skill;
     public Employee[] team;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update(){
-        if(scope <= 0 || time <= 0 || money <= 0){
+    void Update()
+    {
+        if(scope <= 0 || time <= 0 || money <= 0)
+        {
             Debug.Log("Game Over");
         }
     }

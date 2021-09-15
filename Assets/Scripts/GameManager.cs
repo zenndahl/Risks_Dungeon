@@ -17,12 +17,14 @@ public class GameManager : MonoBehaviour
     public string nextScene;
     public int sceneNum;
 
-    private void Awake() {
+    private void Awake()
+    {
         DontDestroyOnLoad(this.gameObject);
     }
 
     // Start is called before the first frame update
-    void Start(){
+    void Start()
+    {
         sceneNum = 0;
     }
 
@@ -31,53 +33,63 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void ERPProject(){
+    public void ERPProject()
+    {
         project = 1;
         projectName = "Desenvolvimento de Sistema ERP";
-        SceneManager.LoadScene("Identificação");
+        presentScene = "Selecionar Equipe";
+        SceneManager.LoadScene("Selecionar Equipe");
     }
 
-    public void AppProject(){
+    public void AppProject()
+    {
         project = 2;
         projectName = "Desenvolvimento de App";
-        SceneManager.LoadScene("Identificação");
+        presentScene = "Selecionar Equipe";
+        SceneManager.LoadScene("Selecionar Equipe");
     }
 
-    public void LoadNextScene(){
-        if(project == 2) SceneManager.LoadScene("SCRUM");
-        else{
-            switch (sceneNum)
+    public void LoadNextScene()
+    {
+        if(presentScene == "Selecionar Equipe") SceneManager.LoadScene("Identificação");
+        else
+        {
+            if(project == 2) SceneManager.LoadScene("SCRUM");
+            else
             {
-                case 1:
-                    SceneManager.LoadScene("Requisitos");
-                    presentScene = "Requisitos";
-                    nextScene = "Implementação";
-                    break;
-                case 2:
-                    SceneManager.LoadScene("Implementação");
-                    presentScene = "Implementação";
-                    nextScene = "VV";
-                    break;
-                case 3:
-                    SceneManager.LoadScene("VV");
-                    presentScene = "VV";
-                    nextScene = "Evolução";
-                    break;
-                case 4:
-                    SceneManager.LoadScene("Evolução");
-                    presentScene = "Evolução";
-                    nextScene = null;
-                    break;
+                switch (sceneNum)
+                {
+                    case 1:
+                        SceneManager.LoadScene("Requisitos");
+                        presentScene = "Requisitos";
+                        nextScene = "Implementação";
+                        break;
+                    case 2:
+                        SceneManager.LoadScene("Implementação");
+                        presentScene = "Implementação";
+                        nextScene = "VV";
+                        break;
+                    case 3:
+                        SceneManager.LoadScene("VV");
+                        presentScene = "VV";
+                        nextScene = "Evolução";
+                        break;
+                    case 4:
+                        SceneManager.LoadScene("Evolução");
+                        presentScene = "Evolução";
+                        nextScene = null;
+                        break;
 
-                default:
-                    SceneManager.LoadScene("Main Menu");
-                    presentScene = "Main Menu";
-                    nextScene = "Implementação";
-                    //tratar possíveis erros(?)
-                    Debug.Log("ERRO!! VOCÊ FOI RETORNADO AO MENU!!");
-                    break;
+                    default:
+                        SceneManager.LoadScene("Main Menu");
+                        presentScene = "Main Menu";
+                        nextScene = "Implementação";
+                        //tratar possíveis erros(?)
+                        Debug.Log("ERRO!! VOCÊ FOI RETORNADO AO MENU!!");
+                        break;
+                }
+                sceneNum++;
             }
-            sceneNum++;
         }
     }
 }
