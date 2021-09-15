@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Desenvolvimento \xC1gil"
   m_EditorClassIdentifier: 
   id: 6
-  skillName: "senvolvimento \xC1gil"
+  skillName: "Desenvolvimento \xC1gil"
   skillDescription: "Diminui o impacto de riscos relacionados ao desenvolvimento
     \xE1gil"
   combat: []

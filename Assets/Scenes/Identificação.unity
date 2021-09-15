@@ -2236,7 +2236,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1802639067}
         m_TargetAssemblyTypeName: Add, Assembly-CSharp
-        m_MethodName: AddRisk
+        m_MethodName: Adding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2296,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d499fae4d6a438141bdc5172ac3201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifiedList: {fileID: 1173802978}
+  toAddList: {fileID: 1173802978}
   describer: {fileID: 455449982}
 --- !u!1 &1961294681
 GameObject:

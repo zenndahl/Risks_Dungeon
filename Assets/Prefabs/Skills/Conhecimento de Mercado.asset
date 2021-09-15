@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Conhecimento de Mercado
   m_EditorClassIdentifier: 
   id: 9
-  skillName: cimento de Mercado
+  skillName: Conhecimento de Mercado
   skillDescription: Diminui a probabilidadew de riscos relacionados a pesquisa de
     mercado
   combat: []

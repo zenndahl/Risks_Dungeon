@@ -8,7 +8,7 @@ public class Add : MonoBehaviour
     public GameObject toAddList;
     public GameObject describer;
 
-    public void AddRisk(){
+    public void Adding(){
         selected.transform.SetParent(toAddList.transform);
         if(describer != null) describer.SetActive(false);
     }

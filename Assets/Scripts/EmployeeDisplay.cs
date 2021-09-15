@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class RiskDisplay : MonoBehaviour
+public class EmployeeDisplay : MonoBehaviour
 {
-    public Risk risk;
+    public Employee employee;
 
-    public Text nameText;
+    public Text skillNameText;
+
     public Text descriptionText;
+
     public GameObject describer;
+
+    public GameObject image;
 
     // Start is called before the first frame update
     void Start()
     {
-        nameText.text = risk.riskName;
+        skillNameText.text = employee.skills[0].skillName;
+        image.GetComponent<Image>().sprite = employee.sprite;
     }
 
     public void ShowDescription(){
         describer.SetActive(true);
-        descriptionText.text = risk.riskDescription;
+        descriptionText.text = employee.skills[0].skillDescription;
     }
 
     public void Select(){

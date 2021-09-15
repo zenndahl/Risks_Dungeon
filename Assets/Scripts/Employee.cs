@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Employee : MonoBehaviour
+[CreateAssetMenu(fileName = "Employee", menuName = "Risks Dungeon/Employee", order = 0)]
+public class Employee : ScriptableObject
 {
     [Header("Employee Infos")]
     public Sprite sprite;
