@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
   m_Name: "Automatiza\xE7\xE3o de Testes"
   m_EditorClassIdentifier: 
-  id: 3
+  id: 2
   opportunityName: "matiza\xE7\xE3o de Testes"
   opportunityEffect: 
   opportunityDescription: "Reduz penalidades de oportunidades em 1 (m\xEDnimo de

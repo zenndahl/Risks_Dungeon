@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Employee : MonoBehaviour
 {
+    [Header("Employee Infos")]
+    public Sprite sprite;
     public Skill[] skills;
+
+    [Header("Employee Stats")]
     public int morale;
     public int combatPower;
 
@@ -15,15 +19,18 @@ public class Employee : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update()
+    {
         
     }
 
-    public void ManageCombatPower(int modifier){
+    public void ManageCombatPower(int modifier)
+    {
         combatPower += modifier;
     }
 
-    public void ManageMorale(int penalty){
+    public void ManageMorale(int penalty)
+    {
         morale -= penalty;
     }
 }

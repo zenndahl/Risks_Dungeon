@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
   m_Name: Mercado Amplo
   m_EditorClassIdentifier: 
-  id: 2
+  id: 11
   opportunityName: Mercado Amplo
   opportunityEffect: 
   opportunityDescription: Reduz a probabilidade de riscos relacionados a pesquisa

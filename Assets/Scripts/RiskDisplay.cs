@@ -23,6 +23,6 @@ public class RiskDisplay : MonoBehaviour
     }
 
     public void SelectRisk(){
-        Add.riskSelected = this.gameObject;
+        Add.selected = this.gameObject;
     }
 }

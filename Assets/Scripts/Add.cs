@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Add : MonoBehaviour
 {
-    public static GameObject riskSelected;
-    public GameObject identifiedList;
+    public static GameObject selected;
+    public GameObject toAddList;
     public GameObject describer;
 
     public void AddRisk(){
-        riskSelected.transform.SetParent(identifiedList.transform);
-        describer.SetActive(false);
+        selected.transform.SetParent(toAddList.transform);
+        if(describer != null) describer.SetActive(false);
     }
 }

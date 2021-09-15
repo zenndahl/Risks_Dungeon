@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
   m_Name: "Inova\xE7\xE3o em Tecnologia"
   m_EditorClassIdentifier: 
-  id: 10
+  id: 9
   opportunityName: "Inova\xE7\xE3o em Tecnologia"
   opportunityEffect: "Reduz a probabilidade de riscos relacionados a tecnologia e
     implementa\xE7\xE3o"

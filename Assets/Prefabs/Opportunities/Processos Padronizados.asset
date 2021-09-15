@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
-  m_Name: Processos Diversificados
+  m_Name: Processos Padronizados
   m_EditorClassIdentifier: 
-  id: 14
+  id: 15
   opportunityName: Processos Diversificados
-  opportunityEffect: 'Escolha um entre: +2 O, +2 T, ter outra oportunidade'
+  opportunityEffect: "Ter esta oportunidade novamente aumenta o b\xF4nus em +1 para
+    cada vez que a teve"
   opportunityDescription: 
-  repeatable: 0
+  repeatable: 1
   consequences: []
   prevent: []
-  scopeBonus: 2
+  scopeBonus: 0
   moneyBonus: -2
-  timeBonus: 0
+  timeBonus: 3

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
   m_Name: "Diversifica\xE7\xE3o de Clientes"
   m_EditorClassIdentifier: 
-  id: 7
+  id: 5
   opportunityName: "Diversifica\xE7\xE3o de Clientes"
   opportunityEffect: 
   opportunityDescription: ' '

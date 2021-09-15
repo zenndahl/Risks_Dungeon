@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
   m_Name: "Funcion\xE1rio mais Experiente"
   m_EditorClassIdentifier: 
-  id: 4
+  id: 7
   opportunityName: "n\xE1rio mais Experiente"
   opportunityEffect: 
   opportunityDescription: "Troque uma habilidade por outra \xE0 sua escolha"

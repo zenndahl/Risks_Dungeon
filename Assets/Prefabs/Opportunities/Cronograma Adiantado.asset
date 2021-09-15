@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
   m_Name: Cronograma Adiantado
   m_EditorClassIdentifier: 
-  id: 6
+  id: 4
   opportunityName: Cronograma Adiantado
   opportunityEffect: "B\xF4nus de Tempo"
   opportunityDescription: 
