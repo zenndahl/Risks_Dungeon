@@ -8,31 +8,71 @@ public class Risk : ScriptableObject
 {
     [Header("Risk Infos")]
     public int id;
+    //type can be 0, 1 or 2, respectively: planning, product, business
     public int type;
+    //project can be 0, 1 or 2, respectively: any project, ERp project, app project
     public int project;
     public string riskName;
     public string riskDescription;
+    public Image image; 
+    //updates the times the risk has been prevented, therefore decreasing its probability
+    public int timesPrevented;
+    //risks that have its probability increased if this risk is activated
+    public Risk[] derivatives;
     //[HideInInspector]
+    //impact and prob level goes from 1 to 5, matchin the scale: very low, low, medium, high, very high
     public int impactLevel;
     public int probLevel;
 
     [Header("Risk Probability")]
+    //the probability is the number, between 0 and 1, that will in fact be used to calculate its chance to be activated
+    //it match the scale: 0.1, 0.3, 0.5, 0.7, 0.9, following the scale from the level
+    //the scale 0.05, 0.1, 0.2, 0.4, 0.8 may be implemented later for the player to choose
     public float probability;
     public float reincidence;
 
     [Header("Risk Effect")]
+    //the impact of the risk in the player resources
     public int scopeCost;
     public int moneyCost;
-    public int timeCost;
-    
-    public Consequence[] consequences;
-    public int timesPrevented;
-
-    public Image image;
+    public int timeCost;       
 
     // Start is called before the first frame update
     void Start()
     {
         //text.text = riskName;
+    }
+
+    public void IncreaseProb(){
+        probability += 0.2f;
+    }
+
+    public void DecreaseProb(){
+        probability -= 0.2f;
+    }
+
+    public void ActivateRisk(){
+
+        Player.scope -= scopeCost;
+        Player.money -= moneyCost;
+        Player.time  -= timeCost;
+
+        foreach (Risk risk in derivatives)
+        {
+            risk.IncreaseProb();
+        }
+    }
+
+    public void ApplyMitigation()
+    {
+        scopeCost--;
+        moneyCost--;
+        timeCost--;
+
+        ActivateRisk();
+
+        scopeCost++;
+        moneyCost++;
+        timeCost++;
     }
 }

@@ -10,10 +10,15 @@ public class GameManager : MonoBehaviour
     public string projectName;
 
     [Header("Risks Infos")]
-    public int[] risksIdentified;
+    public Risk[] generalRisks;
+    public Risk[] risksIdentified; //lembrar de fazer a união desses riscos no array abaixo
+    //public Risk[] risksList;
+
+    [Header("Opportunities")]
+    public Opportunity opportunitiesList;
 
     [Header("Scene Infos")]
-    public string presentScene;
+    public string currentScene;
     public string nextScene;
     public int sceneNum;
 
@@ -22,22 +27,18 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        sceneNum = 0;
-    }
-
-    // Update is called once per frame
     void Update(){
-        
+        if(currentScene == "Selecionar Equipe")
+        {
+
+        }
     }
 
     public void ERPProject()
     {
         project = 1;
         projectName = "Desenvolvimento de Sistema ERP";
-        presentScene = "Selecionar Equipe";
+        currentScene = "Selecionar Equipe";
         SceneManager.LoadScene("Selecionar Equipe");
     }
 
@@ -45,13 +46,13 @@ public class GameManager : MonoBehaviour
     {
         project = 2;
         projectName = "Desenvolvimento de App";
-        presentScene = "Selecionar Equipe";
+        currentScene = "Selecionar Equipe";
         SceneManager.LoadScene("Selecionar Equipe");
     }
 
     public void LoadNextScene()
     {
-        if(presentScene == "Selecionar Equipe") SceneManager.LoadScene("Identificação");
+        if(currentScene == "Selecionar Equipe") SceneManager.LoadScene("Identificação");
         else
         {
             if(project == 2) SceneManager.LoadScene("SCRUM");
@@ -61,28 +62,28 @@ public class GameManager : MonoBehaviour
                 {
                     case 1:
                         SceneManager.LoadScene("Requisitos");
-                        presentScene = "Requisitos";
+                        currentScene = "Requisitos";
                         nextScene = "Implementação";
                         break;
                     case 2:
                         SceneManager.LoadScene("Implementação");
-                        presentScene = "Implementação";
+                        currentScene = "Implementação";
                         nextScene = "VV";
                         break;
                     case 3:
                         SceneManager.LoadScene("VV");
-                        presentScene = "VV";
+                        currentScene = "VV";
                         nextScene = "Evolução";
                         break;
                     case 4:
                         SceneManager.LoadScene("Evolução");
-                        presentScene = "Evolução";
+                        currentScene = "Evolução";
                         nextScene = null;
                         break;
 
                     default:
                         SceneManager.LoadScene("Main Menu");
-                        presentScene = "Main Menu";
+                        currentScene = "Main Menu";
                         nextScene = "Implementação";
                         //tratar possíveis erros(?)
                         Debug.Log("ERRO!! VOCÊ FOI RETORNADO AO MENU!!");

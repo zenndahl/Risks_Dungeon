@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Player", menuName = "Risks Dungeon/Player", order = 0)]
 public class Player : ScriptableObject
 {
-    public int scope;
-    public int time;
-    public int money;
+    public static int scope;
+    public static int time;
+    public static int money;
     public Skill skill;
     public Employee[] team;
 

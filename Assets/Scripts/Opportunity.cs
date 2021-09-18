@@ -8,16 +8,25 @@ public class Opportunity : ScriptableObject
     [Header("Opportunity Infos")]
     public int id;
     public string opportunityName;
+    //abstract of the effect
     public string opportunityEffect;
+    //description of the opportunity
     public string opportunityDescription;
+    //if the opportunity can happen again or is removed from the opportunities available
     public bool repeatable;
-
-    [Header("Opportunity Actions")]
-    public Consequence[] consequences;
-    public Prevention[] prevent;
 
     [Header("Opportunity Bonuses")]
     public int scopeBonus;
     public int moneyBonus;
     public int timeBonus;
+
+    public void DeacreaseCosts()
+    {
+
+    }
+
+    public void IncreaseBonus()
+    {
+
+    }
 }
