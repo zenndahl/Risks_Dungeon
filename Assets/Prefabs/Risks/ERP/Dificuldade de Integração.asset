@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 25
   type: 2
   project: 1
-  riskName: "Dificuldade de Integra\xE7\xE3o do Sistema"
+  riskName: "Dificuldade de Integra\xE7\xE3o"
   riskDescription: "Dificuldade de integrar o novo sistema com o sistema legado da
     organiza\xE7\xE3o"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 5
   probLevel: 4
   probability: 0.7
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
-  consequences: []
-  image: {fileID: 0}

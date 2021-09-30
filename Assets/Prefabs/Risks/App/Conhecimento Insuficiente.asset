@@ -15,8 +15,11 @@ MonoBehaviour:
   id: 42
   type: 2
   project: 2
-  riskName: Conhecimento Insuficiente sobre o Produto
+  riskName: "Produto n\xE3o Familiar"
   riskDescription: "Falta de conhecimento sobre o dom\xEDnio do produto em desenvolvimento"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 5
   probLevel: 4
   probability: 0.7
@@ -24,5 +27,3 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
-  consequences: []
-  image: {fileID: 0}

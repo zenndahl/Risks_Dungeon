@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 28
   type: 1
   project: 1
-  riskName: "Implanta\xE7\xE3o de M\xF3dulos Desnecess\xE1rios"
+  riskName: "M\xF3dulos Desnecess\xE1rios"
   riskDescription: "M\xF3dulos desnecess\xE1rios ou n\xE3i interessantes \xE0 organiza\xE7\xE3o
     sendo implementados"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 5
   probability: 0.9
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

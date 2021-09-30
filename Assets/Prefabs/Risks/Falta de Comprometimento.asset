@@ -15,8 +15,11 @@ MonoBehaviour:
   id: 20
   type: 3
   project: 0
-  riskName: "Falta de Comprometimento da Alta Dire\xE7\xE3o"
+  riskName: "Alta Dire\xE7\xE3o Ausente"
   riskDescription: "Alta dire\xE7\xE3o pouco participativa durante o projeto"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 4
   probability: 0.7
@@ -24,5 +27,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

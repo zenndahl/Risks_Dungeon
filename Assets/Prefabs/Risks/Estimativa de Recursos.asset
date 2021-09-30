@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 18
   type: 1
   project: 0
-  riskName: Estimativa Inadequada de Recursos
+  riskName: Recursos Inadequados
   riskDescription: "Recursos definidos para planejamento, desenvolvimento e teste
-    de funcionalidades n\xE3o suficiente"
+    de funcionalidades n\xE3o suficientes"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 5
   probLevel: 5
   probability: 0.9
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
-  consequences: []
-  image: {fileID: 0}

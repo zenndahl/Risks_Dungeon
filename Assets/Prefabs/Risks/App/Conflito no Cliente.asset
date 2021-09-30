@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 36
   type: 1
   project: 2
-  riskName: Conflito Entre Departamentos do Cliente
+  riskName: Conflito do Cliente
   riskDescription: "Diferentes setores da organiza\xE7\xE3o cliente est\xE3o em desacordo
     sobre produto desejado"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 2
   probLevel: 2
   probability: 0.3
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 2
   moneyCost: 2
   timeCost: 2
-  consequences: []
-  image: {fileID: 0}

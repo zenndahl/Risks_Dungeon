@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Falta de Especialista
   m_EditorClassIdentifier: 
-  id: 44
+  id: 43
   type: 1
   project: 2
   riskName: Falta de Especialista
   riskDescription: "Falta de uum membro especialista em uma fun\xE7\xE3o espec\xEDfica
     importante, como UX ou product owner"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 3
   probLevel: 4
   probability: 0.7
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
-  consequences: []
-  image: {fileID: 0}

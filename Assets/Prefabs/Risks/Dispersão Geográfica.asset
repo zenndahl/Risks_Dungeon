@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 23
   type: 1
   project: 0
-  riskName: "Dispers\xE3o Geogr\xE1fica da Organiza\xE7\xE3o"
+  riskName: "Dispers\xE3o Geogr\xE1fica"
   riskDescription: "Membros da organiza\xE7\xE3o espalhados por v\xE1rias cidades,
     estados ou pa\xEDses"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 3
   probLevel: 3
   probability: 0.5
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
-  consequences: []
-  image: {fileID: 0}

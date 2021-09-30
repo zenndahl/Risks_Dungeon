@@ -30,4 +30,9 @@ public class EmployeeDisplay : MonoBehaviour
     public void Select(){
         Add.selected = this.gameObject;
     }
+
+    public void ResetInfos(){
+        skillNameText.text = employee.skills[0].skillName;
+        image.GetComponent<Image>().sprite = employee.sprite;
+    }
 }

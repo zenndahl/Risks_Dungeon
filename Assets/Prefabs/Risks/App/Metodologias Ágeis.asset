@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 41
   type: 1
   project: 2
-  riskName: "Falta de Experi\xEAncia com Metodologias \xC1geis"
+  riskName: "Inexperi\xEAncia com Metodologias \xC1geis"
   riskDescription: "Equipe e/ou ger\xEAncia com pouco experi\xEAncia com o modelo
     \xE1gil de desenvolvimento"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 3
   probLevel: 4
   probability: 0.7
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
-  consequences: []
-  image: {fileID: 0}

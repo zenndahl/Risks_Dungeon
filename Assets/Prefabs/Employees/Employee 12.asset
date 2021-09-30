@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa7821506948d34b9a2caab80b22535, type: 3}
   m_Name: Employee 12
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d6343315459c19447bb7b94963fa2319, type: 3}
+  sprite: {fileID: 21300000, guid: aaa6f0cb68687884abfcb567fb6308b4, type: 3}
   skills:
   - {fileID: 11400000, guid: 031052e4335628743a933ffa3ca8d9ea, type: 2}
   morale: 10

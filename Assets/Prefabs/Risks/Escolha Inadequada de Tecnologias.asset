@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 13
   type: 2
   project: 0
-  riskName: Escolha Inadequada de Tecnologias
+  riskName: Tecnologia Inadequada
   riskDescription: "Tecnologias escolhidas n\xE3o possuem recursos necess\xE1rios
     ou est\xE3odesatualizadas ou ultrapassadas"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 3
   probability: 0.5
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

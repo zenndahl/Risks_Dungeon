@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 32
   type: 2
   project: 1
-  riskName: "Problema na Migra\xE7\xE3o dos Dados"
+  riskName: "Problema na Migra\xE7\xE3o"
   riskDescription: "Migra\xE7\xE3o para novo sistema encontrando muitos obst\xE1culos
     e dificuldades"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 5
   probLevel: 3
   probability: 0.5
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
-  consequences: []
-  image: {fileID: 0}

@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuPrincipal.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Selecionar Equipe.unity
+    guid: 4e56359c1a232cc4aaa8a7b51002e1b9
+  - enabled: 1
+    path: "Assets/Scenes/Identifica\xE7\xE3o.unity"
+    guid: 3f04a86d82056fa4f96a5449e28dea43
+  - enabled: 1
     path: "Assets/Scenes/Avalia\xE7\xE3o.unity"
     guid: bfc5f70b9697e7d44bebd2a662f8cf5b
   m_configObjects: {}

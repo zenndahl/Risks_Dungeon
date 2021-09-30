@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Cliente Ausente
   m_EditorClassIdentifier: 
-  id: 0
-  type: 0
+  id: 7
+  type: 1
   project: 0
-  riskName: "Cleinte ou Usu\xE1rio Ausente"
+  riskName: "Cliente ou Usu\xE1rio Ausente"
   riskDescription: "Pouca participa\xE7\xE3o do usu\xE1rio ou cliente no planejamento
     e desenvolvimento"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 4
   probability: 0.7
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

@@ -52,10 +52,11 @@ public class Risk : ScriptableObject
     }
 
     public void ActivateRisk(){
+        Player player = GameObject.Find("Player").GetComponent<Player>();
 
-        Player.scope -= scopeCost;
-        Player.money -= moneyCost;
-        Player.time  -= timeCost;
+        player.DecreaseResources(scopeCost);
+        player.DecreaseResources(moneyCost);
+        player.DecreaseResources(timeCost);
 
         foreach (Risk risk in derivatives)
         {
@@ -63,16 +64,16 @@ public class Risk : ScriptableObject
         }
     }
 
-    public void ApplyMitigation()
+    public void ApplyMitigation(int mitigation)
     {
-        scopeCost--;
-        moneyCost--;
-        timeCost--;
+        scopeCost -= mitigation;
+        moneyCost -= mitigation;
+        timeCost -= mitigation;
 
         ActivateRisk();
 
-        scopeCost++;
-        moneyCost++;
-        timeCost++;
+        scopeCost += mitigation;
+        moneyCost += mitigation;
+        timeCost += mitigation;
     }
 }

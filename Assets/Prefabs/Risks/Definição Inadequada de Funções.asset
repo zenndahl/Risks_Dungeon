@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 16
   type: 1
   project: 0
-  riskName: "Defini\xE7\xE3o Inadequada de Fun\xE7\xF5es"
+  riskName: "M\xE1 Defini\xE7\xE3o de Fun\xE7\xF5es"
   riskDescription: "Fun\xE7\xF5es e responsabilidades de membros da equipe definidos
     incorretamente"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 2
   probLevel: 2
   probability: 0.3
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 2
   moneyCost: 0
   timeCost: 2
-  consequences: []
-  image: {fileID: 0}

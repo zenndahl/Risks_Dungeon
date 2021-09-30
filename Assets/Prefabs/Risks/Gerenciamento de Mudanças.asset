@@ -15,9 +15,12 @@ MonoBehaviour:
   id: 17
   type: 1
   project: 0
-  riskName: "Gerenciamento Impr\xF3prio de Mudan\xE7as"
+  riskName: "M\xE1 Ger\xEAncia de Mudan\xE7as"
   riskDescription: "Mudan\xE7a de requisitos, tecnologia, metodologia ou membro da
     equipe feita de modo impr\xF3prio"
+  image: {fileID: 0}
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 4
   probability: 0.7
@@ -25,5 +28,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}
