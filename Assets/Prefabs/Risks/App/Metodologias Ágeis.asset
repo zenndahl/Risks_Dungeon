@@ -18,7 +18,13 @@ MonoBehaviour:
   riskName: "Inexperi\xEAncia com Metodologias \xC1geis"
   riskDescription: "Equipe e/ou ger\xEAncia com pouco experi\xEAncia com o modelo
     \xE1gil de desenvolvimento"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 359d19c1e361c2146bcfd5a8e8133250, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: 65db3fb6745535640977f1d13942feb5, type: 2}
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 3

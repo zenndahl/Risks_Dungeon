@@ -18,6 +18,14 @@ MonoBehaviour:
   riskName: "Ger\xEAncia Inadequada"
   riskDescription: "Ger\xEAncia Inadequada: o gerente do projeto n\xE3o possu\xED
     conhecimento ou experi\xEAncia necess\xE1rios para o projeto"
+  sprite: {fileID: 21300000, guid: 1945751ca59056745bc16b72108749ac, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 5
   probLevel: 4
   probability: 0.7
@@ -25,5 +33,3 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
-  consequences: []
-  image: {fileID: 0}

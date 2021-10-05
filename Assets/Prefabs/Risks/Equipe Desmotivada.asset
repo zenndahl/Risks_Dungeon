@@ -18,6 +18,15 @@ MonoBehaviour:
   riskName: Membros da Equipe Desmotivados
   riskDescription: "Equipe predeu motiva\xE7\xE3o, \xE2nimo ou dedica\xE7\xE3o ao
     projeto"
+  sprite: {fileID: 21300000, guid: 0e7d061399e600544b8536b01d1e4c66, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  - {fileID: 11400000, guid: 9ae514ddb136fe949ae4de894c3ff394, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 2
   probLevel: 2
   probability: 0.3
@@ -25,5 +34,3 @@ MonoBehaviour:
   scopeCost: 2
   moneyCost: 0
   timeCost: 2
-  consequences: []
-  image: {fileID: 0}

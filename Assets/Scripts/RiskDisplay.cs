@@ -9,8 +9,7 @@ public class RiskDisplay : MonoBehaviour
 
     public int impact;
     public int prob;
-    public Sprite defaultSprite;
-    public Sprite selectedSprite;
+    public Sprite sprite;
     public Text nameText;
     public Text descriptionText;
     public GameObject describer;
@@ -21,7 +20,8 @@ public class RiskDisplay : MonoBehaviour
         if(risk != null) nameText.text = risk.riskName;
     }
 
-    public void ShowDescription(){
+    public void ShowDescription()
+    {
         describer.SetActive(true);
         descriptionText.text = risk.riskDescription;
     }
@@ -32,22 +32,19 @@ public class RiskDisplay : MonoBehaviour
         btn.onClick.AddListener(Select);
     }
 
+    public void SetInfos()
+    {
+        if(risk != null) nameText.text = risk.riskName;
+    }
+
     public void Select()
     {
         Add.selected = this.gameObject;
-        //gameObject.transform.GetChild(0).GetComponent<Image>().sprite = selectedSprite;
-    }
-
-    public void Deselect()
-    {
-        Add.selected = null;
-        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = defaultSprite;
     }
 
     public void SelectMatrixCell()
     {
         Add.matrixCell = this.gameObject;
-        Debug.Log("Selected: " + this.gameObject);
     }
 
     public void DisplayInMatrix(Risk rsk)

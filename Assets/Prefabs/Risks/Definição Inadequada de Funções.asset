@@ -18,7 +18,14 @@ MonoBehaviour:
   riskName: "M\xE1 Defini\xE7\xE3o de Fun\xE7\xF5es"
   riskDescription: "Fun\xE7\xF5es e responsabilidades de membros da equipe definidos
     incorretamente"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 8e1c1998eabc61140ba1e1ae6ddb780f, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 9ae514ddb136fe949ae4de894c3ff394, type: 2}
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 2

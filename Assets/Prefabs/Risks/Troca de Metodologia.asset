@@ -10,13 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
-  m_Name: "Troca de M\xE9todo"
+  m_Name: Troca de Metodologia
   m_EditorClassIdentifier: 
   id: 8
   type: 1
   project: 0
   riskName: Troca de Metodologia
   riskDescription: Metodologia de procesos, gerenciamento ou desenvolvimento trocada
+  sprite: {fileID: 21300000, guid: f74ead1e5edb8624286598bb22619477, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  - {fileID: 11400000, guid: 16a015cdaa6d6b543b9ff7a0a037705b, type: 2}
+  - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
+  - {fileID: 11400000, guid: 6b8db98e117bc7a44a418dc9405f2703, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 2
   probLevel: 2
   probability: 0.3
@@ -24,5 +35,3 @@ MonoBehaviour:
   scopeCost: 2
   moneyCost: 0
   timeCost: 2
-  consequences: []
-  image: {fileID: 0}

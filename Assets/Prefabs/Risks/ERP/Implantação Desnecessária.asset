@@ -16,9 +16,16 @@ MonoBehaviour:
   type: 1
   project: 1
   riskName: "M\xF3dulos Desnecess\xE1rios"
-  riskDescription: "M\xF3dulos desnecess\xE1rios ou n\xE3i interessantes \xE0 organiza\xE7\xE3o
+  riskDescription: "M\xF3dulos desnecess\xE1rios ou n\xE3o interessantes \xE0 organiza\xE7\xE3o
     sendo implementados"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 579ab3238f83f674f91de0cdd7b96aac, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 4c5c38ba35d07b9498d1d34d48333781, type: 2}
+  - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: f0bfd3e6643c57d41bcf33053e4b49dc, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 4

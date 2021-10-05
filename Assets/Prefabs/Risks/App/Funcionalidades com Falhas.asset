@@ -18,6 +18,17 @@ MonoBehaviour:
   riskName: Funcionalidades com Falhas
   riskDescription: "Funcionalidades n\xE3o est\xE3o funcionando corretamente ao fim
     de uma itera\xE7\xE3o"
+  sprite: {fileID: 21300000, guid: f74ead1e5edb8624286598bb22619477, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: 9ae514ddb136fe949ae4de894c3ff394, type: 2}
+  - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 4
   probability: 0.7
@@ -25,5 +36,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

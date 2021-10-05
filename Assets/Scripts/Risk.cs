@@ -8,18 +8,26 @@ public class Risk : ScriptableObject
 {
     [Header("Risk Infos")]
     public int id;
-    //type can be 0, 1 or 2, respectively: planning, product, business
+
+    //type can be 1, 2 or 3, respectively: planning, product, business
     public int type;
+
     //project can be 0, 1 or 2, respectively: any project, ERp project, app project
     public int project;
     public string riskName;
     public string riskDescription;
-    public Image image; 
+
+    //the sprite to show in the dungeon when the risk activates
+    public Sprite sprite; 
+    public Prevention[] preventions;
+
+    //the action planned to be take once the risk occurs, 1 - mitigate, 2 - assign, 3 - accept
+    public int reaction;
+    public bool prevented = false;
     //updates the times the risk has been prevented, therefore decreasing its probability
     public int timesPrevented;
     //risks that have its probability increased if this risk is activated
     public Risk[] derivatives;
-    //[HideInInspector]
     //impact and prob level goes from 1 to 5, matchin the scale: very low, low, medium, high, very high
     public int impactLevel;
     public int probLevel;

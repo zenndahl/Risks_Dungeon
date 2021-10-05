@@ -17,6 +17,15 @@ MonoBehaviour:
   project: 2
   riskName: "Falhas na Integra\xE7\xE3o Cont\xEDnua"
   riskDescription: "Falhas na integra\xE7\xE3o de cada itera\xE7\xE3o"
+  sprite: {fileID: 21300000, guid: f6a2b9023da99054fa12f74788e229a5, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 3
   probLevel: 3
   probability: 0.5
@@ -24,5 +33,3 @@ MonoBehaviour:
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
-  consequences: []
-  image: {fileID: 0}

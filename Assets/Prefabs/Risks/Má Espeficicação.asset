@@ -18,6 +18,17 @@ MonoBehaviour:
   riskName: "M\xE1 Especifica\xE7\xE3o de Requisitos"
   riskDescription: "Requisitos do projeto n\xE3o foram definidos completamente ou
     corretamente"
+  sprite: {fileID: 21300000, guid: cf3d5591a50c31149a63b218cb62cd9e, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
+  - {fileID: 11400000, guid: f0bfd3e6643c57d41bcf33053e4b49dc, type: 2}
+  - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
+  - {fileID: 11400000, guid: 4c5c38ba35d07b9498d1d34d48333781, type: 2}
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 5
   probability: 0.9
@@ -25,5 +36,3 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

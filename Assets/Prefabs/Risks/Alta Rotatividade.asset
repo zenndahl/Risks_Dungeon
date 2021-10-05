@@ -17,6 +17,15 @@ MonoBehaviour:
   project: 0
   riskName: Alta Rotatividade da Equipe
   riskDescription: Membros da equipe sendo trocados constantemente
+  sprite: {fileID: 21300000, guid: 9c92ef34a87680948abbd1d5ff2f58ee, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
+  - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 2
   probLevel: 1
   probability: 0.1
@@ -24,5 +33,3 @@ MonoBehaviour:
   scopeCost: 2
   moneyCost: 2
   timeCost: 2
-  consequences: []
-  image: {fileID: 0}

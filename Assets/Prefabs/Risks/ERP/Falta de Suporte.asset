@@ -18,6 +18,15 @@ MonoBehaviour:
   riskName: 'Falta de Suporte '
   riskDescription: "Suporte t\xE9cnico n\xE3o fornecido pela empresa de consultoria
     ap\xF3s implanta\xE7\xE3o do sistema"
+  sprite: {fileID: 21300000, guid: 9c92ef34a87680948abbd1d5ff2f58ee, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: c9753db59132e204ab897a19922cc55d, type: 2}
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  - {fileID: 11400000, guid: 16a015cdaa6d6b543b9ff7a0a037705b, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 4
   probLevel: 4
   probability: 0.7
@@ -25,5 +34,3 @@ MonoBehaviour:
   scopeCost: 0
   moneyCost: 4
   timeCost: 4
-  consequences: []
-  image: {fileID: 0}

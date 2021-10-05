@@ -18,7 +18,13 @@ MonoBehaviour:
   riskName: "Falta de Seguran\xE7a na Transfer\xEAncia"
   riskDescription: "Falta de protocolos de seguran\xE7a na transfer\xEAncia dos dados
     para novo sistema"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 944ac035670c3e74a9be22cb48b3414e, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: da9b2a5eb38f8c84cb47ab0a9738ed44, type: 2}
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 5

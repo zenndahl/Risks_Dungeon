@@ -18,7 +18,12 @@ MonoBehaviour:
   riskName: Conflito do Cliente
   riskDescription: "Diferentes setores da organiza\xE7\xE3o cliente est\xE3o em desacordo
     sobre produto desejado"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 8e1c1998eabc61140ba1e1ae6ddb780f, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
+  - {fileID: 11400000, guid: f0bfd3e6643c57d41bcf33053e4b49dc, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 2

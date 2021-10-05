@@ -22,16 +22,19 @@ public class EmployeeDisplay : MonoBehaviour
         image.GetComponent<Image>().sprite = employee.sprite;
     }
 
-    public void ShowDescription(){
+    public void ShowDescription()
+    {
         describer.SetActive(true);
         descriptionText.text = employee.skills[0].skillDescription;
     }
 
-    public void Select(){
+    public void Select()
+    {
         Add.selected = this.gameObject;
     }
 
-    public void ResetInfos(){
+    public void ResetInfos()
+    {
         skillNameText.text = employee.skills[0].skillName;
         image.GetComponent<Image>().sprite = employee.sprite;
     }

@@ -17,6 +17,15 @@ MonoBehaviour:
   project: 0
   riskName: Ferramentas Inapropriadas
   riskDescription: "Ferramentas para desenvolvimento n\xE3o s\xE3o \xFAteis ou eficientes"
+  sprite: {fileID: 21300000, guid: 0e966620820282a488d237412085772e, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives: []
   impactLevel: 0
   probLevel: 0
   probability: 0
@@ -24,5 +33,3 @@ MonoBehaviour:
   scopeCost: 0
   moneyCost: 0
   timeCost: 0
-  consequences: []
-  image: {fileID: 0}

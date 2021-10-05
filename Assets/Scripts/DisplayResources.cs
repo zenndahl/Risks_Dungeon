@@ -13,4 +13,10 @@ public class DisplayResources : MonoBehaviour
         Player player = GameObject.Find("Player").GetComponent<Player>();
         value.text = player.GetResource(resource).ToString();
     }
+
+    private void Update()
+    {
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        value.text = player.GetResource(resource).ToString();
+    }
 }

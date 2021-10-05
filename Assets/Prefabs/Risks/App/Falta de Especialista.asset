@@ -18,7 +18,13 @@ MonoBehaviour:
   riskName: Falta de Especialista
   riskDescription: "Falta de uum membro especialista em uma fun\xE7\xE3o espec\xEDfica
     importante, como UX ou product owner"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f999dff512ca8c94dbf31a0cbbcdf41d, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: 65db3fb6745535640977f1d13942feb5, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 3

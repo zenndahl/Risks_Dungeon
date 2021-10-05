@@ -18,7 +18,13 @@ MonoBehaviour:
   riskName: Recursos Inadequados
   riskDescription: "Recursos definidos para planejamento, desenvolvimento e teste
     de funcionalidades n\xE3o suficientes"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9c7d0b81307725e40bf5c398965b9076, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
+  - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 5

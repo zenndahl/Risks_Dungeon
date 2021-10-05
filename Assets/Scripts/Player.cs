@@ -27,18 +27,36 @@ public class Player : MonoBehaviour {
         team.Add(employee);
     }
 
-    public void IncreaseResources(int mod)
+    public void IncreaseResources(int value)
     {
-        scope += mod;
-        time += mod;
-        money += mod;
+        scope += value;
+        time  += value;
+        money += value;
     }
 
-    public void DecreaseResources(int mod)
+    public void DecreaseResources(int value)
     {
-        scope -= mod;
-        time -= mod;
-        money -= mod;
+        scope -= value;
+        time  -= value;
+        money -= value;
+    }
+
+    public void OperateScope(int value, int op)
+    {
+        if(op == 1) scope += value;
+        else        scope -= value;
+    }
+
+    public void OperateMoney(int value, int op)
+    {
+        if(op == 1) money += value;
+        else        money -= value;
+    }
+
+    public void OperateTime(int value, int op)
+    {
+        if(op == 1) time += value;
+        else        time -= value;
     }
 
     public int GetResource(string resource)

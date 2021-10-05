@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Menus : MonoBehaviour
 {
     [Header("UI")]
     public GameObject choseProject;
+    public GameObject warningScreen;
 
 
     // Start is called before the first frame update
@@ -23,14 +25,12 @@ public class Menus : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("Saindo do Jogo");
         Application.Quit();
     }
 
     //Main Menu Methods
     public void StartGame()
     {
-        Debug.Log("Iniciando Jogo");
         ActivateChoseProjectUI();
     }
 
@@ -61,11 +61,21 @@ public class Menus : MonoBehaviour
 
     public void Reshuffle()
     {
-        GameManager._instance.RandomizeSkills();
+        //GameManager._instance.RandomizeSkills();
     }
 
     public void FinishId()
     {
-        GameManager._instance.FinishIdentification();
+        GameObject.Find("Identification").GetComponent<Identification>().FinishIdentification();
+    }
+
+    public void PlanningWarningDismiss()
+    {
+        warningScreen.SetActive(false);
+    }
+
+    public void EndGame()
+    {
+        
     }
 }

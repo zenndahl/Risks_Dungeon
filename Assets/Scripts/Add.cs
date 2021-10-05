@@ -7,6 +7,7 @@ public class Add : MonoBehaviour
 {
     public static GameObject selected;
     public static GameObject matrixCell;
+    //public GameObject list;
     public GameObject toAddList;
     public GameObject describer;
 
@@ -14,6 +15,7 @@ public class Add : MonoBehaviour
     {
         if(selected != null)
         {
+            TeamSelection ts = GameObject.Find("Team Selection").GetComponent<TeamSelection>();
             if(describer != null) describer.SetActive(false); //hide the description of the selected object
 
             //cloning the display object selected to the selected objects list
@@ -24,11 +26,11 @@ public class Add : MonoBehaviour
             Employee employee = selected.GetComponent<EmployeeDisplay>().employee;
 
             //set the employees available and the employees the player already picked
-            GameManager._instance.SetEmployeeLists(employee);
+            ts.SetEmployeeLists(employee);
             GameObject.Find("Player").GetComponent<Player>().SetEmployees(employee);
 
             //randomize new employees for the player to choose
-            GameManager._instance.RandomizeSkills();
+            ts.RandomizeSkills();
         }
         selected = null;
     }
@@ -38,8 +40,25 @@ public class Add : MonoBehaviour
         if(selected != null)
         {
             if(describer != null) describer.SetActive(false); //hide the description of the selected object
-            GameManager._instance.SetRisksList(selected.GetComponent<RiskDisplay>().risk);
+            Identification id = GameObject.Find("Identification").GetComponent<Identification>();
+            id.AddId(selected.GetComponent<RiskDisplay>().risk);
             selected.transform.SetParent(toAddList.transform);
+
+            toAddList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
+        }
+        selected = null;
+    }
+
+    public void RemoveRisk()
+    {
+        if(selected != null)
+        {
+            if(describer != null) describer.SetActive(false); //hide the description of the selected object
+            Identification id = GameObject.Find("Identification").GetComponent<Identification>();
+            id.RemoveId(selected.GetComponent<RiskDisplay>().risk);
+            selected.transform.SetParent(toAddList.transform);
+
+            toAddList.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
         }
         selected = null;
     }
@@ -47,12 +66,16 @@ public class Add : MonoBehaviour
     public static void AddToMatrix()
     {
         Risk risk = selected.GetComponent<RiskDisplay>().risk;
-        RiskDisplay riskDisplay = matrixCell.GetComponent<RiskDisplay>();
-        riskDisplay.DisplayInMatrix(risk);
-        GameManager._instance.Evaluation(risk, riskDisplay);
-        Destroy(selected);
-        selected = null;
-        matrixCell = null;
+        if(risk != null)
+        {
+            RiskDisplay riskDisplay = matrixCell.GetComponent<RiskDisplay>();
+            riskDisplay.DisplayInMatrix(risk);
+            Evaluation eval = GameObject.Find("Evaluation").GetComponent<Evaluation>();
+            eval.Evaluate(risk, riskDisplay);
+            Destroy(selected);
+            selected = null;
+            matrixCell = null;
+        }
     }
 
     public void AddIcon()
@@ -70,9 +93,23 @@ public class Add : MonoBehaviour
 
             //Destroy(selected);
 
-            GameManager._instance.FinishIconSelection();
+            GameObject.Find("Team Selection").GetComponent<TeamSelection>().FinishIconSelection();
         }
         selected = null;
+    }
+
+    public void AddPrevention()
+    {
+        Transform holder = GameObject.Find("PreventionHolder").transform;
+        if(holder.childCount != 0) 
+        {
+            //holder.GetChild(0).GetComponent<Button>().interactable = true;
+            holder.GetChild(0).transform.SetParent(toAddList.transform);
+            holder.GetChild(0).GetComponent<Button>().onClick.RemoveListener(AddPrevention);
+        }
+
+        selected.transform.SetParent(gameObject.transform);
+        selected.GetComponent<Button>().onClick.AddListener(AddPrevention);
     }
 
 }

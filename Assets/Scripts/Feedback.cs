@@ -14,7 +14,7 @@ public class Feedback : MonoBehaviour
         
     }
 
-    public void DisplayFeedback(string phaseText, int correctsNumber, int closeNumbers = 0)
+    public void DisplayFeedback(string phaseText, int correctsNumber, int closeNumbers = 0, int assigned = 0)
     {
         Player player = GameObject.Find("Player").GetComponent<Player>();
 
@@ -25,7 +25,12 @@ public class Feedback : MonoBehaviour
 
         if(closeNumbers != 0)
         {
-            feedbackText_1.text += " e " + closeNumbers + " próximos do correto";
+            if(phaseText == "planejou")
+            {
+                feedbackText_1.text += ", atribuiu " + assigned + " riscos";
+                feedbackText_1.text += " e acertou o tipo de " + closeNumbers + " riscos";
+            }
+            else feedbackText_1.text += " e " + closeNumbers + " próximos do correto";
         }
         
         feedbackText_2.text = "Seus recursos:" + 

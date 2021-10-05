@@ -18,7 +18,12 @@ MonoBehaviour:
   riskName: "Dispers\xE3o Geogr\xE1fica"
   riskDescription: "Membros da organiza\xE7\xE3o espalhados por v\xE1rias cidades,
     estados ou pa\xEDses"
-  image: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f999dff512ca8c94dbf31a0cbbcdf41d, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
+  reaction: 0
+  prevented: 0
   timesPrevented: 0
   derivatives: []
   impactLevel: 3
