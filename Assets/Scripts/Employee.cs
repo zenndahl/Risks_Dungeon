@@ -11,27 +11,14 @@ public class Employee : ScriptableObject
 
     [Header("Employee Stats")]
     public int morale;
-    public int combatPower;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ManageCombatPower(int modifier)
     {
-        combatPower += modifier;
+        //combatPower += modifier;
     }
 
     public void ManageMorale(int penalty)
     {
-        morale -= penalty;
+        //morale -= penalty;
     }
 }

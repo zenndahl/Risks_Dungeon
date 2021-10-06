@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   opportunityName: "Diversifica\xE7\xE3o de Clientes"
-  opportunityEffect: 
-  opportunityDescription: ' '
+  opportunityEffect: "B\xF4nus de Recursos"
+  opportunityDescription: "Mais pessoas est\xE3o dispostas ou interessados no sistema"
   repeatable: 0
-  consequences: []
-  prevent: []
-  scopeBonus: 4
+  scopeBonus: 2
   moneyBonus: 4
-  timeBonus: 4
+  timeBonus: -2
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

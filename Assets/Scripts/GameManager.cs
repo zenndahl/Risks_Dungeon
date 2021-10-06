@@ -13,19 +13,19 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Infos")]
     public int project;
-    public static string projectName; 
+    public static string projectName;
 
     [Header("Risks Infos")]
     public List<Risk> risks = new List<Risk>(); 
     //risks identified by the player in the identification phase
     public List<Risk> risksIdentified = new List<Risk>();
-    public Risk activeRisk;
+    public static Risk activeRisk;
     public static List<Prevention> preventionsMade = new List<Prevention>();
     public static List<Risk> risksAssigned = new List<Risk>();
 
     [Header("Opportunities")]
-    public Opportunity[] opportunitiesList;
-    public static Opportunity[] opportunities;
+    public List<Opportunity> opportunitiesList = new List<Opportunity>();
+    public static List<Opportunity> opportunities = new List<Opportunity>();
 
     [Header("Scene Infos")]
     public static string currentScene;
@@ -62,7 +62,11 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
+        if(GameObject.Find("Token/Icon"))
+        {
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            GameObject.Find("Token/Icon").GetComponent<Image>().sprite = player.icon;
+        }
     }
     
     //will be called by the button on the main menu screen to setup the ERP project
@@ -132,13 +136,12 @@ public class GameManager : MonoBehaviour
                     case 4:
                         SceneManager.LoadScene("Evolução");
                         currentScene = "Evolução";
-                        nextScene = null;
+                        nextScene = "Final";
                         break;
 
                     default:
-                        SceneManager.LoadScene("Main Menu");
-                        currentScene = "Main Menu";
-                        nextScene = "Implementação";
+                        SceneManager.LoadScene("Menu Principal");
+                        currentScene = "Menu Principal";
                         //tratar possíveis erros(?)
                         Debug.Log("ERRO!! VOCÊ FOI RETORNADO AO MENU!!");
                         break;

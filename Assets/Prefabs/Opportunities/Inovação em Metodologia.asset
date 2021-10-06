@@ -14,11 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   opportunityName: "Inova\xE7\xE3o em Metodologia"
-  opportunityEffect: Reduz a probabilidade de riscos relacionados a planejamento
-  opportunityDescription: 
+  opportunityEffect: "Aplica a preven\xE7\xE3o Estudo de Fun\xE7\xF5es"
+  opportunityDescription: "A organiza\xE7\xE3o elaborou uma metodologia pr\xF3pria
+    que facilita busca por novidades"
   repeatable: 0
-  consequences: []
-  prevent: []
   scopeBonus: 4
   moneyBonus: -2
-  timeBonus: -2
+  timeBonus: -1
+  prevention: {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  makePrevention: 1
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

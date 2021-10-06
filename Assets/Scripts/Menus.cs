@@ -18,9 +18,10 @@ public class Menus : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void LoadMainMenu()
     {
-        
+        SceneManager.LoadScene("Menu Principal");
+        GameManager.currentScene = "Menu Principal";
     }
 
     public void Quit()
@@ -42,6 +43,11 @@ public class Menus : MonoBehaviour
     public void Options()
     {
 
+    }
+
+    public void HideUI()
+    {
+        this.gameObject.SetActive(false);
     }
 
     //Choose Project Methods
@@ -74,7 +80,30 @@ public class Menus : MonoBehaviour
         warningScreen.SetActive(false);
     }
 
+    public static void EnableInteractbles()
+    {
+        GameObject[] interactbles = GameObject.FindGameObjectsWithTag("Interactble");
+        foreach (GameObject gO in interactbles)
+        {
+            gO.GetComponent<Button>().enabled = true;
+        }
+    }
+
+    public static void DisableInteractbles()
+    {
+        GameObject[] interactbles = GameObject.FindGameObjectsWithTag("Interactble");
+        foreach (GameObject gO in interactbles)
+        {
+            gO.GetComponent<Button>().enabled = false;
+        }
+    }
+
     public void EndGame()
+    {
+        
+    }
+
+    public void GameOver()
     {
         
     }

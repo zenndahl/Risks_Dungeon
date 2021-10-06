@@ -14,11 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 12
   opportunityName: "Novas Li\xE7\xF5es"
-  opportunityEffect: "Tenha outra oportunidade e ganhe uma habilidade aleat\xF3ria"
-  opportunityDescription: 
+  opportunityEffect: 'Ativa mais uma oportunidade '
+  opportunityDescription: "Novos conhecimentos foram formados e novas li\xE7\xF5es
+    aprendidas"
   repeatable: 1
-  consequences: []
-  prevent: []
   scopeBonus: 2
   moneyBonus: 0
   timeBonus: -2
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 1
+  diversify: 0

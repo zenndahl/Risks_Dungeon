@@ -20,7 +20,7 @@ public class Add : MonoBehaviour
 
             //cloning the display object selected to the selected objects list
             Transform cloned = Instantiate(selected.transform, selected.transform);
-            cloned.SetParent(toAddList.transform);
+            if(toAddList != null) cloned.SetParent(toAddList.transform);
 
             //get employee from display
             Employee employee = selected.GetComponent<EmployeeDisplay>().employee;
@@ -44,6 +44,7 @@ public class Add : MonoBehaviour
             id.AddId(selected.GetComponent<RiskDisplay>().risk);
             selected.transform.SetParent(toAddList.transform);
 
+            //selected.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
             toAddList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
         }
         selected = null;
@@ -58,6 +59,7 @@ public class Add : MonoBehaviour
             id.RemoveId(selected.GetComponent<RiskDisplay>().risk);
             selected.transform.SetParent(toAddList.transform);
 
+            //selected.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
             toAddList.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
         }
         selected = null;
@@ -92,7 +94,6 @@ public class Add : MonoBehaviour
             selected.transform.SetParent(describer.transform);
 
             //Destroy(selected);
-
             GameObject.Find("Team Selection").GetComponent<TeamSelection>().FinishIconSelection();
         }
         selected = null;
@@ -104,8 +105,8 @@ public class Add : MonoBehaviour
         if(holder.childCount != 0) 
         {
             //holder.GetChild(0).GetComponent<Button>().interactable = true;
-            holder.GetChild(0).transform.SetParent(toAddList.transform);
             holder.GetChild(0).GetComponent<Button>().onClick.RemoveListener(AddPrevention);
+            holder.GetChild(0).transform.SetParent(toAddList.transform);
         }
 
         selected.transform.SetParent(gameObject.transform);

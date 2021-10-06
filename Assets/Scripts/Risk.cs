@@ -51,24 +51,83 @@ public class Risk : ScriptableObject
         //text.text = riskName;
     }
 
-    public void IncreaseProb(){
-        probability += 0.2f;
+    public void IncreaseProb(int mult){
+        probability += 0.2f * mult;
     }
 
-    public void DecreaseProb(){
-        probability -= 0.2f;
+    public void DecreaseProb(int mult){
+        probability -= 0.2f * mult;
     }
 
-    public void ActivateRisk(){
+    public void ActivateRisk()
+    {
+
+        GameObject rskDisplay = GameObject.Find("Risk Display 2");
+        rskDisplay.GetComponent<RiskDisplay>().risk = this;
+        rskDisplay.GetComponent<RiskDisplay>().ShowRiskInfos();
+        
+
         Player player = GameObject.Find("Player").GetComponent<Player>();
 
+        foreach (Employee employee in Player.team)
+        {
+            foreach (Skill skill in employee.skills)
+            {
+                if(skill.combat.Contains(this))
+                {
+                    ApplyMitigation(player.combatPower);
+                    break;
+                }
+            }
+            break;
+        }
+        
+
+        ApplyReaction();
+        
+
+        
         player.DecreaseResources(scopeCost);
         player.DecreaseResources(moneyCost);
         player.DecreaseResources(timeCost);
 
         foreach (Risk risk in derivatives)
         {
-            risk.IncreaseProb();
+            risk.IncreaseProb(1);
+        }
+    }
+
+    void ApplyReaction()
+    {
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        
+        if(reaction == 1)
+        {
+
+            foreach (Prevention prevention in preventions)
+            {
+                if(GameManager.preventionsMade.Contains(prevention))
+                {
+                    DecreaseProb(1);
+                    break;
+                }
+            }
+        }
+
+        if(reaction == 2)
+        {
+            if(GameManager.risksAssigned.Contains(this))
+            {
+                // the assign risk cost only money
+                AssignRisk();
+            }
+        }
+
+        if(reaction == 3){
+            //accept the risk and its full impact
+            player.DecreaseResources(scopeCost);
+            player.DecreaseResources(moneyCost);
+            player.DecreaseResources(timeCost);
         }
     }
 
@@ -77,11 +136,11 @@ public class Risk : ScriptableObject
         scopeCost -= mitigation;
         moneyCost -= mitigation;
         timeCost -= mitigation;
+    }
 
-        ActivateRisk();
-
-        scopeCost += mitigation;
-        moneyCost += mitigation;
-        timeCost += mitigation;
+    public void AssignRisk()
+    {
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        player.DecreaseResources(moneyCost);
     }
 }

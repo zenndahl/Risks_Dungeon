@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   opportunityName: "Ampla Experi\xEAncia"
-  opportunityDescription: "Aumenta a redu\xE7\xE3o de impacto dos riscos pela equipe
-    em +1"
+  opportunityEffect: Aumento do Poder de Combate a Riscos e Nova Oportunidade
+  opportunityDescription: "Funcion\xE1rios s\xE3o experientes com o tipo de projeto"
   repeatable: 0
-  consequences: []
-  prevent: []
   scopeBonus: 4
-  moneyBonus: 4
-  timeBonus: 4
+  moneyBonus: 2
+  timeBonus: 2
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 1
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 1
+  diversify: 0

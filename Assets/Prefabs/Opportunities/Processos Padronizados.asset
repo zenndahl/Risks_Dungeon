@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: Processos Padronizados
   m_EditorClassIdentifier: 
   id: 15
-  opportunityName: Processos Diversificados
+  opportunityName: Processos Padronizados
   opportunityEffect: "Ter esta oportunidade novamente aumenta o b\xF4nus em +1 para
-    cada vez que a teve"
+    cada vez que a aceitou"
   opportunityDescription: 
   repeatable: 1
-  consequences: []
-  prevent: []
-  scopeBonus: 0
-  moneyBonus: -2
-  timeBonus: 3
+  scopeBonus: -1
+  moneyBonus: -1
+  timeBonus: 2
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

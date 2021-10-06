@@ -17,8 +17,14 @@ MonoBehaviour:
   opportunityEffect: 'Escolha um entre: +2 O, +2 T, ter outra oportunidade'
   opportunityDescription: 
   repeatable: 0
-  consequences: []
-  prevent: []
   scopeBonus: 2
   moneyBonus: -2
   timeBonus: 0
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 1

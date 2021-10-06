@@ -15,10 +15,16 @@ MonoBehaviour:
   id: 13
   opportunityName: Patrocinador
   opportunityEffect: "B\xF4nus de Or\xE7amento"
-  opportunityDescription: 
+  opportunityDescription: "Um patrocinador est\xE1 interessado no projeto ou na organiza\xE7\xE3o"
   repeatable: 1
-  consequences: []
-  prevent: []
   scopeBonus: 0
   moneyBonus: 5
-  timeBonus: -2
+  timeBonus: 0
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

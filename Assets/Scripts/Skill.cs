@@ -8,13 +8,13 @@ public class Skill : ScriptableObject
     public int id;
     public string skillName;
     public string skillDescription;
-    public Risk[] combat;
-    public Risk[] prevent;
+    public List<Risk> combat = new List<Risk>();
+    public List<Risk> prevent = new List<Risk>();
 
     public void PreventRisks(){
         foreach (Risk risk in prevent)
         {
-            risk.DecreaseProb();
+            risk.DecreaseProb(1);
         }
     }
 }

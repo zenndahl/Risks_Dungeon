@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   opportunityName: Equipe Dedicada
-  opportunityEffect: "B\xF4nus de Recursos"
-  opportunityDescription: 
+  opportunityEffect: Aumento do Poder de Combate a Riscos
+  opportunityDescription: "Equipe \xE9 eficiente e dedicada ao projeto"
   repeatable: 1
-  consequences: []
-  prevent: []
   scopeBonus: 3
   moneyBonus: 3
   timeBonus: 3
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 1
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

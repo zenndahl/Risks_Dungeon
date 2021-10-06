@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 9
   opportunityName: "Inova\xE7\xE3o em Tecnologia"
-  opportunityEffect: "Reduz a probabilidade de riscos relacionados a tecnologia e
-    implementa\xE7\xE3o"
-  opportunityDescription: 
+  opportunityEffect: "Aplica a preven\xE7\xE3o Pesquisa de Mercado"
+  opportunityDescription: "A Organiza\xE7\xE3o desenvolveu ferramentas pr\xF3prias
+    que facilitaram a implementa\xE7\xE3o"
   repeatable: 0
-  consequences: []
-  prevent: []
-  scopeBonus: 3
-  moneyBonus: 2
-  timeBonus: -2
+  scopeBonus: 2
+  moneyBonus: -2
+  timeBonus: 2
+  prevention: {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  makePrevention: 1
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

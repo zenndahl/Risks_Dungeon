@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: "Funcion\xE1rio mais Experiente"
   m_EditorClassIdentifier: 
   id: 7
-  opportunityName: "n\xE1rio mais Experiente"
-  opportunityEffect: 
-  opportunityDescription: "Troque uma habilidade por outra \xE0 sua escolha"
+  opportunityName: "Funcion\xE1rio mais Experiente"
+  opportunityEffect: Ganha Nova Habilidade
+  opportunityDescription: "Um novo funcion\xE1rio com uma habilidade diferente se
+    mostra promissor"
   repeatable: 1
-  consequences: []
-  prevent: []
   scopeBonus: 3
-  moneyBonus: -2
-  timeBonus: 2
+  moneyBonus: -3
+  timeBonus: 0
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 0
+  addSkill: 1
+  newOpportunity: 0
+  diversify: 0

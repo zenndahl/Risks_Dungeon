@@ -10,15 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 978aa151284f7de4db80203d5556b952, type: 3}
-  m_Name: Proposta melhor que Concorrente
+  m_Name: Proposta Inovadora
   m_EditorClassIdentifier: 
   id: 16
-  opportunityName: Proposta melhor que Concorrente
-  opportunityEffect: "B\xF4nus de Recursos"
-  opportunityDescription: 
+  opportunityName: Proposta Inovadora
+  opportunityEffect: Diminui Custos de Oportunidades
+  opportunityDescription: "Projeto em implementa\xE7\xE3o tem uma proposta inovadora
+    que chama a aten\xE7\xE3o do mercado"
   repeatable: 0
-  consequences: []
-  prevent: []
   scopeBonus: 4
   moneyBonus: 4
   timeBonus: -2
+  prevention: {fileID: 0}
+  makePrevention: 0
+  increasePower: 0
+  increaseBonus: 0
+  decreaseCosts: 1
+  addSkill: 0
+  newOpportunity: 0
+  diversify: 0

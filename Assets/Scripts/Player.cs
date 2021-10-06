@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     private int scope = 1;
     private int time = 1;
     private int money = 1;
     public static List<Employee> team = new List<Employee>();
     public Sprite icon;
+    public int combatPower;
 
     private void Awake()
     {
@@ -41,22 +43,19 @@ public class Player : MonoBehaviour {
         money -= value;
     }
 
-    public void OperateScope(int value, int op)
+    public void OperateScope(int value)
     {
-        if(op == 1) scope += value;
-        else        scope -= value;
+        scope += value;
     }
 
-    public void OperateMoney(int value, int op)
+    public void OperateMoney(int value)
     {
-        if(op == 1) money += value;
-        else        money -= value;
+         money += value;
     }
 
-    public void OperateTime(int value, int op)
+    public void OperateTime(int value)
     {
-        if(op == 1) time += value;
-        else        time -= value;
+        time += value;
     }
 
     public int GetResource(string resource)
