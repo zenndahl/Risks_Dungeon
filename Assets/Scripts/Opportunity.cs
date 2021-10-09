@@ -48,9 +48,10 @@ public class Opportunity : ScriptableObject
     {
         //apply resource bonus
         Player player = GameObject.Find("Player").GetComponent<Player>();
-        player.IncreaseResources(scopeBonus);
-        player.IncreaseResources(moneyBonus);
-        player.IncreaseResources(timeBonus);
+        player.opportunitiesTaken++;
+        player.OperateScope(scopeBonus);
+        player.OperateMoney(moneyBonus);
+        player.OperateTime(timeBonus);
 
         //check ans apply the extra effects if has any
         if(makePrevention) prevention.Prevent();

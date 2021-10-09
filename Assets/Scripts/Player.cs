@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public Sprite icon;
     public int combatPower;
 
+    public int risksActivated;
+    public int opportunitiesTaken;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -20,7 +23,7 @@ public class Player : MonoBehaviour
     {
         if(scope <= 0 || time <= 0 || money <= 0)
         {
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
         }
     }
 
@@ -32,15 +35,15 @@ public class Player : MonoBehaviour
     public void IncreaseResources(int value)
     {
         scope += value;
-        time  += value;
         money += value;
+        time  += value;
     }
 
     public void DecreaseResources(int value)
     {
         scope -= value;
-        time  -= value;
         money -= value;
+        time  -= value;
     }
 
     public void OperateScope(int value)

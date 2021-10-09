@@ -13,6 +13,8 @@ public class Room : MonoBehaviour
     public Button[] nextRooms;
     public bool isPlayerHere = false;
     public bool isLast;
+    public bool isCheckpoint;
+    public bool isBreakpoint;
 
     public GameObject feedback;
 
@@ -23,11 +25,7 @@ public class Room : MonoBehaviour
     void Start()
     {
         SetRisksProb();
-    }
-
-    public bool HasPlayer()
-    {
-        return isPlayerHere;
+        
     }
 
     public void ChangeHoverColor(int op)
@@ -38,8 +36,6 @@ public class Room : MonoBehaviour
     //add or remove the event MoveToken based on the neighborhood of the room the player is in
     public void SetButton(Button button, int op)
     {
-        Debug.Log(button);
-        Debug.Log(op);
         if(op == 1) button.onClick.AddListener(MoveToken);
         else button.onClick.RemoveAllListeners();  
     }
@@ -54,7 +50,6 @@ public class Room : MonoBehaviour
             {
                 risk.probability -= 0.2f;
                 risk.probLevel -= 1;
-                Debug.Log(risk.riskName);
             }
         }
     }
@@ -78,8 +73,15 @@ public class Room : MonoBehaviour
     {
         MoveCost();
 
+        if(isCheckpoint) SCRUM.sprintLoops++;
+        if(isBreakpoint)
+        {
+            SCRUM.sprintLoops = 0;
+            SCRUM.sprints++;
+        }
+
         //if a risk was randomized last room, when it enters a new room, it is activated
-        if(GameManager.activeRisk != null) GameManager.activeRisk.ActivateRisk();
+        //if(GameManager.activeRisk != null) GameManager.activeRisk.ActivateRisk();
         GameManager._instance.currentRoom = this;
 
         //set the previous room to not have the player
@@ -90,7 +92,8 @@ public class Room : MonoBehaviour
         GameObject.Find("Token").transform.position = new Vector3(gameObject.transform.position.x,
                                                                   gameObject.transform.position.y,
                                                                   gameObject.transform.position.z    
-                                                            );
+                                                                );
+
         SetRooms();
         RskOpp();
 
@@ -101,18 +104,23 @@ public class Room : MonoBehaviour
     {
         GameObject rooms = GameObject.Find("Rooms");
 
+        //first disable every room button
         foreach (Transform child in rooms.transform)
         {
             child.gameObject.GetComponent<Image>().color = new Color(0,0,0,0);
-            child.gameObject.GetComponent<Button>().enabled = false;
+            child.gameObject.GetComponent<Button>().interactable = false;
         }
 
         foreach (Button button in nextRooms)
         {
             button.GetComponent<Room>().ChangeHoverColor(0);
-            button.enabled = true;
+            button.interactable = true;
+            //the scrum project has its own settings
+            if(GameManager._instance.project == 2)
+            {
+                SCRUM.SetSprintRooms(this);
+            }
         }
-
     }
 
     public void RskOpp()
@@ -127,6 +135,7 @@ public class Room : MonoBehaviour
         if(randProb <= risksPossible[randIndex].probability)
         {
             GameManager.activeRisk = risksPossible[randIndex];
+            risksPossible[randIndex].ActivateRisk();
         }
         else
         {

@@ -45,9 +45,14 @@ public class Menus : MonoBehaviour
 
     }
 
-    public void HideUI()
+    public void HideUI(GameObject ui)
     {
-        this.gameObject.SetActive(false);
+        ui.SetActive(false);
+    }
+
+    public void ShowUI(GameObject ui)
+    {
+        ui.SetActive(true);
     }
 
     //Choose Project Methods

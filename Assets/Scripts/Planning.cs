@@ -132,7 +132,10 @@ public class Planning : MonoBehaviour
             //verify if the type given is correct, giving points if it is
             VerifyType();
 
-            preventionSelected = Add.selected.GetComponent<PreventionDisplay>().prevention;
+            if(preventionSelected != null) 
+            {
+                preventionSelected = Add.selected.GetComponent<PreventionDisplay>().prevention;
+            }
         }
 
         reactionScreen.SetActive(true);
@@ -167,7 +170,14 @@ public class Planning : MonoBehaviour
         risksToPlan.RemoveAt(0);
         if(risksToPlan.Any()) 
         {
-            GameObject.Find("PreventionHolder").transform.GetChild(0).transform.SetParent(preventionsParent.transform);
+            //check if a prevention was selected, if it was, move it back to the initial place
+            
+            if(GameObject.Find("PreventionHolder").transform.childCount > 0)
+            {
+                Transform preventHolder = GameObject.Find("PreventionHolder").transform.GetChild(0);
+                preventHolder.SetParent(preventionsParent.transform);
+            }
+
             reactionScreen.SetActive(false);
             RandomizePreventions();
             NextRiskToPlan();

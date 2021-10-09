@@ -5,18 +5,15 @@ using UnityEngine;
 
 public class DisplayResources : MonoBehaviour
 {
-    public Text value;
-    public string resource;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
-        value.text = player.GetResource(resource).ToString();
-    }
+    public Text scopeValue;
+    public Text moneyValue;
+    public Text timeValue;
 
     private void Update()
     {
         Player player = GameObject.Find("Player").GetComponent<Player>();
-        value.text = player.GetResource(resource).ToString();
+        scopeValue.text = player.GetResource("scope").ToString();
+        moneyValue.text = player.GetResource("money").ToString();
+        timeValue.text = player.GetResource("time").ToString();
     }
 }

@@ -56,7 +56,9 @@ public class Risk : ScriptableObject
     }
 
     public void DecreaseProb(int mult){
+        Debug.Log("Antes: " + probability);
         probability -= 0.2f * mult;
+        Debug.Log("Depois: " + probability);
     }
 
     public void ActivateRisk()
@@ -66,6 +68,7 @@ public class Risk : ScriptableObject
         rskDisplay.GetComponent<RiskDisplay>().risk = this;
         rskDisplay.GetComponent<RiskDisplay>().ShowRiskInfos();
         
+        ApplyReaction();
 
         Player player = GameObject.Find("Player").GetComponent<Player>();
 
@@ -81,15 +84,11 @@ public class Risk : ScriptableObject
             }
             break;
         }
-        
 
-        ApplyReaction();
-        
-
-        
-        player.DecreaseResources(scopeCost);
-        player.DecreaseResources(moneyCost);
-        player.DecreaseResources(timeCost);
+        player.risksActivated++;
+        player.OperateScope(scopeCost);
+        player.OperateMoney(moneyCost);
+        player.OperateTime(timeCost);
 
         foreach (Risk risk in derivatives)
         {
@@ -103,7 +102,6 @@ public class Risk : ScriptableObject
         
         if(reaction == 1)
         {
-
             foreach (Prevention prevention in preventions)
             {
                 if(GameManager.preventionsMade.Contains(prevention))
@@ -122,13 +120,6 @@ public class Risk : ScriptableObject
                 AssignRisk();
             }
         }
-
-        if(reaction == 3){
-            //accept the risk and its full impact
-            player.DecreaseResources(scopeCost);
-            player.DecreaseResources(moneyCost);
-            player.DecreaseResources(timeCost);
-        }
     }
 
     public void ApplyMitigation(int mitigation)
@@ -141,6 +132,6 @@ public class Risk : ScriptableObject
     public void AssignRisk()
     {
         Player player = GameObject.Find("Player").GetComponent<Player>();
-        player.DecreaseResources(moneyCost);
+        player.DecreaseResources(moneyCost+2);
     }
 }
