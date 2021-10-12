@@ -52,86 +52,77 @@ public class Risk : ScriptableObject
     }
 
     public void IncreaseProb(int mult){
-        probability += 0.2f * mult;
+        probability += 0.1f * mult;
     }
 
     public void DecreaseProb(int mult){
         Debug.Log("Antes: " + probability);
-        probability -= 0.2f * mult;
+        probability -= 0.1f * mult;
         Debug.Log("Depois: " + probability);
     }
 
     public void ActivateRisk()
     {
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player.risksActivated++;
 
-        GameObject rskDisplay = GameObject.Find("Risk Display 2");
-        rskDisplay.GetComponent<RiskDisplay>().risk = this;
-        rskDisplay.GetComponent<RiskDisplay>().ShowRiskInfos();
+        GameObject rskDisplay = GameObject.Find("Risk Game Display");
+        rskDisplay.GetComponent<RiskGameDisplay>().risk = this;
+        rskDisplay.GetComponent<RiskGameDisplay>().ShowRiskInfos();
         
-        ApplyReaction();
 
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        //check wich reaction is assigned to this risk and apply the correct action
+        if(reaction == 0) CheckDisciplin();
+        if(reaction == 1) ApplyMitigation(Player.combatPower);
+        if(reaction == 2) AssignRisk();
+        if(reaction == 3) AcceptRisk();
 
-        foreach (Employee employee in Player.team)
-        {
-            foreach (Skill skill in employee.skills)
-            {
-                if(skill.combat.Contains(this))
-                {
-                    ApplyMitigation(player.combatPower);
-                    break;
-                }
-            }
-            break;
-        }
-
-        player.risksActivated++;
-        player.OperateScope(scopeCost);
-        player.OperateMoney(moneyCost);
-        player.OperateTime(timeCost);
-
+        //when a risk happens, its derivatives will have more chances to happen too
         foreach (Risk risk in derivatives)
         {
             risk.IncreaseProb(1);
         }
     }
 
-    void ApplyReaction()
+    void CheckDisciplin()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
-        
-        if(reaction == 1)
+        if(Player.disciplin)
         {
-            foreach (Prevention prevention in preventions)
-            {
-                if(GameManager.preventionsMade.Contains(prevention))
-                {
-                    DecreaseProb(1);
-                    break;
-                }
-            }
-        }
-
-        if(reaction == 2)
-        {
-            if(GameManager.risksAssigned.Contains(this))
-            {
-                // the assign risk cost only money
-                AssignRisk();
-            }
+            Player.OperateScope(scopeCost - 1);
+            Player.OperateMoney(moneyCost - 1);
+            Player.OperateTime(timeCost - 1);
         }
     }
 
     public void ApplyMitigation(int mitigation)
     {
-        scopeCost -= mitigation;
-        moneyCost -= mitigation;
-        timeCost -= mitigation;
+        int mod = 0;
+        foreach (Employee employee in Player.team)
+        {
+            if(employee.skill.combat.Contains(this))
+            {
+                mod++;
+                break;
+            }
+        }
+
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player.OperateScope(scopeCost - mod);
+        Player.OperateMoney(moneyCost - mod);
+        Player.OperateTime(timeCost - mod);
     }
 
     public void AssignRisk()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
-        player.DecreaseResources(moneyCost+2);
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player.DecreaseResources(moneyCost+2);
+    }
+
+    void AcceptRisk()
+    {
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player.OperateScope(scopeCost);
+        Player.OperateMoney(moneyCost);
+        Player.OperateTime(timeCost);
     }
 }

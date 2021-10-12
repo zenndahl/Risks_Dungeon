@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1190511393728621357}
   - component: {fileID: 3604843835537010568}
   m_Layer: 5
-  m_Name: Risk Display
+  m_Name: Prevention Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dae0a1cf60b96cf4c8b202933f34ea09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc089d3768ca5044c9d4ad79681e61c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

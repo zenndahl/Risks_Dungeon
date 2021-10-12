@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   skillName: "Lideran\xE7a"
-  skillDescription: Diminui o impacto de riscos relacionados a equipe
-  combat: []
-  prevent: []
+  skillDescription: Combate riscos relacionados a equipe
+  combat:
+  - {fileID: 11400000, guid: 34a48fe8317cdeb45afa0330d5a55313, type: 2}
+  - {fileID: 11400000, guid: 7b11732dfe3b2de4ab9fa7d32573843f, type: 2}
+  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
+  - {fileID: 11400000, guid: db857a6f45de99b4b86faf2e6ae493b7, type: 2}
+  - {fileID: 11400000, guid: 0c9fc288b1217b545a7eeb450aac757f, type: 2}
+  - {fileID: 11400000, guid: 6cee61079c3f7b94f887851dbbc8d5c4, type: 2}

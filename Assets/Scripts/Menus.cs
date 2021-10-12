@@ -9,6 +9,10 @@ public class Menus : MonoBehaviour
     [Header("UI")]
     public GameObject choseProject;
     public GameObject warningScreen;
+    public GameObject scoreBoard;
+    public GameObject projects;
+    public GameObject choseName;
+    public InputField playerName;
 
 
     // Start is called before the first frame update
@@ -35,9 +39,16 @@ public class Menus : MonoBehaviour
         ActivateChoseProjectUI();
     }
 
+    
+    public void SetPlayerName()
+    {
+        Player.playerName = playerName.text;
+    }
+
     public void Scoreboard()
     {
-
+        scoreBoard.SetActive(true);
+        choseProject.SetActive(false);
     }
 
     public void Options()
@@ -59,6 +70,7 @@ public class Menus : MonoBehaviour
     public void ActivateChoseProjectUI()
     {
         choseProject.SetActive(true);
+        scoreBoard.SetActive(false);
     }
 
     public void Select(){
@@ -67,7 +79,7 @@ public class Menus : MonoBehaviour
 
     public void NextLevel()
     {
-        GameManager._instance.LoadNextScene();
+        GameManager.LoadNextScene();
     }
 
     public void Reshuffle()

@@ -31,7 +31,7 @@ public class Planning : MonoBehaviour
     
     void Start()
     {
-        risksToPlan = GameManager._instance.risksIdentified.ToList();
+        risksToPlan = GameManager.risksIdentified.ToList();
         NextRiskToPlan();
         RandomizePreventions();
     }
@@ -105,17 +105,18 @@ public class Planning : MonoBehaviour
 
     void CheckSetPrevention()
     {
-        GameManager._instance.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 1;
+        GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 1;
         
         //planning for mitigation costs 1 of each resource even if its wrong
-        GameObject.Find("Player").GetComponent<Player>().OperateScope(1);
-        GameObject.Find("Player").GetComponent<Player>().OperateMoney(-1); 
-        GameObject.Find("Player").GetComponent<Player>().OperateTime(-2);
+        Player.OperateScope(1);
+        Player.OperateMoney(-1); 
+        Player.OperateTime(-2);
 
         //if the prevention is correct, add the prevention to the preventions list
         if(riskOnPlanning.preventions.Contains(preventionSelected))
         {
             GameManager.preventionsMade.Add(preventionSelected);
+            GameManager.risksCorrectlyPlanned.Add(riskOnPlanning);
             correctlyPlanned++;
         }
     }
@@ -155,7 +156,7 @@ public class Planning : MonoBehaviour
         //add to the assigned risks list (assigned risks cost money when the risk occurs)
         if(reaction == 2) 
         {
-            GameManager._instance.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 2;
+            GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 2;
             GameManager.risksAssigned.Add(riskOnPlanning);
             assigned++;
         }
@@ -163,7 +164,7 @@ public class Planning : MonoBehaviour
         //set the risk to the "accept" reaction
         if (reaction == 3)
         {
-            GameManager._instance.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 3;
+            GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 3;
         }
 
         //check if there is another risk to plan, if not, finish the planning
@@ -171,7 +172,6 @@ public class Planning : MonoBehaviour
         if(risksToPlan.Any()) 
         {
             //check if a prevention was selected, if it was, move it back to the initial place
-            
             if(GameObject.Find("PreventionHolder").transform.childCount > 0)
             {
                 Transform preventHolder = GameObject.Find("PreventionHolder").transform.GetChild(0);
@@ -189,19 +189,33 @@ public class Planning : MonoBehaviour
     {
         if(riskOnPlanning.type == riskType)
         {
-            GameObject.Find("Player").GetComponent<Player>().IncreaseResources(1);
+            Player.IncreaseResources(1);
             correctlyTyped++;
         }
     }
 
     void FinishPlanning()
     {
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
         //show the feedback screen
         feedbackScreen.SetActive(true);
 
-        foreach (Risk risk in GameManager._instance.risksIdentified)
+        //activate the preventions from the team 
+        if(GameManager.project == 1)
         {
-            
+            foreach (Employee employee in Player.team)
+            {
+                //activate the employee skills
+                employee.skill.ActivateSkill();
+                foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject1Risks())
+                {   
+                    //for each risk of the project, if the employees combat them, their probability is reduced
+                    if(employee.skill.combat.Contains(risk))
+                    {
+                        risk.DecreaseProb(1);
+                    }
+                }
+            }
         }
 
         //display feedback of correctly identified risks and the current resources of the player

@@ -18,14 +18,14 @@ public class EmployeeDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        skillNameText.text = employee.skills[0].skillName;
+        skillNameText.text = employee.skill.skillName;
         image.GetComponent<Image>().sprite = employee.sprite;
     }
 
     public void ShowDescription()
     {
         describer.SetActive(true);
-        descriptionText.text = employee.skills[0].skillDescription;
+        descriptionText.text = employee.skill.skillDescription;
     }
 
     public void Select()
@@ -35,7 +35,7 @@ public class EmployeeDisplay : MonoBehaviour
 
     public void ResetInfos()
     {
-        skillNameText.text = employee.skills[0].skillName;
+        skillNameText.text = employee.skill.skillName;
         image.GetComponent<Image>().sprite = employee.sprite;
     }
 }

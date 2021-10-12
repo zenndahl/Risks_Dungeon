@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 9
   skillName: Conhecimento de Mercado
-  skillDescription: Diminui a probabilidadew de riscos relacionados a pesquisa de
+  skillDescription: Diminui a probabilidade de riscos relacionados a pesquisa de
     mercado
-  combat: []
-  prevent: []
+  combat:
+  - {fileID: 11400000, guid: 91cae64692ec03846a806a5f94017420, type: 2}
+  - {fileID: 11400000, guid: 7d4163ad04a2e8c4289fc5f572f06415, type: 2}
+  - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  - {fileID: 11400000, guid: c71ddeb2016458842a7bc7ccee6656aa, type: 2}
+  - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
+  - {fileID: 11400000, guid: 13e857060d720c14db92106549bf0691, type: 2}

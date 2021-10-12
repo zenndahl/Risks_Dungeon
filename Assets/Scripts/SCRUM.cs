@@ -8,11 +8,6 @@ public class SCRUM : MonoBehaviour
     public static int sprints;
     public static int sprintLoops;
 
-    private void Start()
-    {
-        GameObject.Find("Room 0").GetComponent<Room>().SetRooms();
-    }
-
     public static void SetSprintRooms(Room room)
     {
         //if is the last room of the sprint, check if it was done at least 4 loops

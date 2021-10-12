@@ -8,20 +8,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager _instance;
-    public static GameManager Instance { get { return _instance; } }
+    // public static GameManager _instance;
+    // public static GameManager Instance { get { return _instance; } }
 
     [Header("Game Infos")]
-    public int project;
+    public static int project;
     public static string projectName;
 
     [Header("Risks Infos")]
-    public List<Risk> risks = new List<Risk>(); 
-    //risks identified by the player in the identification phase
-    public List<Risk> risksIdentified = new List<Risk>();
-    public static Risk activeRisk;
+    public List<Risk> project1Risks = new List<Risk>();
+    public List<Risk> project2Risks = new List<Risk>();
+    public static List<Risk> risks = new List<Risk>();
+    public static List<Risk> risksIdentified = new List<Risk>();
     public static List<Prevention> preventionsMade = new List<Prevention>();
     public static List<Risk> risksAssigned = new List<Risk>();
+    public static List<Risk> risksCorrectlyIdentified = new List<Risk>();
+    public static List<Risk> risksCorrectlyEvaluated = new List<Risk>();
+    public static List<Risk> risksCorrectlyPlanned = new List<Risk>();
+
 
     [Header("Opportunities")]
     public List<Opportunity> opportunitiesList = new List<Opportunity>();
@@ -37,24 +41,25 @@ public class GameManager : MonoBehaviour
     public static List<Employee> employees = new List<Employee>();
 
     [Header("Rooms Infos")]
-    public Room currentRoom;
+    public static Room currentRoom;
 
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this);
-        } 
-        else 
-        {
-            _instance = this;
-        }
+        // if (_instance != null && _instance != this)
+        // {
+        //     Destroy(this);
+        // } 
+        // else 
+        // {
+        //     _instance = this;
+        // }
     }
 
     void Start()
     {
+        currentScene = "Menu Principal";
         SceneManager.sceneLoaded += OnSceneLoaded;
         opportunities = opportunitiesList;
         employees = employeesList;
@@ -64,8 +69,8 @@ public class GameManager : MonoBehaviour
     {
         if(GameObject.Find("Token/Icon"))
         {
-            Player player = GameObject.Find("Player").GetComponent<Player>();
-            GameObject.Find("Token/Icon").GetComponent<Image>().sprite = player.icon;
+            GameObject.Find("Token/Icon").GetComponent<Image>().sprite = Player.icon;
+            GameObject.Find("Room 0").GetComponent<Room>().SetRooms();
         }
     }
     
@@ -74,8 +79,10 @@ public class GameManager : MonoBehaviour
     {
         project = 1;
         projectName = "Desenvolvimento de Sistema ERP";
-        currentScene = "Selecionar Equipe";
-        SceneManager.LoadScene("Selecionar Equipe");
+        gameObject.GetComponent<Menus>().choseName.SetActive(true);
+        gameObject.GetComponent<Menus>().projects.SetActive(false);
+        //currentScene = "Selecionar Equipe";
+        //SceneManager.LoadScene("Selecionar Equipe");
     }
 
     //will be called by the button on the main menu screen to setup the App project
@@ -83,13 +90,36 @@ public class GameManager : MonoBehaviour
     {
         project = 2;
         projectName = "Desenvolvimento de App";
-        currentScene = "Selecionar Equipe";
-        SceneManager.LoadScene("Selecionar Equipe");
+        gameObject.GetComponent<Menus>().choseName.SetActive(true);
+        gameObject.GetComponent<Menus>().projects.SetActive(false);
+        //nextScene = "Selecionar Equipe";
+        //SceneManager.LoadScene("Selecionar Equipe");
+    }
+
+    public List<Employee> GetEmployeesList()
+    {
+        return employeesList;
+    }
+
+    public List<Risk> GetProject1Risks()
+    {
+        return project1Risks;
+    }
+
+    public List<Risk> GetProject2Risks()
+    {
+        return project2Risks;
     }
 
     //script to load the scenes in order
-    public void LoadNextScene()
+    public static void LoadNextScene()
     {
+        if(currentScene == "Menu Principal")
+        {
+            currentScene = "Selecionar Equipe";
+            nextScene = "Identificação";
+            SceneManager.LoadScene("Selecionar Equipe");
+        }
         if(currentScene == "Selecionar Equipe") 
         {
             currentScene = "Identificação";

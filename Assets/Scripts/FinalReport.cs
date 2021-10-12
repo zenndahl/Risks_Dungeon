@@ -12,9 +12,17 @@ public class FinalReport : MonoBehaviour
 
     void Start()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        int scope = GameObject.Find("Player").GetComponent<Player>().GetResource("scope");
+        int money = GameObject.Find("Player").GetComponent<Player>().GetResource("money");
+        int time = GameObject.Find("Player").GetComponent<Player>().GetResource("time");
+
+        Player.points = scope + ((money + time)/2);
+
+        LeaderboardController.SubmitScore();
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
+        points.text = Player.points.ToString();
         risksPrevented.text = GameManager.preventionsMade.Count.ToString();
-        risksActivated.text = player.risksActivated.ToString();
-        opportunitiesTaken.text = player.opportunitiesTaken.ToString();
+        risksActivated.text = Player.risksActivated.ToString();
+        opportunitiesTaken.text = Player.opportunitiesTaken.ToString();
     }
 }

@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Employee 11
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 8789ce6391720024eb3cd05fdb1f7552, type: 3}
-  skills:
-  - {fileID: 11400000, guid: aca553a17f7537c4fa3867d4241003e1, type: 2}
+  skill: {fileID: 11400000, guid: 031052e4335628743a933ffa3ca8d9ea, type: 2}
   morale: 10
-  combatPower: 1

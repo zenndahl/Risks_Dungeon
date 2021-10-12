@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   skillName: Disciplina
-  skillDescription: "Diminui o impacto de riscos n\xE3o iedntificados ou n\xE3o planejados
+  skillDescription: "Diminui o impacto de riscos n\xE3o identificados ou n\xE3o planejados
     corretamente"
   combat: []
-  prevent: []

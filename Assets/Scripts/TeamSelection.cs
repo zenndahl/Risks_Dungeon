@@ -9,11 +9,12 @@ public class TeamSelection : MonoBehaviour
 {
     public GameObject iconSelectionScreen;
     public EmployeeDisplay[] displays;
-    
+    private List<Employee> employees = new List<Employee>();
     private int maxRange = 12;
 
     private void Start()
     {
+        employees = GameManager.employees;
         RandomizeSkills();
     }
 
@@ -29,7 +30,7 @@ public class TeamSelection : MonoBehaviour
     	        randNum = Random.Range(0,maxRange);
             randomList.Add(randNum);
 
-            ed.employee = GameManager._instance.employeesList[randNum];
+            ed.employee = employees[randNum];
 
             //fazer checagem se tem membros repetidos e permitir novo sorteio
             
@@ -40,7 +41,7 @@ public class TeamSelection : MonoBehaviour
 
     public void SetEmployeeLists(Employee employee)
     {
-        GameManager._instance.employeesList.Remove(employee);
+        employees.Remove(employee);
         if(Player.team.Count() == 4) FinishTeamSelection();
         maxRange--;
     }

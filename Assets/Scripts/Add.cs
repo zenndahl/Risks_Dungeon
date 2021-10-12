@@ -27,7 +27,7 @@ public class Add : MonoBehaviour
 
             //set the employees available and the employees the player already picked
             ts.SetEmployeeLists(employee);
-            GameObject.Find("Player").GetComponent<Player>().SetEmployees(employee);
+            Player.SetEmployees(employee);
 
             //randomize new employees for the player to choose
             ts.RandomizeSkills();
@@ -70,10 +70,10 @@ public class Add : MonoBehaviour
         Risk risk = selected.GetComponent<RiskDisplay>().risk;
         if(risk != null)
         {
-            RiskDisplay riskDisplay = matrixCell.GetComponent<RiskDisplay>();
-            riskDisplay.DisplayInMatrix(risk);
+            MatrixRiskDisplay matrixRiskDisplay = matrixCell.GetComponent<MatrixRiskDisplay>();
+            matrixRiskDisplay.SetMatrixCell(risk);
             Evaluation eval = GameObject.Find("Evaluation").GetComponent<Evaluation>();
-            eval.Evaluate(risk, riskDisplay);
+            eval.Evaluate(risk, matrixRiskDisplay);
             Destroy(selected);
             selected = null;
             matrixCell = null;
@@ -86,7 +86,7 @@ public class Add : MonoBehaviour
         {
             if(describer != null) describer.SetActive(true); //show the description plate
             Sprite icon = selected.transform.GetComponent<Image>().sprite;
-            GameObject.Find("Player").GetComponent<Player>().icon = icon;
+            Player.icon = icon;
 
             //disable the button
             selected.GetComponent<Button>().enabled = false;

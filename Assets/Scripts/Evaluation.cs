@@ -7,6 +7,7 @@ public class Evaluation : MonoBehaviour
 {
     public GameObject riskDisplayPrefab;
     public GameObject feedbackScreen;
+    //public GameObject cellRisksList;
     private int correctlyEvaluated = 0;
     private int closelyEvaluated = 0;
 
@@ -14,16 +15,17 @@ public class Evaluation : MonoBehaviour
     {
         SetUpEvaluation();
     }
+
     void SetUpEvaluation()
     {
         GameObject rskList = GameObject.Find("Risk List/Risks");
-        foreach (Risk rsk in GameManager._instance.risksIdentified)
+        foreach (Risk rsk in GameManager.risksIdentified)
         {
             //instantiating and setting the parent for the risk
             GameObject rskDisplay = Instantiate(riskDisplayPrefab, rskList.transform);
 
             //set spacing between risks
-            //rskList.GetComponent<VerticalLayoutGroup>().spacing += 0.5f;
+            rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
 
             //rskDisplay.transform.SetParent(rskList.transform);
             rskDisplay.GetComponent<RiskDisplay>().risk = rsk;
@@ -33,32 +35,36 @@ public class Evaluation : MonoBehaviour
         }
     }
 
-    public void Evaluate(Risk risk, RiskDisplay riskDisplay)
+    public void Evaluate(Risk risk, MatrixRiskDisplay matrixRiskDisplay)
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
         GameObject rskList = GameObject.Find("Risks");
 
-        if(risk.impactLevel == riskDisplay.impact && risk.probLevel == riskDisplay.prob)
+        //if the player chooses the correct probabilit and impact, he gets 3 points
+        //if it gets the probability or the impact, he gets 1 point
+        //else he gets no points
+        if(risk.impactLevel == matrixRiskDisplay.impact && risk.probLevel == matrixRiskDisplay.prob)
         {
-            player.IncreaseResources(3);
+            GameManager.risksCorrectlyEvaluated.Add(risk);
+            Player.IncreaseResources(3);
             correctlyEvaluated++;
             //Debug.Log("Pontos ganhos: " + 3);
         }
-        else if(risk.impactLevel - riskDisplay.impact < 2)
+        else if(risk.impactLevel - matrixRiskDisplay.impact < 2)
         {
-            player.IncreaseResources(1);
+            Player.IncreaseResources(1);
             closelyEvaluated++;
             //Debug.Log("Pontos ganhos: " + 1);
         } 
-        else if(risk.probLevel - riskDisplay.prob < 2)
+        else if(risk.probLevel - matrixRiskDisplay.prob < 2)
         {
-            player.IncreaseResources(1);
+            Player.IncreaseResources(1);
             closelyEvaluated++;
             //Debug.Log("Pontos ganhos: " + 1);
         }
 
-        GameManager._instance.risks.Remove(risk);
-        if(!GameManager._instance.risks.Any()) FinishEvaluation();
+        GameManager.risks.Remove(risk);
+        if(!GameManager.risks.Any()) FinishEvaluation();
         
     }
     void FinishEvaluation()

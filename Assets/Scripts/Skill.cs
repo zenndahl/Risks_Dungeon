@@ -9,12 +9,22 @@ public class Skill : ScriptableObject
     public string skillName;
     public string skillDescription;
     public List<Risk> combat = new List<Risk>();
-    public List<Risk> prevent = new List<Risk>();
 
-    public void PreventRisks(){
-        foreach (Risk risk in prevent)
+    public void ActivateSkill()
+    {
+        if(skillName == "Dedicação")
         {
-            risk.DecreaseProb(1);
+            Player.combatPower++;
+        }
+
+        if(skillName == "Disciplina")
+        {
+            Player.disciplin = true;
+        }
+
+        if(skillName == "Entusiasmo")
+        {
+            Player.entusiasm = true;
         }
     }
 }

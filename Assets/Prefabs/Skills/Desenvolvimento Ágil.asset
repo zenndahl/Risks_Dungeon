@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   skillName: "Desenvolvimento \xC1gil"
-  skillDescription: "Diminui o impacto de riscos relacionados ao desenvolvimento
-    \xE1gil"
-  combat: []
-  prevent: []
+  skillDescription: "Combate riscos relacionados ao desenvolvimento \xE1gil"
+  combat:
+  - {fileID: 11400000, guid: cbded6dd71e001a49b47ce419a3fe6d9, type: 2}
+  - {fileID: 11400000, guid: 932a93386756f3e48b33e4865181d964, type: 2}
+  - {fileID: 11400000, guid: 7d4163ad04a2e8c4289fc5f572f06415, type: 2}
+  - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
+  - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}

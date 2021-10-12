@@ -7,7 +7,7 @@ public class Employee : ScriptableObject
 {
     [Header("Employee Infos")]
     public Sprite sprite;
-    public Skill[] skills;
+    public Skill skill;
 
     [Header("Employee Stats")]
     public int morale;

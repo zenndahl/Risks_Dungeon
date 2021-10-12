@@ -47,15 +47,14 @@ public class Opportunity : ScriptableObject
     public void ActivateOpportunity()
     {
         //apply resource bonus
-        Player player = GameObject.Find("Player").GetComponent<Player>();
-        player.opportunitiesTaken++;
-        player.OperateScope(scopeBonus);
-        player.OperateMoney(moneyBonus);
-        player.OperateTime(timeBonus);
+        Player.opportunitiesTaken++;
+        Player.OperateScope(scopeBonus);
+        Player.OperateMoney(moneyBonus);
+        Player.OperateTime(timeBonus);
 
         //check ans apply the extra effects if has any
         if(makePrevention) prevention.Prevent();
-        if(increasePower) GameObject.Find("Player").GetComponent<Player>().combatPower++;
+        if(increasePower) Player.combatPower++;
         if(increaseBonus) IncreaseBonus();
         if(newOpportunity) Room.DrawOpportunity();
         if(diversify) GameObject.Find("Opportunity Display").GetComponent<OpportunityDisplay>().uiAuxiliar.SetActive(true);

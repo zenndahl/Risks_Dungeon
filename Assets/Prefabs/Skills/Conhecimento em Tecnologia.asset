@@ -14,6 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   skillName: Conhecimento em Tecnologia
-  skillDescription: "Diminui o impacto de riscos relacionados a tecnologias ou implementa\xE7\xE3o"
-  combat: []
-  prevent: []
+  skillDescription: "Diminui a probabilidade de riscos relacionados a tecnologias
+    ou implementa\xE7\xE3o"
+  combat:
+  - {fileID: 11400000, guid: ba1cb099c70dff6438e3ab1fdce1a1d0, type: 2}
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
+  - {fileID: 11400000, guid: c44285c9a020eed4b89284648017f92f, type: 2}
+  - {fileID: 11400000, guid: c71ddeb2016458842a7bc7ccee6656aa, type: 2}
+  - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
+  - {fileID: 11400000, guid: 3cf7ff7787cf4f64d867e683c8e13aa3, type: 2}

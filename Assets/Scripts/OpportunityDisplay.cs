@@ -96,12 +96,12 @@ public class OpportunityDisplay : MonoBehaviour
 
     public void DiversifyToScope()
     {
-        GameObject.Find("Player").GetComponent<Player>().OperateScope(2);
+        Player.OperateScope(2);
     }
 
     public void DiversifyToTime()
     {
-        GameObject.Find("Player").GetComponent<Player>().OperateTime(2);
+        Player.OperateTime(2);
     }
 
 }

@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   skillName: Adaptabilidade
-  skillDescription: "Reduz o impacto de riscos relacionados a mudan\xE7as"
-  combat: []
-  prevent: []
+  skillDescription: "Combate riscos relacionados a mudan\xE7as"
+  combat:
+  - {fileID: 11400000, guid: de82d2693c246a14988f31716498e64d, type: 2}
+  - {fileID: 11400000, guid: 34a48fe8317cdeb45afa0330d5a55313, type: 2}
+  - {fileID: 11400000, guid: 5aea441f87a767c4da19b20d9919bfef, type: 2}
+  - {fileID: 11400000, guid: 932a93386756f3e48b33e4865181d964, type: 2}
+  - {fileID: 11400000, guid: f1f77889ca79e674787fa2b2eccd59e2, type: 2}
+  - {fileID: 11400000, guid: c71ddeb2016458842a7bc7ccee6656aa, type: 2}
+  - {fileID: 11400000, guid: afc1cabac9f13e143bc2982692fde932, type: 2}
+  - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  - {fileID: 11400000, guid: 6cee61079c3f7b94f887851dbbc8d5c4, type: 2}
+  - {fileID: 11400000, guid: 4a91e114c7835f642b67719acd3ef5bf, type: 2}
+  - {fileID: 11400000, guid: 56921a853442b814ebc3b99b7e8b19f1, type: 2}
+  - {fileID: 11400000, guid: 13e857060d720c14db92106549bf0691, type: 2}

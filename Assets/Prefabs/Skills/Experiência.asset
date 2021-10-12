@@ -14,6 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   skillName: "Experi\xEAncia"
-  skillDescription: "Diminui a probabilidade de riscos envolvendo ger\xEAncia"
-  combat: []
-  prevent: []
+  skillDescription: "Combate riscos envolvendo ger\xEAncia e planejamento"
+  combat:
+  - {fileID: 11400000, guid: 184080296a7fd984a8a64d159fe98742, type: 2}
+  - {fileID: 11400000, guid: 5aea441f87a767c4da19b20d9919bfef, type: 2}
+  - {fileID: 11400000, guid: ba1cb099c70dff6438e3ab1fdce1a1d0, type: 2}
+  - {fileID: 11400000, guid: ab5bb89a444ac9e4dbb5430d10d991f4, type: 2}
+  - {fileID: 11400000, guid: 64b3ce017650e574ca48a8b8b0933642, type: 2}
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
+  - {fileID: 11400000, guid: c44285c9a020eed4b89284648017f92f, type: 2}
+  - {fileID: 11400000, guid: afc1cabac9f13e143bc2982692fde932, type: 2}
+  - {fileID: 11400000, guid: 5fb792fb76b71fe4bbe2bd7ad5dcd86b, type: 2}
+  - {fileID: 11400000, guid: b90565c8a9b7f834abc6e47c096abd62, type: 2}
+  - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
+  - {fileID: 11400000, guid: ace1c7f8895aee24a92f640117bbe92f, type: 2}
+  - {fileID: 11400000, guid: dd0cc47d9adee0840adf14bae5fedebe, type: 2}
+  - {fileID: 11400000, guid: 56921a853442b814ebc3b99b7e8b19f1, type: 2}
+  - {fileID: 11400000, guid: 13e857060d720c14db92106549bf0691, type: 2}
+  - {fileID: 11400000, guid: 6cee61079c3f7b94f887851dbbc8d5c4, type: 2}

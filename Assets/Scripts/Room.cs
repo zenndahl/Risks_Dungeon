@@ -11,6 +11,7 @@ public class Room : MonoBehaviour
 {
     public Risk[] risksPossible;
     public Button[] nextRooms;
+    public bool explored = false;
     public bool isPlayerHere = false;
     public bool isLast;
     public bool isCheckpoint;
@@ -57,15 +58,22 @@ public class Room : MonoBehaviour
     //to get to a room, a random value between 1 and 4 will be charged from the player resources
     void MoveCost()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        //Player player = GameObject.Find("Player").GetComponent<Player>();
 
         for(int i = 0; i < 3; i++)
         {
             //there will be a random value for each resource individually
-            int rand = Random.Range(0,4);
-            if(i == 0) player.OperateScope(-rand);
-            if(i == 1) player.OperateMoney(-rand);
-            if(i == 2) player.OperateTime(-rand);
+            int rand = Random.Range(1,4);
+            //if the player has the skill "Entusiasmo" the cost is decreased to a minimum of 1
+            if(Player.entusiasm && !explored)
+            {
+                rand--;
+                if(rand <= 0) rand++;
+            }
+
+            if(i == 0) Player.OperateScope(-rand);
+            if(i == 1) Player.OperateMoney(-rand);
+            if(i == 2) Player.OperateTime(-rand);
         }
     }
 
@@ -78,11 +86,19 @@ public class Room : MonoBehaviour
         {
             SCRUM.sprintLoops = 0;
             SCRUM.sprints++;
+            GameObject rooms = GameObject.Find("Rooms");
+
+            //reset the explored rooms from the previous sprint
+            foreach (Transform child in rooms.transform)
+            {
+                child.GetComponent<Room>().explored = false;
+            }
         }
 
         //if a risk was randomized last room, when it enters a new room, it is activated
-        //if(GameManager.activeRisk != null) GameManager.activeRisk.ActivateRisk();
-        GameManager._instance.currentRoom = this;
+        GameManager.currentRoom = this;
+
+        explored = true;
 
         //set the previous room to not have the player
         GameObject.Find("Token").transform.parent.GetComponent<Room>().isPlayerHere = false;
@@ -116,7 +132,7 @@ public class Room : MonoBehaviour
             button.GetComponent<Room>().ChangeHoverColor(0);
             button.interactable = true;
             //the scrum project has its own settings
-            if(GameManager._instance.project == 2)
+            if(GameManager.project == 2)
             {
                 SCRUM.SetSprintRooms(this);
             }
@@ -131,10 +147,9 @@ public class Room : MonoBehaviour
         //will draw the probability
         float randProb = Random.Range(0f,1f);
 
-        //if the probability draw is less than the probability of the risk to happen, it is setted to active
+        //if the probability draw is less than the probability of the risk to happen, it happens
         if(randProb <= risksPossible[randIndex].probability)
         {
-            GameManager.activeRisk = risksPossible[randIndex];
             risksPossible[randIndex].ActivateRisk();
         }
         else
