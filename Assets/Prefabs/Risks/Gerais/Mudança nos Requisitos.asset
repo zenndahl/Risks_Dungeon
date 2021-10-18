@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: "Mudan\xE7a nos Requisitos"
+  m_EditorClassIdentifier: 
+  id: 19
+  type: 1
+  project: 0
+  riskName: "Mudan\xE7a de Requisitos"
+  riskDescription: "Cliente exigiu por novas funcionalidades ou mudan\xE7as em funcionalidades
+    em desenvolvimento"
+  sprite: {fileID: 21300000, guid: cf3d5591a50c31149a63b218cb62cd9e, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
+  - {fileID: 11400000, guid: 6b8db98e117bc7a44a418dc9405f2703, type: 2}
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives:
+  - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  impactLevel: 5
+  probLevel: 5
+  baseProbability: 0.9
+  probability: 0.9
+  reincidence: 0.7
+  scopeCost: 5
+  moneyCost: 5
+  timeCost: 5

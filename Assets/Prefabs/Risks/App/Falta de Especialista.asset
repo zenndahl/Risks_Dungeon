@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Falta de Especialista
   m_EditorClassIdentifier: 
-  id: 43
+  id: 40
   type: 1
   project: 2
   riskName: Falta de Especialista
-  riskDescription: "Falta de uum membro especialista em uma fun\xE7\xE3o espec\xEDfica
+  riskDescription: "Falta de um membro especialista em uma fun\xE7\xE3o espec\xEDfica
     importante, como UX ou product owner"
   sprite: {fileID: 21300000, guid: f999dff512ca8c94dbf31a0cbbcdf41d, type: 3}
   preventions:
@@ -26,9 +26,14 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: c746ff6b02c73014b9701f64b11dabbd, type: 2}
+  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
+  - {fileID: 11400000, guid: 932a93386756f3e48b33e4865181d964, type: 2}
+  - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
   impactLevel: 3
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5
   scopeCost: 3

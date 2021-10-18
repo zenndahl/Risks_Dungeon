@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 1
   project: 2
   riskName: Conflito do Cliente
-  riskDescription: "Diferentes setores da organiza\xE7\xE3o cliente est\xE3o em desacordo
-    sobre produto desejado"
+  riskDescription: "Diferentes setores da organiza\xE7\xE3o do cliente est\xE3o em
+    desacordo sobre produto desejado"
   sprite: {fileID: 21300000, guid: 8e1c1998eabc61140ba1e1ae6ddb780f, type: 3}
   preventions:
   - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
@@ -25,9 +25,13 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   impactLevel: 2
   probLevel: 2
+  baseProbability: 0.3
   probability: 0.3
   reincidence: 0.3
   scopeCost: 2

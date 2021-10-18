@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Metodologias \xC1geis"
   m_EditorClassIdentifier: 
-  id: 41
+  id: 42
   type: 1
   project: 2
   riskName: "Inexperi\xEAncia com Metodologias \xC1geis"
@@ -26,9 +26,13 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
+  - {fileID: 11400000, guid: 932a93386756f3e48b33e4865181d964, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 3
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.1
   scopeCost: 3

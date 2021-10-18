@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Instabilidade Financeira
   m_EditorClassIdentifier: 
-  id: 33
+  id: 34
   type: 3
   project: 1
   riskName: Instabilidade Financeira
-  riskDescription: Instabilidade Financeira devido ao alto custo do sistema sendo
+  riskDescription: Instabilidade financeira devido ao alto custo do sistema sendo
     implementado
   sprite: {fileID: 21300000, guid: 359d19c1e361c2146bcfd5a8e8133250, type: 3}
   preventions:
@@ -29,6 +29,7 @@ MonoBehaviour:
   derivatives: []
   impactLevel: 5
   probLevel: 3
+  baseProbability: 0.5
   probability: 0.5
   reincidence: 0.1
   scopeCost: 5

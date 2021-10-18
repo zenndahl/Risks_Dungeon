@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Impacto na Rotina
   m_EditorClassIdentifier: 
-  id: 29
+  id: 32
   type: 3
   project: 1
   riskName: "Impacto na Rotina dos Funcion\xE1rios"
-  riskDescription: "Funcion\xE1rios da organiza\xE7\xE3o usu\xE1rios do sistema implantado
-    t\xEAm rotina afetada"
+  riskDescription: "Funcion\xE1rios da organiza\xE7\xE3o, usu\xE1rios do sistema
+    implantado, t\xEAm rotina afetada"
   sprite: {fileID: 21300000, guid: c7ed2f621dcc79b4d90972927a08ecdd, type: 3}
   preventions:
   - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
@@ -26,9 +26,12 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 91cae64692ec03846a806a5f94017420, type: 2}
+  - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   impactLevel: 3
   probLevel: 5
+  baseProbability: 0.9
   probability: 0.9
   reincidence: 0.5
   scopeCost: 0

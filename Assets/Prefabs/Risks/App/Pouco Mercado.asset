@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Pouco Mercado
   m_EditorClassIdentifier: 
-  id: 38
+  id: 44
   type: 3
   project: 2
   riskName: Pouca Demanda de Mercado
@@ -26,9 +26,13 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
+  - {fileID: 11400000, guid: c28f35220bcf4de40a606e281d8cd73f, type: 2}
   impactLevel: 5
   probLevel: 3
+  baseProbability: 0.5
   probability: 0.5
   reincidence: 0.3
   scopeCost: 5

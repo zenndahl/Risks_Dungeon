@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   skillName: "Organiza\xE7\xE3o"
-  skillDescription: Combate riscos de planejamento
+  skillDescription: Reduz impacto de riscos planejados corretamente
   combat: []

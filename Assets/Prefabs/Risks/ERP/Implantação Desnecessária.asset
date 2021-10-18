@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Implanta\xE7\xE3o Desnecess\xE1ria"
   m_EditorClassIdentifier: 
-  id: 28
+  id: 33
   type: 1
   project: 1
   riskName: "M\xF3dulos Desnecess\xE1rios"
@@ -27,9 +27,14 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
+  - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
+  - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   impactLevel: 4
   probLevel: 5
+  baseProbability: 0.9
   probability: 0.9
   reincidence: 0.7
   scopeCost: 4

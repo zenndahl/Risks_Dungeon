@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Necessidade de Refatora\xE7\xE3o"
   m_EditorClassIdentifier: 
-  id: 35
+  id: 43
   type: 2
   project: 2
   riskName: "Necessidade de Refatora\xE7\xE3o"
@@ -31,6 +31,7 @@ MonoBehaviour:
   derivatives: []
   impactLevel: 3
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5
   scopeCost: 3

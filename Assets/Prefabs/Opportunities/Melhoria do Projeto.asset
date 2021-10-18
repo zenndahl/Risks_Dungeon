@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   opportunityName: Melhoria do Projeto
-  opportunityEffect: "B\xF4nus de recursos acumulativo por vezes que aceitou esta
+  opportunityEffect: "B\xF4nus de recursos acumulativo por vezes que aproveitou esta
     oportunidade"
-  opportunityDescription: "A ger\xEAncia aprimorou o plano de projeto, facilitando
-    a implementa\xE7\xE3o"
+  opportunityDescription: "A ger\xEAncia aprimorou o plano de projeto"
   repeatable: 1
   scopeBonus: 1
   moneyBonus: -1

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: Equipe Inadequada
+  m_EditorClassIdentifier: 
+  id: 9
+  type: 2
+  project: 0
+  riskName: Equipe Inadequada
+  riskDescription: "A equipe n\xE3o possu\xED conhecimentos ou experi\xEAncia necess\xE1rios
+    para o projeto"
+  sprite: {fileID: 21300000, guid: 0e966620820282a488d237412085772e, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives:
+  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
+  - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
+  - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
+  - {fileID: 11400000, guid: 178e07bb6d9e0a248b208ffadc5feafa, type: 2}
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
+  - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
+  - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
+  impactLevel: 4
+  probLevel: 2
+  baseProbability: 0.3
+  probability: 0.3
+  reincidence: 0.1
+  scopeCost: 4
+  moneyCost: 4
+  timeCost: 4

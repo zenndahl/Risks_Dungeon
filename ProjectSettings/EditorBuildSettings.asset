@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Requisitos.unity
     guid: 04201fca58f3d9f4bbb10f44a6f6378a
+  - enabled: 1
+    path: "Assets/Scenes/Implementa\xE7\xE3o.unity"
+    guid: f91ab73db413c2749a74e0846dab14fe
+  - enabled: 1
+    path: Assets/Scenes/VV.unity
+    guid: 0af081b46f9ec154fb8e01bdade3347e
+  - enabled: 1
+    path: "Assets/Scenes/Evolu\xE7\xE3o.unity"
+    guid: 075512d2aa055504bb2e223c513450ce
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: e75e296d6e6a26b47846abbe0a8908ca
   m_configObjects: {}

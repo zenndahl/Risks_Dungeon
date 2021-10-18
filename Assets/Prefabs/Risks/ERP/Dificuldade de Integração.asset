@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Dificuldade de Integra\xE7\xE3o"
   m_EditorClassIdentifier: 
-  id: 25
+  id: 26
   type: 2
   project: 1
   riskName: "Dificuldade de Integra\xE7\xE3o"
@@ -27,9 +27,14 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
+  - {fileID: 11400000, guid: 08511b2e2ff80b147a695d34d96ee418, type: 2}
+  - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
   impactLevel: 5
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.3
   scopeCost: 5

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: Conflito na Equipe
+  m_EditorClassIdentifier: 
+  id: 4
+  type: 2
+  project: 0
+  riskName: Conflito na Equipe
+  riskDescription: "Conflito na equipe: conflito e falta de coopera\xE7\xE3o entre
+    membros da equipe"
+  sprite: {fileID: 21300000, guid: 007e479d60ce18b46a14b754b85f8707, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  - {fileID: 11400000, guid: 6a9a7654a8aeb734cb8b8fd0a3a0a21e, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives:
+  - {fileID: 11400000, guid: 08511b2e2ff80b147a695d34d96ee418, type: 2}
+  - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
+  - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
+  - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
+  impactLevel: 4
+  probLevel: 3
+  baseProbability: 0.5
+  probability: 0.5
+  reincidence: 0.3
+  scopeCost: 4
+  moneyCost: 4
+  timeCost: 4

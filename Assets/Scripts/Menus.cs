@@ -10,22 +10,30 @@ public class Menus : MonoBehaviour
     public GameObject choseProject;
     public GameObject warningScreen;
     public GameObject scoreBoard;
+    public GameObject creditsScreen;
     public GameObject projects;
     public GameObject choseName;
     public InputField playerName;
+    private bool isPauseMenuOn = false;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        if(Input.GetButtonDown("Cancel"))
+        {
+            //toggle on/off the pause menu in scenes that you can pause
+            if(GameObject.Find("Pause Menu"))
+            {
+                isPauseMenuOn = !isPauseMenuOn;
+                if(isPauseMenuOn) Pause();
+                else Continue();
+            }
+        }
     }
 
-    // Update is called once per frame
     public void LoadMainMenu()
     {
+        //GameManager.currentScene = "Menu Principal";
         SceneManager.LoadScene("Menu Principal");
-        GameManager.currentScene = "Menu Principal";
     }
 
     public void Quit()
@@ -33,13 +41,27 @@ public class Menus : MonoBehaviour
         Application.Quit();
     }
 
+    public void Pause()
+    {
+        DisableInteractbles();
+        GameObject.Find("Pause Menu").transform.SetAsLastSibling();
+    }
+
+    public void Continue()
+    {
+        EnableInteractbles();
+        isPauseMenuOn = false;
+        GameObject.Find("Pause Menu").transform.SetSiblingIndex(0);
+    }
+
     //Main Menu Methods
     public void StartGame()
     {
         ActivateChoseProjectUI();
+        creditsScreen.SetActive(false);
+        scoreBoard.SetActive(false);
     }
-
-    
+ 
     public void SetPlayerName()
     {
         Player.playerName = playerName.text;
@@ -53,7 +75,12 @@ public class Menus : MonoBehaviour
 
     public void Options()
     {
+        //TODO
+    }
 
+    public void Credits()
+    {
+        creditsScreen.SetActive(true);
     }
 
     public void HideUI(GameObject ui)
@@ -73,7 +100,8 @@ public class Menus : MonoBehaviour
         scoreBoard.SetActive(false);
     }
 
-    public void Select(){
+    public void Select()
+    {
         Add.selected = this.gameObject;
     }
 
@@ -117,11 +145,14 @@ public class Menus : MonoBehaviour
 
     public void EndGame()
     {
-        
+        GameManager.nextScene = "Final";
+        GameManager.LoadNextScene();
     }
 
     public void GameOver()
     {
-        
+        GameObject.FindGameObjectsWithTag("Phase")[0].SetActive(false);
+        GameObject.Find("Game Over").transform.SetAsLastSibling();
+        GameObject.Find("Game Over").GetComponent<FinalReport>().DisplayFinalReport();
     }
 }

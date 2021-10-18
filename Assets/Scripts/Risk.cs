@@ -36,6 +36,7 @@ public class Risk : ScriptableObject
     //the probability is the number, between 0 and 1, that will in fact be used to calculate its chance to be activated
     //it match the scale: 0.1, 0.3, 0.5, 0.7, 0.9, following the scale from the level
     //the scale 0.05, 0.1, 0.2, 0.4, 0.8 may be implemented later for the player to choose
+    public float baseProbability;
     public float probability;
     public float reincidence;
 
@@ -49,16 +50,18 @@ public class Risk : ScriptableObject
     void Start()
     {
         //text.text = riskName;
+        probability = baseProbability;
     }
 
-    public void IncreaseProb(int mult){
-        probability += 0.1f * mult;
+    public void IncreaseProb(int mult)
+    {
+        if(probability < 0.9) probability += 0.1f * mult;
     }
 
-    public void DecreaseProb(int mult){
-        Debug.Log("Antes: " + probability);
-        probability -= 0.1f * mult;
-        Debug.Log("Depois: " + probability);
+    public void DecreaseProb(int mult)
+    {
+        //the minimum probability of a risk is 0.1;
+        if(probability - 0.1f > 0.1f) probability -= 0.1f * mult;
     }
 
     public void ActivateRisk()
@@ -73,9 +76,11 @@ public class Risk : ScriptableObject
 
         //check wich reaction is assigned to this risk and apply the correct action
         if(reaction == 0) CheckDisciplin();
-        if(reaction == 1) ApplyMitigation(Player.combatPower);
+        if(reaction == 1) ApplyMitigation();
         if(reaction == 2) AssignRisk();
         if(reaction == 3) AcceptRisk();
+
+        probability = reincidence;
 
         //when a risk happens, its derivatives will have more chances to happen too
         foreach (Risk risk in derivatives)
@@ -94,7 +99,7 @@ public class Risk : ScriptableObject
         }
     }
 
-    public void ApplyMitigation(int mitigation)
+    public void ApplyMitigation()
     {
         int mod = 0;
         foreach (Employee employee in Player.team)
@@ -106,10 +111,24 @@ public class Risk : ScriptableObject
             }
         }
 
+        //if the player has the skill organized, add 1 to the impact reduction
+        if(Player.organized)
+        {
+            Debug.Log("Organizado");
+            mod++;
+        }
+        
+        mod *= Player.combatPower;
+
+        //the minimum cost for a risk is 0, else it will add resouces
+        if(scopeCost - mod < 0) mod = scopeCost;
+        if(moneyCost - mod < 0) mod = moneyCost;
+        if(timeCost - mod < 0) mod = timeCost;
+
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        Player.OperateScope(scopeCost - mod);
-        Player.OperateMoney(moneyCost - mod);
-        Player.OperateTime(timeCost - mod);
+        Player.OperateScope(-(scopeCost - mod));
+        Player.OperateMoney(-(moneyCost - mod));
+        Player.OperateTime(-(timeCost - mod));
     }
 
     public void AssignRisk()

@@ -45,20 +45,20 @@ public class OpportunityDisplay : MonoBehaviour
 
             if(opportunity.moneyBonus > 0)
             {
-                bonusText.text += "Orçamento: +" +opportunity.moneyBonus+ " "; 
+                bonusText.text += "\nOrçamento: +" +opportunity.moneyBonus+ " "; 
             }
             else if(opportunity.moneyBonus < 0)
             {
-                costText.text = "Orçamento: " +opportunity.moneyBonus+ " "; 
+                costText.text += "Orçamento: " +opportunity.moneyBonus+ " "; 
             }
 
             if(opportunity.timeBonus > 0)
             {
-                bonusText.text += "Cronograma: +" +opportunity.timeBonus; 
+                bonusText.text += "\nCronograma: +" +opportunity.timeBonus; 
             }
             else if(opportunity.timeBonus < 0)
             {
-                costText.text = "Cronograma: " +opportunity.timeBonus+ " "; 
+                costText.text += "Cronograma: " +opportunity.timeBonus+ " "; 
             }
         }
     }
@@ -85,6 +85,8 @@ public class OpportunityDisplay : MonoBehaviour
         baseUI.SetActive(true); 
         transform.position = new Vector3 (Screen.width * 2f, Screen.height * 2f, 0);
         Menus.EnableInteractbles();
+        bonusText.text = "";
+        costText.text = "";
         if(!opportunity.repeatable) GameManager.opportunities.Remove(opportunity);
     }
     

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: "Dispers\xE3o Geogr\xE1fica"
+  m_EditorClassIdentifier: 
+  id: 7
+  type: 1
+  project: 0
+  riskName: "Dispers\xE3o Geogr\xE1fica"
+  riskDescription: "Membros da organiza\xE7\xE3o espalhados por v\xE1rias cidades,
+    estados ou pa\xEDses"
+  sprite: {fileID: 21300000, guid: f999dff512ca8c94dbf31a0cbbcdf41d, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives:
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
+  - {fileID: 11400000, guid: 08511b2e2ff80b147a695d34d96ee418, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
+  - {fileID: 11400000, guid: 64b3ce017650e574ca48a8b8b0933642, type: 2}
+  - {fileID: 11400000, guid: b90565c8a9b7f834abc6e47c096abd62, type: 2}
+  impactLevel: 3
+  probLevel: 3
+  baseProbability: 0.5
+  probability: 0.5
+  reincidence: 0.3
+  scopeCost: 3
+  moneyCost: 3
+  timeCost: 3

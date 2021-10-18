@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Conhecimento Insuficiente
   m_EditorClassIdentifier: 
-  id: 42
+  id: 37
   type: 2
   project: 2
   riskName: "Produto n\xE3o Familiar"
@@ -25,9 +25,19 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 08511b2e2ff80b147a695d34d96ee418, type: 2}
+  - {fileID: 11400000, guid: 178e07bb6d9e0a248b208ffadc5feafa, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
+  - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   impactLevel: 5
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.3
   scopeCost: 5

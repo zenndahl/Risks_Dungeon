@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     [Header("Scene Infos")]
     public static string currentScene;
     public static string nextScene;
-    public static int sceneNum = 1;
 
     [Header("Select Team Infos")]
     public List<Employee> employeesList = new List<Employee>();
@@ -47,19 +46,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        // if (_instance != null && _instance != this)
-        // {
-        //     Destroy(this);
-        // } 
-        // else 
-        // {
-        //     _instance = this;
-        // }
     }
 
     void Start()
     {
         currentScene = "Menu Principal";
+        nextScene = "Selecionar Equipe";
         SceneManager.sceneLoaded += OnSceneLoaded;
         opportunities = opportunitiesList;
         employees = employeesList;
@@ -72,17 +64,25 @@ public class GameManager : MonoBehaviour
             GameObject.Find("Token/Icon").GetComponent<Image>().sprite = Player.icon;
             GameObject.Find("Room 0").GetComponent<Room>().SetRooms();
         }
+
+        //when a new scene is loaded, set the next and reset the current
+        SetScenes(scene);
     }
     
     //will be called by the button on the main menu screen to setup the ERP project
     public void ERPProject()
     {
         project = 1;
-        projectName = "Desenvolvimento de Sistema ERP";
-        gameObject.GetComponent<Menus>().choseName.SetActive(true);
-        gameObject.GetComponent<Menus>().projects.SetActive(false);
-        //currentScene = "Selecionar Equipe";
-        //SceneManager.LoadScene("Selecionar Equipe");
+        projectName = "Implantação de Sistema ERP";
+        //gameObject.GetComponent<Menus>().choseName.SetActive(true);
+        //gameObject.GetComponent<Menus>().projects.SetActive(false);
+        LoadNextScene();
+
+        //reset risks probabilitys
+        foreach (Risk risk in project1Risks)
+        {
+            risk.probability = risk.baseProbability;
+        }
     }
 
     //will be called by the button on the main menu screen to setup the App project
@@ -90,10 +90,15 @@ public class GameManager : MonoBehaviour
     {
         project = 2;
         projectName = "Desenvolvimento de App";
-        gameObject.GetComponent<Menus>().choseName.SetActive(true);
-        gameObject.GetComponent<Menus>().projects.SetActive(false);
-        //nextScene = "Selecionar Equipe";
-        //SceneManager.LoadScene("Selecionar Equipe");
+        //gameObject.GetComponent<Menus>().choseName.SetActive(true);
+        //gameObject.GetComponent<Menus>().projects.SetActive(false);
+        LoadNextScene();
+
+        //reset risks probabilitys
+        foreach (Risk risk in project1Risks)
+        {
+            risk.probability = risk.baseProbability;
+        }
     }
 
     public List<Employee> GetEmployeesList()
@@ -111,73 +116,29 @@ public class GameManager : MonoBehaviour
         return project2Risks;
     }
 
-    //script to load the scenes in order
+    void SetScenes(Scene scene)
+    {
+        //set the current scene
+        currentScene = scene.name;
+
+        //setting the next scenes to be loaded
+        if(scene.name == "Menu Principal") nextScene = "Selecionar Equipe";
+        if(scene.name == "Selecionar Equipe") nextScene = "Identificação";
+        if(scene.name == "Identificação") nextScene = "Avaliação";
+        if(scene.name == "Avaliação") nextScene = "Planejamento";
+        if(scene.name == "Planejamento")
+        {
+            //the last phase is loaded based on the project type
+            if(project == 2) nextScene = "SCRUM";
+            else nextScene = "Requisitos";
+        }
+        if(scene.name == "Requisitos") nextScene = "Implementação";
+        if(scene.name == "Implementação") nextScene = "VV";
+        if(scene.name == "VV") nextScene = "Evolução";
+    }
+
     public static void LoadNextScene()
     {
-        if(currentScene == "Menu Principal")
-        {
-            currentScene = "Selecionar Equipe";
-            nextScene = "Identificação";
-            SceneManager.LoadScene("Selecionar Equipe");
-        }
-        if(currentScene == "Selecionar Equipe") 
-        {
-            currentScene = "Identificação";
-            nextScene = "Avaliação";
-            SceneManager.LoadScene("Identificação");
-        }
-        else if(currentScene == "Identificação")
-        {
-            currentScene = "Avaliação";
-            SceneManager.LoadScene("Avaliação");
-        }
-        else if(currentScene == "Avaliação")
-        {
-            currentScene = "Planejamento";
-            SceneManager.LoadScene("Planejamento");
-        }
-        else
-        {
-            if(project == 2)
-            {
-                currentScene = "SCRUM";
-                SceneManager.LoadScene("SCRUM");
-                nextScene = null;
-            } 
-            else
-            {
-                switch (sceneNum)
-                {
-                    case 1:
-                        SceneManager.LoadScene("Requisitos");
-                        currentScene = "Requisitos";
-                        nextScene = "Implementação";
-                        break;
-                    case 2:
-                        SceneManager.LoadScene("Implementação");
-                        currentScene = "Implementação";
-                        nextScene = "VV";
-                        break;
-                    case 3:
-                        SceneManager.LoadScene("VV");
-                        currentScene = "VV";
-                        nextScene = "Evolução";
-                        break;
-                    case 4:
-                        SceneManager.LoadScene("Evolução");
-                        currentScene = "Evolução";
-                        nextScene = "Final";
-                        break;
-
-                    default:
-                        SceneManager.LoadScene("Menu Principal");
-                        currentScene = "Menu Principal";
-                        //tratar possíveis erros(?)
-                        Debug.Log("ERRO!! VOCÊ FOI RETORNADO AO MENU!!");
-                        break;
-                }
-                sceneNum++;
-            }
-        }
+        SceneManager.LoadScene(nextScene);
     }
 }

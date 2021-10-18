@@ -16,18 +16,11 @@ public class Room : MonoBehaviour
     public bool isLast;
     public bool isCheckpoint;
     public bool isBreakpoint;
-
+    private int roomCost = 2;
     public GameObject feedback;
 
     private Color allowed = new Color(102, 231, 99, 200);
     //private Color notAllowed = new Color(251, 60, 63, 200);
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        SetRisksProb();
-        
-    }
 
     public void ChangeHoverColor(int op)
     {
@@ -41,20 +34,6 @@ public class Room : MonoBehaviour
         else button.onClick.RemoveAllListeners();  
     }
 
-    //will calculate probabilities and decide if a risk will happen
-    public void SetRisksProb()
-    {
-        foreach (Risk risk in risksPossible)
-        {
-            
-            if(GameManager.preventionsMade.Intersect<Prevention>(risk.preventions) != null)
-            {
-                risk.probability -= 0.2f;
-                risk.probLevel -= 1;
-            }
-        }
-    }
-
     //to get to a room, a random value between 1 and 4 will be charged from the player resources
     void MoveCost()
     {
@@ -63,17 +42,26 @@ public class Room : MonoBehaviour
         for(int i = 0; i < 3; i++)
         {
             //there will be a random value for each resource individually
-            int rand = Random.Range(1,4);
-            //if the player has the skill "Entusiasmo" the cost is decreased to a minimum of 1
+            // int rand = Random.Range(1,4);
+            // //if the player has the skill "Entusiasmo" the cost is decreased to a minimum of 1
             if(Player.entusiasm && !explored)
             {
-                rand--;
-                if(rand <= 0) rand++;
+
+                // rand--;
+                // if(rand <= 0) rand++;
+                Debug.Log(roomCost-1);
+                if(i == 0) Player.OperateScope(-(roomCost-1));
+                if(i == 1) Player.OperateMoney(-(roomCost-1));
+                if(i == 2) Player.OperateTime(-(roomCost-1));
+            }
+            else
+            {
+                Debug.Log(roomCost);
+                if(i == 0) Player.OperateScope(-roomCost);
+                if(i == 1) Player.OperateMoney(-roomCost);
+                if(i == 2) Player.OperateTime(-roomCost);
             }
 
-            if(i == 0) Player.OperateScope(-rand);
-            if(i == 1) Player.OperateMoney(-rand);
-            if(i == 2) Player.OperateTime(-rand);
         }
     }
 

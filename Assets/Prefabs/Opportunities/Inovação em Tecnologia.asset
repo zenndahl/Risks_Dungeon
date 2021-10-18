@@ -16,7 +16,7 @@ MonoBehaviour:
   opportunityName: "Inova\xE7\xE3o em Tecnologia"
   opportunityEffect: "Aplica a preven\xE7\xE3o Pesquisa de Mercado"
   opportunityDescription: "A Organiza\xE7\xE3o desenvolveu ferramentas pr\xF3prias
-    que facilitaram a implementa\xE7\xE3o"
+    que facilitam a implementa\xE7\xE3o"
   repeatable: 0
   scopeBonus: 2
   moneyBonus: -2

@@ -9,7 +9,7 @@ public class Planning : MonoBehaviour
     [Header("Risks Infos")]
     //private int riskIndex = 0;
     private int riskType;
-    private List<Risk> risksToPlan = new List<Risk>();
+    public List<Risk> risksToPlan = new List<Risk>();
     private Risk riskOnPlanning;
     private int correctlyPlanned = 0;
     private int correctlyTyped = 0;
@@ -73,7 +73,8 @@ public class Planning : MonoBehaviour
         List<int> randomList = new List<int>();
         int randNum;
         int randNum2;
-        //get the employee display objects under the selection parent and randomize the employees displayed
+
+        //get the preventions display objects under the planning parent and randomize the preventions displayed
         foreach (GameObject goPD in preventionsDisplays)
         {
             PreventionDisplay pd = goPD.GetComponent<PreventionDisplay>();
@@ -84,15 +85,13 @@ public class Planning : MonoBehaviour
             randomList.Add(randNum);
 
             pd.prevention = preventions[randNum];
-
-            //fazer checagem se tem membros repetidos e permitir novo sorteio
             
             //need to reset the display for the new employee to be shown in the display
             pd.ResetInfos();
         }
 
         //chose randomly a display to set an correct prevention for the risk on planning
-        randNum = Random.Range(0,riskOnPlanning.preventions.Length);
+        randNum = Random.Range(0, riskOnPlanning.preventions.Length);
         while(randomList.Contains(randNum))
             randNum = Random.Range(0,riskOnPlanning.preventions.Length);
         randomList.Add(randNum);
@@ -103,21 +102,36 @@ public class Planning : MonoBehaviour
         pvD.ResetInfos();
     }
 
-    void CheckSetPrevention()
+    public void SetPrevention(Prevention prevention)
     {
-        GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 1;
-        
-        //planning for mitigation costs 1 of each resource even if its wrong
-        Player.OperateScope(1);
-        Player.OperateMoney(-1); 
+        preventionSelected = prevention;
+    }
+
+    void Mitigate()
+    {        
+        //planning for mitigation costs 1 money and 2 time
+        Player.OperateMoney(-1);
         Player.OperateTime(-2);
 
-        //if the prevention is correct, add the prevention to the preventions list
+        //if the prevention is correct, add the prevention to the preventions list and apply the prevention
         if(riskOnPlanning.preventions.Contains(preventionSelected))
         {
+            //if the prevention is right, set the reaction to the risk as mitigate
+            GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 1;
+            //reward for correctly planning a risk
+            Player.OperateScope(1);
+            Player.preventCorrect++;
             GameManager.preventionsMade.Add(preventionSelected);
             GameManager.risksCorrectlyPlanned.Add(riskOnPlanning);
             correctlyPlanned++;
+
+            //get the risks list, find the current risk on planning and decrease its probability
+            List<Risk> rskList = GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject1Risks();
+            if(rskList.Any(x => x == riskOnPlanning))
+            {
+                rskList.Find(x => x == riskOnPlanning).DecreaseProb(1);
+            }
+
         }
     }
 
@@ -132,14 +146,8 @@ public class Planning : MonoBehaviour
         {
             //verify if the type given is correct, giving points if it is
             VerifyType();
-
-            if(preventionSelected != null) 
-            {
-                preventionSelected = Add.selected.GetComponent<PreventionDisplay>().prevention;
-            }
+            reactionScreen.SetActive(true);
         }
-
-        reactionScreen.SetActive(true);
     }
 
     public void React()
@@ -149,7 +157,8 @@ public class Planning : MonoBehaviour
         //verify if the prevention selected is correct for mitigation
         if(reaction == 1)
         {
-            if(preventionSelected != null) CheckSetPrevention();
+            //will not apply mitigation if no prevention was selected
+            if(preventionSelected != null) Mitigate();
             
         }
 
@@ -200,15 +209,14 @@ public class Planning : MonoBehaviour
         //show the feedback screen
         feedbackScreen.SetActive(true);
 
-        //activate the preventions from the team 
+        //decrease the probability of the risks if the employees have skills that do so
         if(GameManager.project == 1)
         {
-            foreach (Employee employee in Player.team)
-            {
-                //activate the employee skills
-                employee.skill.ActivateSkill();
-                foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject1Risks())
-                {   
+            foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject1Risks())
+            {   
+                //activate the preventions from the team 
+                foreach (Employee employee in Player.team)
+                {
                     //for each risk of the project, if the employees combat them, their probability is reduced
                     if(employee.skill.combat.Contains(risk))
                     {
@@ -217,7 +225,21 @@ public class Planning : MonoBehaviour
                 }
             }
         }
-
+        if(GameManager.project == 2)
+        {
+            foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject2Risks())
+            {   
+                foreach (Employee employee in Player.team)
+                {
+                    //for each risk of the project, if the employees combat them, their probability is reduced
+                    if(employee.skill.combat.Contains(risk))
+                    {
+                        risk.DecreaseProb(1);
+                    }
+                }
+            }
+        }
+        
         //display feedback of correctly identified risks and the current resources of the player
         feedbackScreen.GetComponent<Feedback>().DisplayFeedback("planejou", correctlyPlanned, correctlyTyped, assigned);
     }

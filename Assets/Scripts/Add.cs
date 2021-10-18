@@ -39,12 +39,12 @@ public class Add : MonoBehaviour
     {
         if(selected != null)
         {
-            if(describer != null) describer.SetActive(false); //hide the description of the selected object
             Identification id = GameObject.Find("Identification").GetComponent<Identification>();
             id.AddId(selected.GetComponent<RiskDisplay>().risk);
             selected.transform.SetParent(toAddList.transform);
 
             //selected.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
+            selected.transform.parent.gameObject.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
             toAddList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
         }
         selected = null;
@@ -54,7 +54,7 @@ public class Add : MonoBehaviour
     {
         if(selected != null)
         {
-            if(describer != null) describer.SetActive(false); //hide the description of the selected object
+            //if(describer != null) GameObject.Find("Describer").SetSiblingIndex(0); //hide the description of the selected object
             Identification id = GameObject.Find("Identification").GetComponent<Identification>();
             id.RemoveId(selected.GetComponent<RiskDisplay>().risk);
             selected.transform.SetParent(toAddList.transform);
@@ -102,15 +102,20 @@ public class Add : MonoBehaviour
     public void AddPrevention()
     {
         Transform holder = GameObject.Find("PreventionHolder").transform;
+        //remove the previous prevention from holder if another one is selected to go to the holder
         if(holder.childCount != 0) 
         {
             //holder.GetChild(0).GetComponent<Button>().interactable = true;
-            holder.GetChild(0).GetComponent<Button>().onClick.RemoveListener(AddPrevention);
+            //holder.GetChild(0).GetComponent<Button>().onClick.RemoveListener(AddPrevention);
             holder.GetChild(0).transform.SetParent(toAddList.transform);
         }
-
-        selected.transform.SetParent(gameObject.transform);
-        selected.GetComponent<Button>().onClick.AddListener(AddPrevention);
+        
+        if(selected != null)
+        {
+            GameObject.Find("Planning").GetComponent<Planning>().SetPrevention(selected.GetComponent<PreventionDisplay>().prevention);
+            selected.transform.SetParent(gameObject.transform);
+        }
+        //selected.GetComponent<Button>().onClick.AddListener(AddPrevention);
     }
 
 }

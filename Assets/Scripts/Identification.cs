@@ -6,7 +6,55 @@ using UnityEngine;
 public class Identification : MonoBehaviour
 {
     public GameObject feedbackScreen;
+    public GameObject riskDisplayPrefab;
     private int correctlyId = 0;
+
+    private void Start()
+    {
+        SetRisksToId();
+    }
+
+    public void SetRisksToId()
+    {
+        if(GameManager.project == 1)
+        {
+            foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject1Risks())
+            {
+                //instantiating and setting the parent for the risk
+                GameObject rskDisplay = Instantiate(riskDisplayPrefab, transform.position, transform.rotation);
+                GameObject rskList = GameObject.Find("Risk List/Risks");
+                rskDisplay.transform.SetParent(rskList.transform);
+
+                //set spacing between risks
+                rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
+
+                //assigning the risk to the display
+                rskDisplay.GetComponent<RiskDisplay>().risk = risk;
+
+                //adding button listeners events by calling method inside RiskDisplay
+                rskDisplay.GetComponent<RiskDisplay>().SetEvents(rskDisplay);
+            }
+        }
+        if(GameManager.project == 2)
+        {
+            foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject2Risks())
+            {
+                //instantiating and setting the parent for the risk
+                GameObject rskDisplay = Instantiate(riskDisplayPrefab, transform.position, transform.rotation);
+                GameObject rskList = GameObject.Find("Risk List/Risks");
+                rskDisplay.transform.SetParent(rskList.transform);
+
+                //set spacing between risks
+                rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
+
+                //assigning the risk to the display
+                rskDisplay.GetComponent<RiskDisplay>().risk = risk;
+
+                //adding button listeners events by calling method inside RiskDisplay
+                rskDisplay.GetComponent<RiskDisplay>().SetEvents(rskDisplay);
+            }
+        }
+    }
 
     public void AddId(Risk risk)
     {

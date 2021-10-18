@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Problema na Migra\xE7\xE3o"
   m_EditorClassIdentifier: 
-  id: 32
+  id: 35
   type: 2
   project: 1
   riskName: "Problema na Migra\xE7\xE3o"
@@ -26,9 +26,11 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
   impactLevel: 5
   probLevel: 3
+  baseProbability: 0.5
   probability: 0.5
   reincidence: 0.1
   scopeCost: 5

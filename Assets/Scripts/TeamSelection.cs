@@ -31,8 +31,6 @@ public class TeamSelection : MonoBehaviour
             randomList.Add(randNum);
 
             ed.employee = employees[randNum];
-
-            //fazer checagem se tem membros repetidos e permitir novo sorteio
             
             //need to reset the display for the new employee to be shown in the display
             ed.ResetInfos();
@@ -54,6 +52,12 @@ public class TeamSelection : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         iconSelectionScreen.SetActive(true);
+
+        foreach (Employee employee in Player.team)
+        {
+            //activate the employee skills
+            employee.skill.ActivateSkill();
+        }
     }
 
     public void FinishIconSelection()

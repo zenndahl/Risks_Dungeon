@@ -16,7 +16,8 @@ MonoBehaviour:
   opportunityName: Processos Padronizados
   opportunityEffect: "Ter esta oportunidade novamente aumenta o b\xF4nus em +1 para
     cada vez que a aceitou"
-  opportunityDescription: 
+  opportunityDescription: "Padroniza\xE7\xE3o dos processos facilitou efetuar tarefas
+    conhecidas"
   repeatable: 1
   scopeBonus: -1
   moneyBonus: -1

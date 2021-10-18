@@ -28,6 +28,7 @@ public class Evaluation : MonoBehaviour
             rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
 
             //rskDisplay.transform.SetParent(rskList.transform);
+            //assigning the risk to the display
             rskDisplay.GetComponent<RiskDisplay>().risk = rsk;
 
             //adding button listeners events by calling method inside RiskDisplay
@@ -48,19 +49,16 @@ public class Evaluation : MonoBehaviour
             GameManager.risksCorrectlyEvaluated.Add(risk);
             Player.IncreaseResources(3);
             correctlyEvaluated++;
-            //Debug.Log("Pontos ganhos: " + 3);
         }
         else if(risk.impactLevel - matrixRiskDisplay.impact < 2)
         {
             Player.IncreaseResources(1);
             closelyEvaluated++;
-            //Debug.Log("Pontos ganhos: " + 1);
         } 
         else if(risk.probLevel - matrixRiskDisplay.prob < 2)
         {
             Player.IncreaseResources(1);
             closelyEvaluated++;
-            //Debug.Log("Pontos ganhos: " + 1);
         }
 
         GameManager.risks.Remove(risk);

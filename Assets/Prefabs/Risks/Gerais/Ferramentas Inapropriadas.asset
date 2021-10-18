@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: Ferramentas Inapropriadas
+  m_EditorClassIdentifier: 
+  id: 15
+  type: 2
+  project: 0
+  riskName: Ferramentas Inapropriadas
+  riskDescription: "Ferramentas para desenvolvimento n\xE3o s\xE3o \xFAteis ou eficientes"
+  sprite: {fileID: 21300000, guid: 0e966620820282a488d237412085772e, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
+  - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives:
+  - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
+  - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
+  - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
+  - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
+  impactLevel: 1
+  probLevel: 1
+  baseProbability: 0.1
+  probability: 0.1
+  reincidence: 0.1
+  scopeCost: 1
+  moneyCost: 1
+  timeCost: 1

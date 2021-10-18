@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Falta de Ader\xEAncia do Sistema"
   m_EditorClassIdentifier: 
-  id: 34
+  id: 27
   type: 3
   project: 1
   riskName: "Falta de Ader\xEAncia do Sistema"
@@ -26,9 +26,14 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
+  - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  - {fileID: 11400000, guid: b90565c8a9b7f834abc6e47c096abd62, type: 2}
+  - {fileID: 0}
   impactLevel: 4
   probLevel: 3
+  baseProbability: 0.5
   probability: 0.5
   reincidence: 0.1
   scopeCost: 4

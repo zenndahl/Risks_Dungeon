@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Falhas na Integra\xE7\xE3o"
   m_EditorClassIdentifier: 
-  id: 40
+  id: 39
   type: 2
   project: 2
   riskName: "Falhas na Integra\xE7\xE3o Cont\xEDnua"
@@ -25,9 +25,12 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 3
   probLevel: 3
+  baseProbability: 0.5
   probability: 0.5
   reincidence: 0.5
   scopeCost: 3

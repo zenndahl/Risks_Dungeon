@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    
     public static string playerName;
     private static int scope = 1;
     private static int time = 1;
@@ -14,7 +15,9 @@ public class Player : MonoBehaviour
     public static int combatPower;
     public static bool entusiasm;
     public static bool disciplin;
+    public static bool organized;
 
+    public static int preventCorrect;
     public static int risksActivated;
     public static int opportunitiesTaken;
 

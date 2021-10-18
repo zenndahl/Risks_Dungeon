@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Falta de Suporte
   m_EditorClassIdentifier: 
-  id: 27
+  id: 30
   type: 3
   project: 1
   riskName: 'Falta de Suporte '
@@ -26,9 +26,12 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
   impactLevel: 4
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.1
   scopeCost: 0

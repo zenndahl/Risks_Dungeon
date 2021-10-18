@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: "Falta de Seguran\xE7a"
   m_EditorClassIdentifier: 
-  id: 30
+  id: 29
   type: 2
   project: 1
   riskName: "Falta de Seguran\xE7a na Transfer\xEAncia"
@@ -26,9 +26,12 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
   impactLevel: 5
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5
   scopeCost: 5

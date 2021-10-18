@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 14
   opportunityName: Processos Diversificados
   opportunityEffect: 'Escolha um entre: +2 O, +2 T, ter outra oportunidade'
-  opportunityDescription: 
+  opportunityDescription: "Diversifica\xE7\xE3o de projetos permiram maior adaptabilidade"
   repeatable: 0
   scopeBonus: 2
   moneyBonus: -2

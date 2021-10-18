@@ -16,7 +16,7 @@ MonoBehaviour:
   opportunityName: "Inova\xE7\xE3o em Metodologia"
   opportunityEffect: "Aplica a preven\xE7\xE3o Estudo de Fun\xE7\xF5es"
   opportunityDescription: "A organiza\xE7\xE3o elaborou uma metodologia pr\xF3pria
-    que facilita busca por novidades"
+    que facilita o desenvolvimento"
   repeatable: 0
   scopeBonus: 4
   moneyBonus: -2

@@ -15,15 +15,15 @@ public class RiskDisplay : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         SetInfos();
     }
 
     public virtual void ShowDescription()
     {
-        if(describer != null) describer.SetActive(true);
-        if(descriptionText != null) descriptionText.text = risk.riskDescription;
+        //if(describer != null) GameObject.Find("Describer").SetAsLastSibling();
+        if(GameObject.Find("Describer/Text")) GameObject.Find("Describer/Text").GetComponent<Text>().text = risk.riskDescription;
     }
 
     public void SetEvents(GameObject rskDisplay)

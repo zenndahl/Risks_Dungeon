@@ -12,6 +12,11 @@ public class FinalReport : MonoBehaviour
 
     void Start()
     {
+        DisplayFinalReport();
+    }
+
+    public void DisplayFinalReport()
+    {
         int scope = GameObject.Find("Player").GetComponent<Player>().GetResource("scope");
         int money = GameObject.Find("Player").GetComponent<Player>().GetResource("money");
         int time = GameObject.Find("Player").GetComponent<Player>().GetResource("time");
@@ -20,8 +25,8 @@ public class FinalReport : MonoBehaviour
 
         LeaderboardController.SubmitScore();
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        points.text = Player.points.ToString();
-        risksPrevented.text = GameManager.preventionsMade.Count.ToString();
+        if(points != null) points.text = Player.points.ToString();
+        risksPrevented.text = Player.preventCorrect.ToString();
         risksActivated.text = Player.risksActivated.ToString();
         opportunitiesTaken.text = Player.opportunitiesTaken.ToString();
     }

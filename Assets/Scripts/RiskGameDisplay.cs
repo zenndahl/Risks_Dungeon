@@ -8,20 +8,31 @@ public class RiskGameDisplay : RiskDisplay
     public Image image;
     public Text probText;
     public Text impactText;
+    public Text actionText;
+
+    protected override void Start() 
+    {
+        if(risk != null) ShowRiskInfos();
+    }
 
     public override void ShowDescription()
     {
-        if(describer != null) describer.SetActive(true);
-        if(descriptionText != null) descriptionText.text = risk.riskDescription;
-        if(image != null) image.sprite = risk.sprite;
+        //if(describer != null) describer.SetActive(true);
+        if(risk.reaction == 0) actionText.text = "Não Planejado Corretamente";
+        if(risk.reaction == 1) actionText.text = "Reação: Mitigar";
+        if(risk.reaction == 2) actionText.text = "Reação: Atribuir";
+        if(risk.reaction == 3) actionText.text = "Reação: Aceitar";
+        descriptionText.text = risk.riskDescription;
+        image.sprite = risk.sprite;
     }
 
     public void ShowRiskInfos()
     {
         transform.position = new Vector3 (Screen.width * 0.5f, Screen.height * 0.5f, 0);
         Menus.DisableInteractbles();
-        impactText.text += "\n" + risk.impactLevel;
-        probText.text += "\n" + risk.probability;
+        if(risk != null) nameText.text = risk.id + " - " + risk.riskName;
+        impactText.text = risk.impactLevel.ToString();
+        probText.text = (risk.probability * 100) + "%";
         ShowDescription();
     }
 

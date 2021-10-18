@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 5
   opportunityName: "Diversifica\xE7\xE3o de Clientes"
   opportunityEffect: "B\xF4nus de Recursos"
-  opportunityDescription: "Mais pessoas est\xE3o dispostas ou interessados no sistema"
+  opportunityDescription: "Mais pessoas est\xE3o dispostas ou interessadas em usar
+    o sistema"
   repeatable: 0
   scopeBonus: 2
   moneyBonus: 4

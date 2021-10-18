@@ -24,10 +24,14 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   impactLevel: 5
-  probLevel: 2
-  probability: 0.3
+  probLevel: 1
+  baseProbability: 0.1
+  probability: 0.1
   reincidence: 0
   scopeCost: 5
   moneyCost: 5

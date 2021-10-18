@@ -15,8 +15,12 @@ public class Skill : ScriptableObject
         if(skillName == "Dedicação")
         {
             Player.combatPower++;
+            Debug.Log("Poder: " + Player.combatPower);
         }
-
+        if(skillName == "Organização")
+        {
+            Player.organized = true;
+        }
         if(skillName == "Disciplina")
         {
             Player.disciplin = true;

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
+  m_Name: Equipe Desmotivada
+  m_EditorClassIdentifier: 
+  id: 8
+  type: 2
+  project: 0
+  riskName: Membros da Equipe Desmotivados
+  riskDescription: "Equipe perdeu motiva\xE7\xE3o, \xE2nimo ou dedica\xE7\xE3o ao
+    projeto"
+  sprite: {fileID: 21300000, guid: 0e7d061399e600544b8536b01d1e4c66, type: 3}
+  preventions:
+  - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
+  - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
+  - {fileID: 11400000, guid: 9ae514ddb136fe949ae4de894c3ff394, type: 2}
+  reaction: 0
+  prevented: 0
+  timesPrevented: 0
+  derivatives:
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
+  - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
+  - {fileID: 11400000, guid: 178e07bb6d9e0a248b208ffadc5feafa, type: 2}
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
+  impactLevel: 2
+  probLevel: 2
+  baseProbability: 0.3
+  probability: 0.3
+  reincidence: 0.3
+  scopeCost: 2
+  moneyCost: 0
+  timeCost: 2

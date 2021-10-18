@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae04ca60fd6e148adcaf11050d5bf1, type: 3}
   m_Name: Funcionalidades com Falhas
   m_EditorClassIdentifier: 
-  id: 37
+  id: 41
   type: 2
   project: 2
   riskName: Funcionalidades com Falhas
@@ -28,9 +28,11 @@ MonoBehaviour:
   reaction: 0
   prevented: 0
   timesPrevented: 0
-  derivatives: []
+  derivatives:
+  - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 4
   probLevel: 4
+  baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5
   scopeCost: 4
