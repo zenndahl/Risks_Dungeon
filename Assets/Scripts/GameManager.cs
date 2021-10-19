@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static string projectName;
 
     [Header("Risks Infos")]
+    public List<Risk> allRisks = new List<Risk>();
     public List<Risk> project1Risks = new List<Risk>();
     public List<Risk> project2Risks = new List<Risk>();
     public static List<Risk> risks = new List<Risk>();
@@ -104,6 +105,11 @@ public class GameManager : MonoBehaviour
     public List<Employee> GetEmployeesList()
     {
         return employeesList;
+    }
+
+    public List<Risk> GetAllRisks()
+    {
+        return allRisks;
     }
 
     public List<Risk> GetProject1Risks()
