@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "A Organiza\xE7\xE3o desenvolveu ferramentas pr\xF3prias
     que facilitam a implementa\xE7\xE3o"
   repeatable: 0
+  baseScopeBonus: 2
+  baseMoneyBonus: -2
+  baseTimeBonus: 2
   scopeBonus: 2
   moneyBonus: -2
   timeBonus: 2

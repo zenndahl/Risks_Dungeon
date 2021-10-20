@@ -60,7 +60,7 @@ public class Add : MonoBehaviour
             selected.transform.SetParent(toAddList.transform);
 
             //selected.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
-            toAddList.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
+            toAddList.GetComponent<RectTransform>().offsetMin += new Vector2(0,100);
         }
         selected = null;
     }
@@ -74,7 +74,7 @@ public class Add : MonoBehaviour
             matrixRiskDisplay.SetMatrixCell(risk);
             Evaluation eval = GameObject.Find("Evaluation").GetComponent<Evaluation>();
             eval.Evaluate(risk, matrixRiskDisplay);
-            Destroy(selected);
+            selected.transform.GetChild(0).GetComponent<Button>().interactable = false;
             selected = null;
             matrixCell = null;
         }

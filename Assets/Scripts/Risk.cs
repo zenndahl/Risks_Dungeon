@@ -31,6 +31,8 @@ public class Risk : ScriptableObject
     //impact and prob level goes from 1 to 5, matchin the scale: very low, low, medium, high, very high
     public int impactLevel;
     public int probLevel;
+    public string evaluatedProb;
+    public string evaluatedImpact;
 
     [Header("Risk Probability")]
     //the probability is the number, between 0 and 1, that will in fact be used to calculate its chance to be activated
@@ -93,10 +95,11 @@ public class Risk : ScriptableObject
     {
         if(Player.disciplin)
         {
-            Player.OperateScope(scopeCost - 1);
-            Player.OperateMoney(moneyCost - 1);
-            Player.OperateTime(timeCost - 1);
+            Player.OperateScope(-(scopeCost - 1));
+            Player.OperateMoney(-(moneyCost - 1));
+            Player.OperateTime(-(timeCost - 1));
         }
+        else AcceptRisk();
     }
 
     public void ApplyMitigation()
@@ -140,8 +143,8 @@ public class Risk : ScriptableObject
     void AcceptRisk()
     {
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        Player.OperateScope(scopeCost);
-        Player.OperateMoney(moneyCost);
-        Player.OperateTime(timeCost);
+        Player.OperateScope(-scopeCost);
+        Player.OperateMoney(-moneyCost);
+        Player.OperateTime(-timeCost);
     }
 }

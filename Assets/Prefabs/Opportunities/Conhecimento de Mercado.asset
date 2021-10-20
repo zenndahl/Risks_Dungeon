@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "Organiza\xE7\xE3o tem aplo conhecimento do mercado em
     que est\xE3o inseridos"
   repeatable: 0
+  baseScopeBonus: 4
+  baseMoneyBonus: 4
+  baseTimeBonus: 4
   scopeBonus: 4
   moneyBonus: 4
   timeBonus: 4

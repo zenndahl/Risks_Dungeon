@@ -512,8 +512,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RiskDisplay, Assembly-CSharp
+      - m_Target: {fileID: 1164568729135170450}
+        m_TargetAssemblyTypeName: RiskGameDisplay, Assembly-CSharp
         m_MethodName: DismissRiskDisplay
         m_Mode: 1
         m_Arguments:

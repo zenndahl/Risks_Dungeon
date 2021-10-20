@@ -7,7 +7,6 @@ using UnityEngine;
 public class Planning : MonoBehaviour
 {
     [Header("Risks Infos")]
-    //private int riskIndex = 0;
     private int riskType;
     public List<Risk> risksToPlan = new List<Risk>();
     private Risk riskOnPlanning;
@@ -16,24 +15,29 @@ public class Planning : MonoBehaviour
     private int assigned = 0;
 
     [Header("Preventions Infos")]
-    public GameObject preventionsParent;
+    public GameObject preventDispPrefab;
     public List<Prevention> preventions = new List<Prevention>();
     private Prevention preventionSelected;
     private int reaction;
-    private int maxRange = 17;
 
     [Header("UI Infos")]
     public GameObject warningScreen;
     public GameObject feedbackScreen;
+    public GameObject preventionsScreen;
     public GameObject reactionScreen;
     public RiskDisplay riskDisplay;
-    public GameObject[] preventionsDisplays;
+    public GameObject preventionsDisplay;
     
     void Start()
     {
         risksToPlan = GameManager.risksIdentified.ToList();
-        NextRiskToPlan();
-        RandomizePreventions();
+        if(risksToPlan.Count == 0) GameManager.LoadNextScene();
+        else
+        {
+            SetPreventions();
+            NextRiskToPlan();
+        }
+        //RandomizePreventions();
     }
 
     //these are called by the pos buttons and set the reaction to be assign to the risk on planning
@@ -65,42 +69,58 @@ public class Planning : MonoBehaviour
             riskDisplay.risk = risksToPlan[0];
             riskOnPlanning = risksToPlan[0];
             riskDisplay.SetInfos();
+            GameObject probDesc = GameObject.Find("Prob Evaluation");
+            GameObject imapctDesc = GameObject.Find("Impact Evaluation");
+            probDesc.GetComponent<Text>().text = "Prob.: " + riskOnPlanning.evaluatedProb;
+            imapctDesc.GetComponent<Text>().text = "Impacto: " +  riskOnPlanning.evaluatedImpact;
         }
     }
 
-    public void RandomizePreventions()
+    public void SetPreventions()
     {
-        List<int> randomList = new List<int>();
-        int randNum;
-        int randNum2;
-
-        //get the preventions display objects under the planning parent and randomize the preventions displayed
-        foreach (GameObject goPD in preventionsDisplays)
+        foreach (Prevention prevention in GameManager.preventions)
         {
-            PreventionDisplay pd = goPD.GetComponent<PreventionDisplay>();
-            randNum = Random.Range(0,maxRange);
-            
-            while(randomList.Contains(randNum))
-    	        randNum = Random.Range(0,maxRange);
-            randomList.Add(randNum);
-
-            pd.prevention = preventions[randNum];
-            
-            //need to reset the display for the new employee to be shown in the display
-            pd.ResetInfos();
+            GameObject preventDisp = Instantiate(preventDispPrefab, transform.position, transform.rotation);
+            preventDisp.GetComponent<PreventionDisplay>().prevention = prevention;
+            preventDisp.transform.SetParent(preventionsScreen.transform);
+            preventDisp.GetComponent<PreventionDisplay>().SetInfos();
+            preventionsScreen.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
         }
-
-        //chose randomly a display to set an correct prevention for the risk on planning
-        randNum = Random.Range(0, riskOnPlanning.preventions.Length);
-        while(randomList.Contains(randNum))
-            randNum = Random.Range(0,riskOnPlanning.preventions.Length);
-        randomList.Add(randNum);
-        
-        randNum2 = Random.Range(0,2);
-        PreventionDisplay pvD = preventionsDisplays[randNum2].GetComponent<PreventionDisplay>();
-        pvD.prevention = riskOnPlanning.preventions[randNum];
-        pvD.ResetInfos();
     }
+
+    // public void RandomizePreventions()
+    // {
+    //     List<int> randomList = new List<int>();
+    //     int randNum;
+    //     int randNum2;
+
+    //     //get the preventions display objects under the planning parent and randomize the preventions displayed
+    //     foreach (GameObject goPD in preventionsDisplays)
+    //     {
+    //         PreventionDisplay pd = goPD.GetComponent<PreventionDisplay>();
+    //         randNum = Random.Range(0,maxRange);
+            
+    //         while(randomList.Contains(randNum))
+    // 	        randNum = Random.Range(0,maxRange);
+    //         randomList.Add(randNum);
+
+    //         pd.prevention = preventions[randNum];
+            
+    //         //need to reset the display for the new employee to be shown in the display
+    //         pd.ResetInfos();
+    //     }
+
+    //     //chose randomly a display to set an correct prevention for the risk on planning
+    //     randNum = Random.Range(0, riskOnPlanning.preventions.Length);
+    //     while(randomList.Contains(randNum))
+    //         randNum = Random.Range(0,riskOnPlanning.preventions.Length);
+    //     randomList.Add(randNum);
+        
+    //     randNum2 = Random.Range(0,2);
+    //     PreventionDisplay pvD = preventionsDisplays[randNum2].GetComponent<PreventionDisplay>();
+    //     pvD.prevention = riskOnPlanning.preventions[randNum];
+    //     pvD.ResetInfos();
+    // }
 
     public void SetPrevention(Prevention prevention)
     {
@@ -146,6 +166,7 @@ public class Planning : MonoBehaviour
         {
             //verify if the type given is correct, giving points if it is
             VerifyType();
+            preventionsDisplay.SetActive(false);
             reactionScreen.SetActive(true);
         }
     }
@@ -184,11 +205,11 @@ public class Planning : MonoBehaviour
             if(GameObject.Find("PreventionHolder").transform.childCount > 0)
             {
                 Transform preventHolder = GameObject.Find("PreventionHolder").transform.GetChild(0);
-                preventHolder.SetParent(preventionsParent.transform);
+                preventHolder.SetParent(preventionsScreen.transform);
             }
 
             reactionScreen.SetActive(false);
-            RandomizePreventions();
+            preventionsDisplay.SetActive(true);
             NextRiskToPlan();
         }
         else FinishPlanning();

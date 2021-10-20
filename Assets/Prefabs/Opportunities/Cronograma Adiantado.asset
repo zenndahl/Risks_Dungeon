@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "Funcionalidades foram implementadas com sucesso mais r\xE1pido
     que o esperado"
   repeatable: 1
+  baseScopeBonus: 0
+  baseMoneyBonus: 0
+  baseTimeBonus: 5
   scopeBonus: 0
   moneyBonus: 0
   timeBonus: 5

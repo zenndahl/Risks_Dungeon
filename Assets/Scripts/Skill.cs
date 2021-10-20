@@ -17,6 +17,13 @@ public class Skill : ScriptableObject
             Player.combatPower++;
             Debug.Log("Poder: " + Player.combatPower);
         }
+        if(skillName == "Inovação")
+        {
+            foreach (Opportunity opportunity in GameManager.opportunities)
+            {
+                opportunity.Inovate();
+            }
+        }
         if(skillName == "Organização")
         {
             Player.organized = true;

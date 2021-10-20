@@ -17,6 +17,9 @@ MonoBehaviour:
   opportunityEffect: "B\xF4nus de Or\xE7amento"
   opportunityDescription: "Um patrocinador est\xE1 interessado no projeto ou na organiza\xE7\xE3o"
   repeatable: 1
+  baseScopeBonus: 0
+  baseMoneyBonus: 5
+  baseTimeBonus: 0
   scopeBonus: 0
   moneyBonus: 5
   timeBonus: 0

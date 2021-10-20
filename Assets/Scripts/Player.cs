@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public static int points;
     public static List<Employee> team = new List<Employee>();
     public static Sprite icon;
-    public static int combatPower;
+    public static int combatPower = 1;
     public static bool entusiasm;
     public static bool disciplin;
     public static bool organized;

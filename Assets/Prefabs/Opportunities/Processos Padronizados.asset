@@ -19,6 +19,9 @@ MonoBehaviour:
   opportunityDescription: "Padroniza\xE7\xE3o dos processos facilitou efetuar tarefas
     conhecidas"
   repeatable: 1
+  baseScopeBonus: 0
+  baseMoneyBonus: -1
+  baseTimeBonus: 2
   scopeBonus: -1
   moneyBonus: -1
   timeBonus: 2

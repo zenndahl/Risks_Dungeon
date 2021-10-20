@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "A organiza\xE7\xE3o elaborou uma metodologia pr\xF3pria
     que facilita o desenvolvimento"
   repeatable: 0
+  baseScopeBonus: 2
+  baseMoneyBonus: -1
+  baseTimeBonus: -1
   scopeBonus: 4
   moneyBonus: -2
   timeBonus: -1

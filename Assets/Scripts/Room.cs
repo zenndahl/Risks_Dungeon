@@ -49,14 +49,12 @@ public class Room : MonoBehaviour
 
                 // rand--;
                 // if(rand <= 0) rand++;
-                Debug.Log(roomCost-1);
                 if(i == 0) Player.OperateScope(-(roomCost-1));
                 if(i == 1) Player.OperateMoney(-(roomCost-1));
                 if(i == 2) Player.OperateTime(-(roomCost-1));
             }
             else
             {
-                Debug.Log(roomCost);
                 if(i == 0) Player.OperateScope(-roomCost);
                 if(i == 1) Player.OperateMoney(-roomCost);
                 if(i == 2) Player.OperateTime(-roomCost);
@@ -98,10 +96,17 @@ public class Room : MonoBehaviour
                                                                   gameObject.transform.position.z    
                                                                 );
 
-        SetRooms();
-        RskOpp();
+        if(!isLast)
+        {
+            SetRooms();
+            RskOpp();
+        }
 
-        if(isLast) feedback.GetComponent<Feedback>().PhaseFeedback();
+        if(isLast) 
+        {
+            feedback.SetActive(true);
+            feedback.GetComponent<Feedback>().PhaseFeedback();
+        }
     }
 
     public void SetRooms()

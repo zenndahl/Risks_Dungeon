@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "Novos conhecimentos foram formados e novas li\xE7\xF5es
     aprendidas"
   repeatable: 1
+  baseScopeBonus: 2
+  baseMoneyBonus: 0
+  baseTimeBonus: -2
   scopeBonus: 2
   moneyBonus: 0
   timeBonus: -2

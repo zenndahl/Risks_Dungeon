@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "Projeto em implementa\xE7\xE3o tem uma proposta inovadora
     que chama a aten\xE7\xE3o do mercado"
   repeatable: 0
+  baseScopeBonus: 4
+  baseMoneyBonus: 4
+  baseTimeBonus: -2
   scopeBonus: 4
   moneyBonus: 4
   timeBonus: -2

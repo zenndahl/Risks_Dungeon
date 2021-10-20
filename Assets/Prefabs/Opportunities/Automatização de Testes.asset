@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: A equipe desenvolveu testes automatizados para economizar
     tempo
   repeatable: 0
+  baseScopeBonus: 0
+  baseMoneyBonus: -2
+  baseTimeBonus: 3
   scopeBonus: 0
   moneyBonus: -2
   timeBonus: 3

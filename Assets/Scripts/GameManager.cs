@@ -21,14 +21,17 @@ public class GameManager : MonoBehaviour
     public List<Risk> project2Risks = new List<Risk>();
     public static List<Risk> risks = new List<Risk>();
     public static List<Risk> risksIdentified = new List<Risk>();
-    public static List<Prevention> preventionsMade = new List<Prevention>();
     public static List<Risk> risksAssigned = new List<Risk>();
     public static List<Risk> risksCorrectlyIdentified = new List<Risk>();
     public static List<Risk> risksCorrectlyEvaluated = new List<Risk>();
     public static List<Risk> risksCorrectlyPlanned = new List<Risk>();
 
+    [Header("Preventions Infos")]
+    public static List<Prevention> preventionsMade = new List<Prevention>();
+    public List<Prevention> preventionsList = new List<Prevention>();
+    public static List<Prevention> preventions = new List<Prevention>();
 
-    [Header("Opportunities")]
+    [Header("Opportunities Infos")]
     public List<Opportunity> opportunitiesList = new List<Opportunity>();
     public static List<Opportunity> opportunities = new List<Opportunity>();
 
@@ -56,6 +59,14 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         opportunities = opportunitiesList;
         employees = employeesList;
+        preventions = preventionsList;
+
+        foreach (Opportunity opportunity in opportunities)
+        {
+            opportunity.scopeBonus = opportunity.baseScopeBonus;
+            opportunity.moneyBonus = opportunity.baseMoneyBonus;
+            opportunity.timeBonus = opportunity.baseTimeBonus;
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -18,6 +18,9 @@ MonoBehaviour:
     oportunidade"
   opportunityDescription: "A ger\xEAncia aprimorou o plano de projeto"
   repeatable: 1
+  baseScopeBonus: 1
+  baseMoneyBonus: -1
+  baseTimeBonus: -1
   scopeBonus: 1
   moneyBonus: -1
   timeBonus: -1

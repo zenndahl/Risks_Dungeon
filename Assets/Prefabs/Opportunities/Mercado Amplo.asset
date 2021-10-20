@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "O mercado em que a organiza\xE7\xE3o se encontra \xE9
     favor\xE1vel para o projeto em implementa\xE7\xE3o"
   repeatable: 0
+  baseScopeBonus: 3
+  baseMoneyBonus: 3
+  baseTimeBonus: -1
   scopeBonus: 3
   moneyBonus: 3
   timeBonus: -1

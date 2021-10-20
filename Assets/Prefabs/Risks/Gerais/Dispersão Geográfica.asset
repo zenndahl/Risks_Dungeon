@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Dispers\xE3o Geogr\xE1fica"
   m_EditorClassIdentifier: 
   id: 7
-  type: 1
+  type: 3
   project: 0
   riskName: "Dispers\xE3o Geogr\xE1fica"
   riskDescription: "Membros da organiza\xE7\xE3o espalhados por v\xE1rias cidades,
@@ -22,7 +22,7 @@ MonoBehaviour:
   preventions:
   - {fileID: 11400000, guid: 00bda28efec5d404db5b19416edc6b2d, type: 2}
   - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
-  reaction: 0
+  reaction: 3
   prevented: 0
   timesPrevented: 0
   derivatives:

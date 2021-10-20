@@ -16,6 +16,9 @@ public class Opportunity : ScriptableObject
     public bool repeatable;
 
     [Header("Opportunity Bonuses")]
+    public int baseScopeBonus;
+    public int baseMoneyBonus;
+    public int baseTimeBonus;
     public int scopeBonus;
     public int moneyBonus;
     public int timeBonus;
@@ -44,6 +47,13 @@ public class Opportunity : ScriptableObject
         if(timeBonus > 0) timeBonus++;
     }
 
+    public void Inovate()
+    {
+        scopeBonus *= 2;
+        moneyBonus *= 2;
+        timeBonus *= 2;
+    }
+
     public void ActivateOpportunity()
     {
         //apply resource bonus
@@ -57,8 +67,6 @@ public class Opportunity : ScriptableObject
         if(increasePower) Player.combatPower++;
         if(increaseBonus) IncreaseBonus();
         if(newOpportunity) Room.DrawOpportunity();
-        if(diversify) GameObject.Find("Opportunity Display").GetComponent<OpportunityDisplay>().uiAuxiliar.SetActive(true);
-        if(addSkill) GameObject.Find("Opportunity Display").GetComponent<OpportunityDisplay>().skillUI.SetActive(true);
         if(decreaseCosts)
         {
             foreach (Opportunity opp in GameManager.opportunities)
@@ -66,5 +74,8 @@ public class Opportunity : ScriptableObject
                 opp.DeacreaseCosts();
             }
         }
+
+        //if the opportunity is not repeatable, remove it from the list
+        GameManager.opportunities.Remove(this);
     }
 }

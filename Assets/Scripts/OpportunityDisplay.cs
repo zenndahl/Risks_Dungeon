@@ -29,38 +29,36 @@ public class OpportunityDisplay : MonoBehaviour
     void ShowValues()
     {
         //check wich resource will be bonus and wich will be cost and show them apropriately
-        for(int i = 0; i < 3; i++)
+        //check if the scope will be bonus
+        if(opportunity.scopeBonus > 0)
         {
-            //check if the scope will be bonus
-            if(opportunity.scopeBonus > 0)
-            {
-                bonusText.text = "Escopo: +" +opportunity.scopeBonus+ " "; 
-            }
-            else if(opportunity.scopeBonus < 0) //if it is not a bonus, it is a cost
-            {
-                costText.text = "Escopo: " +opportunity.scopeBonus+ " "; 
-            }
-
-            //same goes to the others
-
-            if(opportunity.moneyBonus > 0)
-            {
-                bonusText.text += "\nOrçamento: +" +opportunity.moneyBonus+ " "; 
-            }
-            else if(opportunity.moneyBonus < 0)
-            {
-                costText.text += "Orçamento: " +opportunity.moneyBonus+ " "; 
-            }
-
-            if(opportunity.timeBonus > 0)
-            {
-                bonusText.text += "\nCronograma: +" +opportunity.timeBonus; 
-            }
-            else if(opportunity.timeBonus < 0)
-            {
-                costText.text += "Cronograma: " +opportunity.timeBonus+ " "; 
-            }
+            bonusText.text = "Escopo: +" +opportunity.scopeBonus+ " "; 
         }
+        else if(opportunity.scopeBonus < 0) //if it is not a bonus, it is a cost
+        {
+            costText.text = "Escopo: " +opportunity.scopeBonus+ " "; 
+        }
+
+        //same goes to the others
+
+        if(opportunity.moneyBonus > 0)
+        {
+            bonusText.text += "\nOrçamento: +" +opportunity.moneyBonus+ " "; 
+        }
+        else if(opportunity.moneyBonus < 0)
+        {
+            costText.text += "Orçamento: " +opportunity.moneyBonus+ " "; 
+        }
+
+        if(opportunity.timeBonus > 0)
+        {
+            bonusText.text += "\nCronograma: +" +opportunity.timeBonus; 
+        }
+        else if(opportunity.timeBonus < 0)
+        {
+            costText.text += "Cronograma: " +opportunity.timeBonus+ " "; 
+        }
+        
     }
 
     public void HideAuxiliars()
@@ -75,7 +73,12 @@ public class OpportunityDisplay : MonoBehaviour
         //these 2 opportunities use aditional UI, so if it is one of them, the display is not disabled yet
         if(opportunity.addSkill)
         {
-            GameObject.Find("BaseUI").SetActive(false);
+            baseUI.SetActive(false);
+            skillUI.SetActive(true);
+        }
+        if(opportunity.diversify)
+        {
+            uiAuxiliar.SetActive(true);
         }
         if(!opportunity.diversify && !opportunity.addSkill) ResetDisplay();
     }
@@ -87,23 +90,34 @@ public class OpportunityDisplay : MonoBehaviour
         Menus.EnableInteractbles();
         bonusText.text = "";
         costText.text = "";
+        HideAuxiliars();
         if(!opportunity.repeatable) GameManager.opportunities.Remove(opportunity);
+    }
+
+    public void TakeNewEmployee()
+    {
+        Player.team.Add(Add.selected.GetComponent<Employee>());
+        baseUI.SetActive(true);
+        ResetDisplay();
     }
     
     //methods for the opportunity "Diversificar ..."
     public void DrawNewOpportunity()
     {
         Room.DrawOpportunity();
+        ResetDisplay();
     }
 
     public void DiversifyToScope()
     {
         Player.OperateScope(2);
+        ResetDisplay();
     }
 
     public void DiversifyToTime()
     {
         Player.OperateTime(2);
+        ResetDisplay();
     }
 
 }

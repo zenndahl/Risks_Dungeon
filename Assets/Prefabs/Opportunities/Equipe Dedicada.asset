@@ -17,6 +17,9 @@ MonoBehaviour:
   opportunityEffect: Aumento do Poder de Combate a Riscos
   opportunityDescription: "Equipe \xE9 eficiente e dedicada ao projeto"
   repeatable: 1
+  baseScopeBonus: 3
+  baseMoneyBonus: 3
+  baseTimeBonus: 3
   scopeBonus: 3
   moneyBonus: 3
   timeBonus: 3

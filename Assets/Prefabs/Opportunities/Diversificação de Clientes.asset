@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "Mais pessoas est\xE3o dispostas ou interessadas em usar
     o sistema"
   repeatable: 0
+  baseScopeBonus: 2
+  baseMoneyBonus: 4
+  baseTimeBonus: -2
   scopeBonus: 2
   moneyBonus: 4
   timeBonus: -2

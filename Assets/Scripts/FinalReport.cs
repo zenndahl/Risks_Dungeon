@@ -23,7 +23,7 @@ public class FinalReport : MonoBehaviour
 
         Player.points = scope + ((money + time)/2);
 
-        LeaderboardController.SubmitScore();
+        //LeaderboardController.SubmitScore();
         //Player player = GameObject.Find("Player").GetComponent<Player>();
         if(points != null) points.text = Player.points.ToString();
         risksPrevented.text = Player.preventCorrect.ToString();

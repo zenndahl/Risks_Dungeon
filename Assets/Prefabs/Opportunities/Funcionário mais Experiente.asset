@@ -18,6 +18,9 @@ MonoBehaviour:
   opportunityDescription: "Um novo funcion\xE1rio com uma habilidade diferente se
     mostra promissor"
   repeatable: 1
+  baseScopeBonus: 3
+  baseMoneyBonus: -2
+  baseTimeBonus: 0
   scopeBonus: 3
   moneyBonus: -3
   timeBonus: 0

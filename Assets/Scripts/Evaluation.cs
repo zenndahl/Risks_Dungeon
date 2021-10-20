@@ -18,6 +18,7 @@ public class Evaluation : MonoBehaviour
 
     void SetUpEvaluation()
     {
+        if(GameManager.risksIdentified.Count == 0) GameManager.LoadNextScene();
         GameObject rskList = GameObject.Find("Risk List/Risks");
         foreach (Risk rsk in GameManager.risksIdentified)
         {
@@ -25,7 +26,7 @@ public class Evaluation : MonoBehaviour
             GameObject rskDisplay = Instantiate(riskDisplayPrefab, rskList.transform);
 
             //set spacing between risks
-            rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
+            rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
 
             //rskDisplay.transform.SetParent(rskList.transform);
             //assigning the risk to the display
@@ -36,10 +37,60 @@ public class Evaluation : MonoBehaviour
         }
     }
 
+    void SetRiskEvaluationChoosed(Risk risk, MatrixRiskDisplay matrixRiskDisplay)
+    {
+        //set the probability text
+        switch (matrixRiskDisplay.prob)
+        {
+            case 1:
+                risk.evaluatedProb = "Muito Baixa";
+                break;
+            case 2:
+                risk.evaluatedProb = "Baixa";
+                break;
+            case 3:
+                risk.evaluatedProb = "Moderada";
+                break;
+            case 4:
+                risk.evaluatedProb = "Alta";
+                break;
+            case 5:
+                risk.evaluatedProb = "Muito Alta";
+                break;
+            default:
+                break;
+        }
+
+        //set the impact text
+        switch (matrixRiskDisplay.impact)
+        {
+            case 1:
+                risk.evaluatedImpact = "Muito Baixo";
+                break;
+            case 2:
+                risk.evaluatedImpact = "Baixo";
+                break;
+            case 3:
+                risk.evaluatedImpact = "Moderado";
+                break;
+            case 4:
+                risk.evaluatedImpact = "Alto";
+                break;
+            case 5:
+                risk.evaluatedImpact = "Muito Alto";
+                break;
+            default:
+                break;
+        }
+    }
+
     public void Evaluate(Risk risk, MatrixRiskDisplay matrixRiskDisplay)
     {
         //Player player = GameObject.Find("Player").GetComponent<Player>();
         GameObject rskList = GameObject.Find("Risks");
+
+        //set the evaluation probability and impact chose by the player
+        SetRiskEvaluationChoosed(risk, matrixRiskDisplay);
 
         //if the player chooses the correct probabilit and impact, he gets 3 points
         //if it gets the probability or the impact, he gets 1 point

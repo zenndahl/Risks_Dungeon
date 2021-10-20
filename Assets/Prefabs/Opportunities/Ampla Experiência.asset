@@ -17,6 +17,9 @@ MonoBehaviour:
   opportunityEffect: Aumento do Poder de Combate a Riscos e Nova Oportunidade
   opportunityDescription: "Funcion\xE1rios s\xE3o experientes com o tipo de projeto"
   repeatable: 0
+  baseScopeBonus: 4
+  baseMoneyBonus: 4
+  baseTimeBonus: 4
   scopeBonus: 4
   moneyBonus: 2
   timeBonus: 2

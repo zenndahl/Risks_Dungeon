@@ -647,17 +647,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   nextRooms:
   - {fileID: 1963272666}
   explored: 0
@@ -812,15 +809,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
   nextRooms:
   - {fileID: 893715071}
   explored: 0
@@ -1108,15 +1104,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
   nextRooms:
   - {fileID: 119516496}
   explored: 0
@@ -1308,15 +1303,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
   nextRooms:
   - {fileID: 230071033}
   explored: 0
@@ -1881,7 +1875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353, y: 278}
+  m_AnchoredPosition: {x: 353, y: 311}
   m_SizeDelta: {x: 111.183, y: 61.1541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413067185
@@ -3587,15 +3581,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 2000806928}
@@ -4410,7 +4403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6951996234479696525, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
       propertyPath: m_Name
-      value: Risk Display 2
+      value: Risk Game Display
       objectReference: {fileID: 0}
     - target: {fileID: 6951996234479696526, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
       propertyPath: m_Pivot.x
@@ -6080,18 +6073,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  nextRooms: []
+  - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  nextRooms:
+  - {fileID: 102516764}
   explored: 0
   isPlayerHere: 0
   isLast: 0
@@ -7562,25 +7553,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
+  - {fileID: 11400000, guid: 76e0f8db06f98d140a8d9bd7600b83b7, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
+  - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
+  - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   nextRooms:
   - {fileID: 413067186}
   explored: 0
@@ -7829,15 +7816,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 119516496}
@@ -7899,17 +7885,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: ada30fdf0bf55d14690e839f793e3373, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
+  - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   nextRooms:
   - {fileID: 413067186}
   - {fileID: 1542746944}
