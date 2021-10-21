@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     [Header("Opportunities Infos")]
     public List<Opportunity> opportunitiesList = new List<Opportunity>();
     public static List<Opportunity> opportunities = new List<Opportunity>();
+    public static List<Opportunity> opportunitiesPossible = new List<Opportunity>();
 
     [Header("Scene Infos")]
     public static string currentScene;
@@ -60,14 +61,35 @@ public class GameManager : MonoBehaviour
         nextScene = "Selecionar Equipe";
         SceneManager.sceneLoaded += OnSceneLoaded;
         opportunities = opportunitiesList;
+        opportunitiesPossible = opportunitiesList;
         employees = employeesList;
         preventions = preventionsList;
+        ResetScripts();
+    }
 
+    //reset the scripts that gets modified through the game
+    void ResetScripts()
+    {
+        //reset risks
+        foreach (Risk risk in allRisks)
+        {
+            risk.probability = risk.baseProbability;
+            risk.reaction = 0;
+            risk.prevented = false;
+            risk.timesPrevented = 0;
+        }
+
+        //reset opportunities bonuses
         foreach (Opportunity opportunity in opportunities)
         {
             opportunity.scopeBonus = opportunity.baseScopeBonus;
             opportunity.moneyBonus = opportunity.baseMoneyBonus;
             opportunity.timeBonus = opportunity.baseTimeBonus;
+        }
+
+        foreach (Employee emp in employees)
+        {
+            emp.morale = 0.5f;
         }
     }
 
@@ -91,12 +113,6 @@ public class GameManager : MonoBehaviour
         // gameObject.GetComponent<Menus>().choseName.SetActive(true);
         // gameObject.GetComponent<Menus>().projects.SetActive(false);
         LoadNextScene();
-
-        //reset risks probabilitys
-        foreach (Risk risk in project1Risks)
-        {
-            risk.probability = risk.baseProbability;
-        }
     }
 
     //will be called by the button on the main menu screen to setup the App project
@@ -107,12 +123,6 @@ public class GameManager : MonoBehaviour
         // gameObject.GetComponent<Menus>().choseName.SetActive(true);
         // gameObject.GetComponent<Menus>().projects.SetActive(false);
         LoadNextScene();
-
-        //reset risks probabilitys
-        foreach (Risk risk in project1Risks)
-        {
-            risk.probability = risk.baseProbability;
-        }
     }
 
     public List<Employee> GetEmployeesList()

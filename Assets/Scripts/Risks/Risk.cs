@@ -63,12 +63,7 @@ public class Risk : ScriptableObject
 
     public void Subscribe()
     {
-        Room.OnEnterRoom += Logging;
-    }
-
-    void Logging()
-    {
-        Debug.Log("Entrando na sala");
+        
     }
 
     public void IncreaseProb(int mult)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -40,5 +41,6 @@ public class RiskGameDisplay : RiskDisplay
     {
         transform.position = new Vector3 (Screen.width * 2f, Screen.height * 2f, 0);
         Menus.EnableInteractbles();
+        GameObject.Find("Beholder").GetComponent<TeamAgent>().CalculateTeamMorale();
     }
 }
