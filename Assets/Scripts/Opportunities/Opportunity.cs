@@ -76,6 +76,9 @@ public class Opportunity : ScriptableObject
         }
 
         //if the opportunity is not repeatable, remove it from the list
-        GameManager.opportunities.Remove(this);
+        if(!repeatable)
+        {
+            GameManager.opportunities.Remove(this);
+        }
     }
 }

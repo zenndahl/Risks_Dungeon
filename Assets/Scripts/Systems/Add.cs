@@ -44,8 +44,8 @@ public class Add : MonoBehaviour
             selected.transform.SetParent(toAddList.transform);
 
             //selected.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
-            selected.transform.parent.gameObject.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
-            toAddList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,20);
+            selected.transform.parent.gameObject.GetComponent<RectTransform>().offsetMin += new Vector2(0,100);
+            toAddList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
         }
         selected = null;
     }

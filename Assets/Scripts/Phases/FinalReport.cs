@@ -15,6 +15,13 @@ public class FinalReport : MonoBehaviour
         DisplayFinalReport();
     }
 
+    public void SubmitScore()
+    {
+        // GameObject.Find("GameManager").GetComponent<ScoreManager>().AddScore(new Score(Player.playerName, Player.points));
+        // GameObject.Find("GameManager").GetComponent<ScoreManager>().SaveScore();
+        //HighScores.UploadScore(Player.playerName, Player.points);
+    }
+
     public void DisplayFinalReport()
     {
         int scope = GameObject.Find("Player").GetComponent<Player>().GetResource("scope");

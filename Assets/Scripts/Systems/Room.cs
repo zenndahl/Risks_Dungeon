@@ -2,8 +2,9 @@ using System;
 using Random=UnityEngine.Random;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.UI;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
@@ -18,6 +19,10 @@ public class Room : MonoBehaviour
     public bool isBreakpoint;
     private int roomCost = 2;
     public GameObject feedback;
+
+    //event variables
+    public delegate void EnterRoom();
+    public static event EnterRoom OnEnterRoom;
 
     private Color allowed = new Color(102, 231, 99, 200);
     //private Color notAllowed = new Color(251, 60, 63, 200);
@@ -65,6 +70,7 @@ public class Room : MonoBehaviour
 
     public void MoveToken()
     {
+        if(OnEnterRoom != null) OnEnterRoom();
         MoveCost();
 
         if(isCheckpoint) SCRUM.sprintLoops++;
@@ -144,19 +150,21 @@ public class Room : MonoBehaviour
         if(randProb <= risksPossible[randIndex].probability)
         {
             risksPossible[randIndex].ActivateRisk();
+            GameManager.risksInSequence++;
         }
         else
         {
             Room.DrawOpportunity();
+            GameManager.risksInSequence = 0;
         }
     }
 
     public static void DrawOpportunity()
     {
         //will randomly chose one of the opportunities
-            int randOpp = Random.Range(0,GameManager.opportunities.Count);
-            GameObject oppDisplay = GameObject.Find("Opportunity Display");
-            oppDisplay.GetComponent<OpportunityDisplay>().opportunity = GameManager.opportunities[randOpp];
-            oppDisplay.GetComponent<OpportunityDisplay>().ShowDescription();
+        int randOpp = Random.Range(0,GameManager.opportunities.Count);
+        GameObject oppDisplay = GameObject.Find("Opportunity Display");
+        oppDisplay.GetComponent<OpportunityDisplay>().opportunity = GameManager.opportunities[randOpp];
+        oppDisplay.GetComponent<OpportunityDisplay>().ShowDescription();
     }
 }

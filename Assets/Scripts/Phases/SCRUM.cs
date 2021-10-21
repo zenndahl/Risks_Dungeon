@@ -28,9 +28,9 @@ public class SCRUM : MonoBehaviour
         //if it was not done, the last room is disabled 
         if(room.isBreakpoint)
         {
-            if(sprints < 4)
+            if(sprints < 2)
             {
-                Button breakpoint = room.nextRooms[0];
+                Button breakpoint = GameObject.Find("Room 7").GetComponent<Button>();
                 breakpoint.gameObject.GetComponent<Image>().color = new Color(0,0,0,0);
                 breakpoint.interactable = false;
             }

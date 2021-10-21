@@ -219,7 +219,7 @@ public class Planning : MonoBehaviour
     {
         if(riskOnPlanning.type == riskType)
         {
-            Player.IncreaseResources(1);
+            Player.IncreaseResources(5);
             correctlyTyped++;
         }
     }

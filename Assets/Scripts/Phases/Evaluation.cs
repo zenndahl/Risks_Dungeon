@@ -98,17 +98,17 @@ public class Evaluation : MonoBehaviour
         if(risk.impactLevel == matrixRiskDisplay.impact && risk.probLevel == matrixRiskDisplay.prob)
         {
             GameManager.risksCorrectlyEvaluated.Add(risk);
-            Player.IncreaseResources(3);
+            Player.IncreaseResources(5);
             correctlyEvaluated++;
         }
         else if(risk.impactLevel - matrixRiskDisplay.impact < 2)
         {
-            Player.IncreaseResources(1);
+            Player.IncreaseResources(3);
             closelyEvaluated++;
         } 
         else if(risk.probLevel - matrixRiskDisplay.prob < 2)
         {
-            Player.IncreaseResources(1);
+            Player.IncreaseResources(3);
             closelyEvaluated++;
         }
 

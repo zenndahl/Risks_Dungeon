@@ -91,7 +91,6 @@ public class OpportunityDisplay : MonoBehaviour
         bonusText.text = "";
         costText.text = "";
         HideAuxiliars();
-        if(!opportunity.repeatable) GameManager.opportunities.Remove(opportunity);
     }
 
     public void TakeNewEmployee()

@@ -57,6 +57,7 @@ public class TeamSelection : MonoBehaviour
         {
             //activate the employee skills
             employee.skill.ActivateSkill();
+            employee.Subscribe();
         }
     }
 

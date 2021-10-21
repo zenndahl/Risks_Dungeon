@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Risk", menuName = "Risks Dungeon/Risk", order = 0)]
@@ -11,6 +12,7 @@ public class Risk : ScriptableObject
 
     //type can be 1, 2 or 3, respectively: planning, product, business
     public int type;
+    public string riskClass;
 
     //project can be 0, 1 or 2, respectively: any project, ERp project, app project
     public int project;
@@ -46,13 +48,27 @@ public class Risk : ScriptableObject
     //the impact of the risk in the player resources
     public int scopeCost;
     public int moneyCost;
-    public int timeCost;       
+    public int timeCost;
+
+    //event variables
+    public delegate void ActivatingRisk(Risk risk);
+    public static event ActivatingRisk OnActivateRisk;
 
     // Start is called before the first frame update
     void Start()
     {
         //text.text = riskName;
         probability = baseProbability;
+    }
+
+    public void Subscribe()
+    {
+        Room.OnEnterRoom += Logging;
+    }
+
+    void Logging()
+    {
+        Debug.Log("Entrando na sala");
     }
 
     public void IncreaseProb(int mult)
@@ -68,6 +84,8 @@ public class Risk : ScriptableObject
 
     public void ActivateRisk()
     {
+        if(OnActivateRisk != null) OnActivateRisk(this);
+
         //Player player = GameObject.Find("Player").GetComponent<Player>();
         Player.risksActivated++;
 

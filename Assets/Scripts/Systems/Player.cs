@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
 {
     
     public static string playerName;
-    private static int scope = 1;
-    private static int time = 1;
-    private static int money = 1;
+    private static int scope = 10;
+    private static int time = 10;
+    private static int money = 10;
     public static int points;
     public static List<Employee> team = new List<Employee>();
     public static Sprite icon;
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     {
         if(scope <= 0 || time <= 0 || money <= 0)
         {
-            //Debug.Log("Game Over");
+            Menus.GameOver();
         }
     }
 

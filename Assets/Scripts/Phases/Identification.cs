@@ -18,6 +18,9 @@ public class Identification : MonoBehaviour
     {
         foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetAllRisks())
         {
+            //set all events subscriptions of the risks
+            risk.Subscribe();
+
             //instantiating and setting the parent for the risk
             GameObject rskDisplay = Instantiate(riskDisplayPrefab, transform.position, transform.rotation);
             GameObject rskList = GameObject.Find("Risk List/Risks");
@@ -55,7 +58,7 @@ public class Identification : MonoBehaviour
             //check if the risk identified is general or for the selected project and adds the resources if it is
             if(risk.project == 0 || risk.project == GameManager.project)
             {
-                Player.IncreaseResources(1);
+                Player.IncreaseResources(5);
                 GameManager.risksCorrectlyIdentified.Add(risk);
                 correctlyId++;
             }

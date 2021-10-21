@@ -14,7 +14,7 @@ public class Menus : MonoBehaviour
     public GameObject projects;
     public GameObject choseName;
     public InputField playerName;
-    private bool isPauseMenuOn = false;
+    private bool gameIsPaused = false;
 
     private void Update()
     {
@@ -23,9 +23,8 @@ public class Menus : MonoBehaviour
             //toggle on/off the pause menu in scenes that you can pause
             if(GameObject.Find("Pause Menu"))
             {
-                isPauseMenuOn = !isPauseMenuOn;
-                if(isPauseMenuOn) Pause();
-                else Continue();
+                gameIsPaused = !gameIsPaused;
+                PauseGame();
             }
         }
     }
@@ -38,19 +37,34 @@ public class Menus : MonoBehaviour
 
     public void Quit()
     {
+        //GameObject.Find("GameManager").GetComponent<ScoreManager>().SaveScore();
         Application.Quit();
     }
 
-    public void Pause()
+    bool TogglePause()
     {
-        DisableInteractbles();
-        GameObject.Find("Pause Menu").transform.SetAsLastSibling();
+        if(gameIsPaused) return false;
+        else return true;
+    }
+
+    public void PauseGame()
+    {
+        if(gameIsPaused)
+        {
+            DisableInteractbles();
+            GameObject.Find("Pause Menu").transform.SetAsLastSibling();
+        }
+        else 
+        {
+            EnableInteractbles();
+            GameObject.Find("Pause Menu").transform.SetSiblingIndex(0);
+        }
     }
 
     public void Continue()
     {
         EnableInteractbles();
-        isPauseMenuOn = false;
+        gameIsPaused = TogglePause();
         GameObject.Find("Pause Menu").transform.SetSiblingIndex(0);
     }
 
@@ -149,9 +163,14 @@ public class Menus : MonoBehaviour
         GameManager.LoadNextScene();
     }
 
-    public void GameOver()
+    public static void GameOver()
     {
-        GameObject.FindGameObjectsWithTag("Phase")[0].SetActive(false);
+        GameObject.Find("Risk Game Display").GetComponent<RiskGameDisplay>().DismissRiskDisplay();
+        GameObject.Find("Opportunity Display").GetComponent<OpportunityDisplay>().ResetDisplay();
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Phase"))
+        {
+            obj.SetActive(false);
+        }
         GameObject.Find("Game Over").transform.SetAsLastSibling();
         GameObject.Find("Game Over").GetComponent<FinalReport>().DisplayFinalReport();
     }

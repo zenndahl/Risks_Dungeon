@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Rooms Infos")]
     public static Room currentRoom;
+    public static int risksInSequence;
 
 
     private void Awake()
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //HighScores.UploadScore("Gian", 100);
         currentScene = "Menu Principal";
         nextScene = "Selecionar Equipe";
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -86,8 +88,8 @@ public class GameManager : MonoBehaviour
     {
         project = 1;
         projectName = "Implantação de Sistema ERP";
-        //gameObject.GetComponent<Menus>().choseName.SetActive(true);
-        //gameObject.GetComponent<Menus>().projects.SetActive(false);
+        // gameObject.GetComponent<Menus>().choseName.SetActive(true);
+        // gameObject.GetComponent<Menus>().projects.SetActive(false);
         LoadNextScene();
 
         //reset risks probabilitys
@@ -102,8 +104,8 @@ public class GameManager : MonoBehaviour
     {
         project = 2;
         projectName = "Desenvolvimento de App";
-        //gameObject.GetComponent<Menus>().choseName.SetActive(true);
-        //gameObject.GetComponent<Menus>().projects.SetActive(false);
+        // gameObject.GetComponent<Menus>().choseName.SetActive(true);
+        // gameObject.GetComponent<Menus>().projects.SetActive(false);
         LoadNextScene();
 
         //reset risks probabilitys
