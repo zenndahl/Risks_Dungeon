@@ -15,7 +15,6 @@ public class Skill : ScriptableObject
         if(skillName == "Dedicação")
         {
             Player.combatPower++;
-            Debug.Log("Poder: " + Player.combatPower);
         }
         if(skillName == "Inovação")
         {

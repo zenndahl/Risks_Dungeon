@@ -7,17 +7,33 @@ using UnityEngine;
 
 public class TeamAgent : MonoBehaviour
 {
-    public AnimationCurve high;
-    public AnimationCurve normal;
-    public AnimationCurve low;
-    public float teamMorale;
+    [Header("Curves")]
+    [SerializeField] private AnimationCurve high;
+    [SerializeField] private AnimationCurve normal;
+    [SerializeField] private AnimationCurve low;
+
+    [Header("State")]
     public TeamState teamState;
-    public float highMorale;
-    public float normalMorale;
-    public float lowMorale;
+    public TeamState oldState;
+
+    private float teamMorale;
+    private float defuzzy;
+    private float highMorale;
+    private float normalMorale;
+    private float lowMorale;
+    // private float high3Morale;
+    // private float normal3Morale;
+    // private float low3Morale;
     private List<float> hM = new List<float>();
     private List<float> nM = new List<float>();
     private List<float> lM = new List<float>();
+    private List<float> highList = new List<float>();
+    private List<float> normalList = new List<float>();
+    private List<float> lowList = new List<float>();
+
+    //events
+    public delegate void TeamStateChange(int teamState);
+    public static event TeamStateChange OnTeamStateChange;
 
     public enum TeamState
     {
@@ -33,38 +49,126 @@ public class TeamAgent : MonoBehaviour
 
     private void Start()
     {
+        //reset the variables
+        teamState = TeamState.Normal;
+        oldState = teamState;
+        highList.Clear();
+        normalList.Clear();
+        lowList.Clear();
+        hM.Clear();
+        nM.Clear();
+        lM.Clear();
         highMorale = 0;
+        //high3Morale = 0;
         normalMorale = 0;
+        //normal3Morale = 0;
         lowMorale = 0;
+        //low3Morale = 0;
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //RiskGameDisplay.OnDisplayDismissed += CalculateTeamMorale;
+        TeamAgent.OnTeamStateChange += SetTeamRisks;
     }
 
-    //set the team morale state based on the fuzzy output
-    void SetTeamMoraleState()
+    void AtLeast3Rule()
     {
-        if(teamMorale <= 0.3) teamState = TeamState.Desmotivada;
-        if(teamMorale > 0.3 && teamMorale < 0.7) teamState = TeamState.Normal;
-        else teamState = TeamState.Dedicada;
-        Debug.Log(teamState);
+        //1
+        //     //gets the min of each triplet (operator 'and') on the employee morale list
+        //     for(int i = 0; i <= 2; i++)
+        //     {
+        //         for(int j = i+1; j <= hM.Count-1; j++)
+        //         {
+        //             for(int k = j+1; k <= hM.Count; k++)
+        //             {
+        //                 Debug.Log(i + "/" + j + "/" + k);
+        //                 highList.Add(System.Math.Min(hM.ElementAt(i),System.Math.Min(hM.ElementAt(j), hM.ElementAt(j))));
+        //                 Debug.Log(System.Math.Min(hM.ElementAt(i),System.Math.Min(hM.ElementAt(j), hM.ElementAt(j))));
+        //             }
+        //         }
+        //     }
+        //     //gets the max value between the triplets (operator 'or')
+        //     high3Morale = highList.Max();
+
+        //     //gets the min of each triplet (operator 'and') on the employee morale list
+        //     for(int i = 0; i <= 2; i++)
+        //     {
+        //         for(int j = i+1; j <= nM.Count-1; j++)
+        //         {
+        //             for(int k = j+1; k <= nM.Count; k++)
+        //             {
+        //                 normalList.Add(System.Math.Min(nM.ElementAt(i),System.Math.Min(nM.ElementAt(j), nM.ElementAt(j))));
+        //             }
+        //         }
+        //     }
+        //     //gets the max value between the triplets (operator 'or')
+        //     normal3Morale = normalList.Max();
+
+        //     //gets the min of each triplet (operator 'and') on the employee morale list
+        //     for(int i = 0; i <= 2; i++)
+        //     {
+        //         for(int j = i+1; j <= lM.Count-1; j++)
+        //         {
+        //             for(int k = j+1; k <= lM.Count; k++)
+        //             {
+        //                 lowList.Add(System.Math.Min(lM.ElementAt(i),System.Math.Min(lM.ElementAt(j), lM.ElementAt(j))));
+        //                 Debug.Log(System.Math.Min(lM.ElementAt(i),System.Math.Min(lM.ElementAt(j), lM.ElementAt(j))));
+        //             }
+        //         }
+        //     }
+        //     //gets the max value between the triplets (operator 'or')
+        //     low3Morale = lowList.Max();
     }
 
     public void CalculateTeamMorale()
     {
         //fuzzy rules
-        highMorale += hM.Min();
-        normalMorale += nM.Min();
-        lowMorale += lM.Min();
-        //adicionar mais
+        highMorale = hM.Min();
+        normalMorale = nM.Min();
+        lowMorale = lM.Min();
+        //AtLeast3Rule();
 
-        teamMorale = System.Math.Max(highMorale, System.Math.Max(normalMorale, lowMorale));
-        Debug.Log(teamMorale);     
+        //defuzzyfication
+        //get the sets sum and multiply by their rules output
+        defuzzy = hM.Sum()*highMorale + nM.Sum()*normalMorale + lM.Sum()*lowMorale;
+        //defuzzy += highList.Sum()*high3Morale + normalList.Sum()*normal3Morale + lowList.Sum()*low3Morale;
 
-        SetTeamMoraleState();
+        //then divides by the rules output times the number of members of each set
+        float denominator = highMorale*5 + normalMorale*5 + lowMorale*5;
+        //denominator += high3Morale*highList.Count + normal3Morale*normalList.Count + low3Morale*lowList.Count;
+        defuzzy /= denominator;
+
+        //pass the defuzzyfied valor through the fuzzy sets to determine wich one of them is more suited
+        teamMorale = System.Math.Max(evH(defuzzy), System.Math.Max(evN(defuzzy), evL(defuzzy)));
+
+        //set the team morale state based on the defuzzyfication output
+        //compare the max with each result and find the match, then set the state accordingly
+        if(teamMorale == evH(defuzzy)) 
+        {
+            teamState = TeamState.Dedicada;
+        }
+        if(teamMorale == evN(defuzzy)) 
+        {
+            teamState = TeamState.Normal;
+        }
+        if(teamMorale == evL(defuzzy)) 
+        {
+            teamState = TeamState.Desmotivada;
+        }
+
+        //see if the state has changed
+        Perception();
+        Debug.Log(teamMorale);
+    }
+
+    void Perception()
+    {
+        //if the state change, do the actions
+        if(oldState != teamState) OnTeamStateChange((int)teamState);
+        oldState = teamState;
     }
 
     //will set the team state by fuzzy logic
@@ -77,5 +181,27 @@ public class TeamAgent : MonoBehaviour
         hM.Add(mH);
         nM.Add(mN);
         lM.Add(mL);
+    }
+
+    //actions
+    void SetTeamRisks(int state)
+    {
+        //if the team is dedicated
+        if(state == 0)
+        {
+            foreach (Risk risk in GameObject.Find("GameManager").GetComponent<GameManager>().GetAllRisks())
+            {
+                if(risk.riskClass == "Equipe") risk.DecreaseProb(1);
+            }
+        }
+        //if the team is unmotivated
+        if(state == 0)
+        {
+            foreach (Risk risk in GameObject.Find("GameManager").GetComponent<GameManager>().GetAllRisks())
+            {
+                //increase prob of proudct and team risks
+                if(risk.riskClass == "Equipe" || risk.riskClass == "Produto") risk.IncreaseProb(1);
+            }
+        }
     }
 }

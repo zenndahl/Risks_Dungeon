@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
 {
     
     public static string playerName;
-    private static int scope = 10;
-    private static int time = 10;
-    private static int money = 10;
+    [SerializeField] private static int scope;
+    [SerializeField] private static int time ;
+    [SerializeField] private static int money;
     public static int points;
     public static List<Employee> team = new List<Employee>();
     public static Sprite icon;
@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        ResetVariables();
         DontDestroyOnLoad(this);
     }
     void Update()
@@ -73,5 +74,21 @@ public class Player : MonoBehaviour
         else if(resource == "money") return money;
         else if(resource == "time") return time;
         else return 0;
+    }
+
+    void ResetVariables()
+    {
+        scope = 10;
+        money = 10;
+        time = 10;
+        combatPower = 1;
+        entusiasm = false;
+        disciplin = false;
+        organized = false;
+        preventCorrect = 0;
+        risksActivated = 0;
+        opportunitiesTaken = 0;
+        team.Clear();
+        points = 0;
     }
 }

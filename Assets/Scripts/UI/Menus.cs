@@ -31,7 +31,9 @@ public class Menus : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        //GameManager.currentScene = "Menu Principal";
+        Destroy(GameObject.Find("Game Manager"));
+        Destroy(GameObject.Find("Player"));
+        Destroy(GameObject.Find("Beholder"));
         SceneManager.LoadScene("Menu Principal");
     }
 
@@ -165,6 +167,7 @@ public class Menus : MonoBehaviour
 
     public static void GameOver()
     {
+        
         GameObject.Find("Risk Game Display").GetComponent<RiskGameDisplay>().DismissRiskDisplay();
         GameObject.Find("Opportunity Display").GetComponent<OpportunityDisplay>().ResetDisplay();
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Phase"))
