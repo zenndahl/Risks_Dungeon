@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 12
   type: 3
+  riskClass: "Dire\xE7\xE3o"
   project: 0
   riskName: "Alta Dire\xE7\xE3o Ausente"
   riskDescription: "Alta dire\xE7\xE3o pouco participativa durante o projeto"
@@ -35,6 +36,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   impactLevel: 4
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.3

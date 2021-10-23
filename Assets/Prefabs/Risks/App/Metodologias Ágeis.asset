@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 42
   type: 1
+  riskClass: Planejamento
   project: 2
   riskName: "Inexperi\xEAncia com Metodologias \xC1geis"
   riskDescription: "Equipe e/ou ger\xEAncia com pouco experi\xEAncia com o modelo
@@ -32,6 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 3
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.1

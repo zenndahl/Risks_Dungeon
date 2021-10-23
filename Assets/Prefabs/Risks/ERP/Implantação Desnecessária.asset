@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 33
   type: 1
+  riskClass: Planejamento
   project: 1
   riskName: "M\xF3dulos Desnecess\xE1rios"
   riskDescription: "M\xF3dulos desnecess\xE1rios ou n\xE3o interessantes \xE0 organiza\xE7\xE3o
@@ -34,6 +35,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   impactLevel: 4
   probLevel: 5
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.9
   probability: 0.9
   reincidence: 0.7

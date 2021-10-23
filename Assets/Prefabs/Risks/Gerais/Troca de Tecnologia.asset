@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 25
   type: 2
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: Troca de Tecnologia
   riskDescription: "Tecnologia ou vers\xE3o de tecnologia trocada durante desenvolvimento"
@@ -36,6 +37,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 2
   probLevel: 2
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.3
   probability: 0.3
   reincidence: 0.1

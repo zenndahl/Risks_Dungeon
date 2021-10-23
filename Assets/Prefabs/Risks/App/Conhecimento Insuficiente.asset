@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 37
   type: 2
+  riskClass: Equipe
   project: 2
   riskName: "Produto n\xE3o Familiar"
   riskDescription: "Falta de conhecimento sobre o dom\xEDnio do produto em desenvolvimento"
@@ -37,6 +38,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   impactLevel: 5
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.3

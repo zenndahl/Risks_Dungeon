@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   type: 2
+  riskClass: Planejamento
   project: 0
   riskName: Alta Complexidade
   riskDescription: "Alta Complexidade do Produto: produto sendo desenvolvido \xE9
@@ -24,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
   - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
   - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
-  reaction: 3
+  reaction: 0
   prevented: 0
   timesPrevented: 0
   derivatives:
@@ -38,6 +39,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   impactLevel: 4
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
   probability: 0.5
   reincidence: 0.1

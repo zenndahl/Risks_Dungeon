@@ -11,6 +11,8 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public Risk[] risksPossible;
+    public string roomName;
+    public string roomClass;
     public Button[] nextRooms;
     public bool explored = false;
     public bool isPlayerHere = false;

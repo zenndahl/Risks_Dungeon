@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11
   type: 1
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: Recursos Inadequados
   riskDescription: "Recursos definidos para planejamento, desenvolvimento e teste
@@ -32,8 +33,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
   impactLevel: 5
   probLevel: 5
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.9
-  probability: 0.9
+  probability: 1
   reincidence: 0.5
   scopeCost: 5
   moneyCost: 5

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 17
   type: 1
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: "Ger\xEAncia Inadequada"
   riskDescription: "A ger\xEAncia do projeto n\xE3o possu\xED conhecimento ou experi\xEAncia
@@ -38,6 +39,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   impactLevel: 5
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.3

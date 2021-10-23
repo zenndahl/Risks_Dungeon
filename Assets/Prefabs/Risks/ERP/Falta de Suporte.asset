@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 30
   type: 3
+  riskClass: Externo
   project: 1
   riskName: 'Falta de Suporte '
   riskDescription: "Suporte t\xE9cnico n\xE3o fornecido pela empresa de consultoria
@@ -31,6 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb6f87c8ead8e504d8c7cd0407e787eb, type: 2}
   impactLevel: 4
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.1

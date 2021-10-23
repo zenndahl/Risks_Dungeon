@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   type: 2
+  riskClass: Equipe
   project: 0
   riskName: Alta Rotatividade da Equipe
   riskDescription: Membros da equipe sendo trocados constantemente
@@ -22,7 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
   - {fileID: 11400000, guid: 486f34c95b3a69f4b832f9782d2bbba4, type: 2}
   - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
-  reaction: 1
+  reaction: 0
   prevented: 0
   timesPrevented: 0
   derivatives:
@@ -32,6 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   impactLevel: 2
   probLevel: 1
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.1
   probability: 0.1
   reincidence: 0.1

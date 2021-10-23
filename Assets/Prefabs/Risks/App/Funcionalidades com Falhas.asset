@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 41
   type: 2
+  riskClass: Produto
   project: 2
   riskName: Funcionalidades com Falhas
   riskDescription: "Funcionalidades n\xE3o est\xE3o funcionando corretamente ao fim
@@ -32,6 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 4
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5

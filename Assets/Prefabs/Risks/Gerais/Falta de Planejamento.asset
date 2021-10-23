@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 13
   type: 1
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: 'Falta de Planejamento '
   riskDescription: Falta de planejamento, estabelecimento de processos ou mapeamento
@@ -39,6 +40,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
   impactLevel: 4
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5

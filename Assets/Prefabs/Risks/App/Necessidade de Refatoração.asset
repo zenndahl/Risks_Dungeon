@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 43
   type: 2
+  riskClass: Produto
   project: 2
   riskName: "Necessidade de Refatora\xE7\xE3o"
   riskDescription: "C\xF3digo mal escrito, escrito \xE0s pressas ou funcionalidades
@@ -31,6 +32,8 @@ MonoBehaviour:
   derivatives: []
   impactLevel: 3
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5

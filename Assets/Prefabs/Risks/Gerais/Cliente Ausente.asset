@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   type: 1
+  riskClass: Cliente
   project: 0
   riskName: "Cliente ou Usu\xE1rio Ausente"
   riskDescription: "Pouca participa\xE7\xE3o do usu\xE1rio ou cliente no planejamento
@@ -33,8 +34,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64b3ce017650e574ca48a8b8b0933642, type: 2}
   impactLevel: 4
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
-  probability: 0.7
+  probability: 0.5
   reincidence: 0.5
   scopeCost: 4
   moneyCost: 4

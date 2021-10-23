@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 22
   type: 1
+  riskClass: "Dire\xE7\xE3o"
   project: 0
   riskName: "Realoca\xE7\xE3o de Recursos"
   riskDescription: "A organiza\xE7\xE3o realocou recursos para outro projeto ou setor"
@@ -32,6 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   impactLevel: 3
   probLevel: 2
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.3
   probability: 0.3
   reincidence: 0.3

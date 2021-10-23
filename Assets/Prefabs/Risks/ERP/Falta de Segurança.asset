@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 29
   type: 2
+  riskClass: Planejamento
   project: 1
   riskName: "Falta de Seguran\xE7a na Transfer\xEAncia"
   riskDescription: "Falta de protocolos de seguran\xE7a na transfer\xEAncia dos dados
@@ -31,6 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
   impactLevel: 5
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5

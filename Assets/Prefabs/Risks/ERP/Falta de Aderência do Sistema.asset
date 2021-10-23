@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 27
   type: 3
+  riskClass: Planejamento
   project: 1
   riskName: "Falta de Ader\xEAncia do Sistema"
   riskDescription: "Modelo da empresa e sistema implementado n\xE3o se comunicam
@@ -33,8 +34,10 @@ MonoBehaviour:
   - {fileID: 0}
   impactLevel: 4
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
-  probability: 0.5
+  probability: 0.6
   reincidence: 0.1
   scopeCost: 4
   moneyCost: 4

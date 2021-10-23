@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 18
   type: 3
+  riskClass: "Dire\xE7\xE3o"
   project: 0
   riskName: "Mudan\xE7a de Gest\xE3o Organizacional"
   riskDescription: "Mudan\xE7as na alta dire\xE7\xE3o da organiza\xE7\xE3o"
@@ -30,6 +31,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
   impactLevel: 1
   probLevel: 1
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.1
   probability: 0.1
   reincidence: 0.1

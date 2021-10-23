@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   type: 2
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: Controle Pobre ou Inexistente
   riskDescription: Controle de desenvolvimento, testes e funcionalidades mal executado
@@ -37,6 +38,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   impactLevel: 3
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
   probability: 0.5
   reincidence: 0.3

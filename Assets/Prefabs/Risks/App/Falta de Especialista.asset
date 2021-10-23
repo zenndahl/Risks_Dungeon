@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 40
   type: 1
+  riskClass: Equipe
   project: 2
   riskName: Falta de Especialista
   riskDescription: "Falta de um membro especialista em uma fun\xE7\xE3o espec\xEDfica
@@ -33,6 +34,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
   impactLevel: 3
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 19
   type: 1
+  riskClass: Cliente
   project: 0
   riskName: "Mudan\xE7a de Requisitos"
   riskDescription: "Cliente exigiu por novas funcionalidades ou mudan\xE7as em funcionalidades
@@ -33,6 +34,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   impactLevel: 5
   probLevel: 5
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.9
   probability: 0.9
   reincidence: 0.7

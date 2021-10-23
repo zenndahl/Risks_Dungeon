@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 21
   type: 1
+  riskClass: Planejamento
   project: 0
   riskName: "M\xE1 Especifica\xE7\xE3o de Requisitos"
   riskDescription: "Requisitos do projeto n\xE3o foram definidos completamente ou
@@ -37,8 +38,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 4
   probLevel: 5
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.9
-  probability: 0.9
+  probability: 1
   reincidence: 0.7
   scopeCost: 4
   moneyCost: 4

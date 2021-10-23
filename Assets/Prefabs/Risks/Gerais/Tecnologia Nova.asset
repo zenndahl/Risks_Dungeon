@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 23
   type: 2
+  riskClass: Externo
   project: 0
   riskName: "Tecnologia N\xE3o Familiar"
   riskDescription: "Tecnologia nova, imatura ou n\xE3o familiar \xE0 equipe e ger\xEAncia"
@@ -33,6 +34,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   impactLevel: 2
   probLevel: 2
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.3
   probability: 0.3
   reincidence: 0.1

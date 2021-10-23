@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 20
   type: 1
+  riskClass: Planejamento
   project: 0
   riskName: "M\xE1 Defini\xE7\xE3o do Escopo"
   riskDescription: "Escopo do projeto n\xE3o foi definido completamente ou corretamente"
@@ -38,8 +39,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
   impactLevel: 5
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
-  probability: 0.5
+  probability: 0.6
   reincidence: 0.3
   scopeCost: 5
   moneyCost: 5

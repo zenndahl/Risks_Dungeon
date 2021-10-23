@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 15
   type: 2
+  riskClass: Planejamento
   project: 0
   riskName: Ferramentas Inapropriadas
   riskDescription: "Ferramentas para desenvolvimento n\xE3o s\xE3o \xFAteis ou eficientes"
@@ -33,6 +34,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0450cf355a7667443a3896cf8a6ea9a9, type: 2}
   impactLevel: 1
   probLevel: 1
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.1
   probability: 0.1
   reincidence: 0.1

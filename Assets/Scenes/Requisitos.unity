@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomName: Entrada
+  roomClass: Entrada
   nextRooms:
   - {fileID: 1990713003}
   explored: 0
@@ -655,6 +657,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  roomName: "Especifica\xE7\xE3o 3"
+  roomClass: "Especifica\xE7\xE3o"
   nextRooms:
   - {fileID: 1963272666}
   explored: 0
@@ -817,6 +821,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  roomName: "Elicita\xE7\xE3o 4"
+  roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 893715071}
   explored: 0
@@ -1112,6 +1118,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  roomName: "Elicita\xE7\xE3o 3"
+  roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 119516496}
   explored: 0
@@ -1311,6 +1319,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  roomName: "Elicita\xE7\xE3o 2"
+  roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 230071033}
   explored: 0
@@ -1891,6 +1901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomName: Exit
+  roomClass: Exit
   nextRooms: []
   explored: 0
   isPlayerHere: 0
@@ -3589,6 +3601,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  roomName: "Elicita\xE7\xE3o 5"
+  roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 2000806928}
@@ -6081,6 +6095,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  roomName: "Especifica\xE7\xE3o 2"
+  roomClass: "Especifica\xE7\xE3o"
   nextRooms:
   - {fileID: 102516764}
   explored: 0
@@ -7568,6 +7584,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
+  roomName: "Valida\xE7\xE3o"
+  roomClass: "Valida\xE7\xE3o"
   nextRooms:
   - {fileID: 413067186}
   explored: 0
@@ -7824,6 +7842,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  roomName: "Elicita\xE7\xE3o 1"
+  roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 119516496}
@@ -7893,6 +7913,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  roomName: "Especifica\xE7\xE3o 1"
+  roomClass: "Especifica\xE7\xE3o"
   nextRooms:
   - {fileID: 413067186}
   - {fileID: 1542746944}

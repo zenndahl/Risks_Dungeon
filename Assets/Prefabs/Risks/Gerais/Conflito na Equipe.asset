@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   type: 2
+  riskClass: Equipe
   project: 0
   riskName: Conflito na Equipe
   riskDescription: "Conflito na equipe: conflito e falta de coopera\xE7\xE3o entre
@@ -33,6 +34,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9df7645ab33ed6340811a704f44886e9, type: 2}
   impactLevel: 4
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
   probability: 0.5
   reincidence: 0.3

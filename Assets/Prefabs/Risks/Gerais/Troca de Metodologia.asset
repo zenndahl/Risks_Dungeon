@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 24
   type: 1
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: Troca de Metodologia
   riskDescription: Metodologia de processos, gerenciamento ou desenvolvimento trocada
@@ -35,6 +36,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
   impactLevel: 2
   probLevel: 2
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.3
   probability: 0.3
   reincidence: 0.1

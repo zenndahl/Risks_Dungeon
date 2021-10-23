@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 16
   type: 1
+  riskClass: "Ger\xEAncia"
   project: 0
   riskName: "M\xE1 Ger\xEAncia de Mudan\xE7as"
   riskDescription: "Mudan\xE7a de requisitos, tecnologia, metodologia ou membro da
@@ -35,6 +36,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   impactLevel: 4
   probLevel: 4
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.7
   probability: 0.7
   reincidence: 0.5

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 34
   type: 3
+  riskClass: Externo
   project: 1
   riskName: Instabilidade Financeira
   riskDescription: Instabilidade financeira devido ao alto custo do sistema sendo
@@ -29,6 +30,8 @@ MonoBehaviour:
   derivatives: []
   impactLevel: 5
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
   probability: 0.5
   reincidence: 0.1

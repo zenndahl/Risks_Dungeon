@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 44
   type: 3
+  riskClass: Externo
   project: 2
   riskName: Pouca Demanda de Mercado
   riskDescription: "Produto em desenvolvimento n\xE3o possu\xED muito espa\xE7o no
@@ -32,6 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c28f35220bcf4de40a606e281d8cd73f, type: 2}
   impactLevel: 5
   probLevel: 3
+  evaluatedProb: 
+  evaluatedImpact: 
   baseProbability: 0.5
   probability: 0.5
   reincidence: 0.3
