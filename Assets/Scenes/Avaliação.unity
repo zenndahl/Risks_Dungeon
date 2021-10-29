@@ -1618,7 +1618,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Para avaliar um risco, selecione-o da lista \xE0 direita, em seguida selecione
-    a posi\xE7\xE3o na Mtriz de Riscos que deseja posicion\xE1-lo e ent\xE3o clique
+    a posi\xE7\xE3o na Matriz de Riscos que deseja posicion\xE1-lo e ent\xE3o clique
     em \"Avaliar Risco\"\n\nAten\xE7\xE3o! N\xE3o \xE9 poss\xEDvel  desfazer a avalia\xE7\xE3o,
     ent\xE3o escolha com cuidado."
 --- !u!222 &200584088

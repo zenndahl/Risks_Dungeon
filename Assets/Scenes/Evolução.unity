@@ -876,12 +876,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &211917082
 MonoBehaviour:
@@ -1029,12 +1030,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &229215725
 MonoBehaviour:
@@ -3688,12 +3690,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1175549162
 MonoBehaviour:
@@ -3840,12 +3843,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!1 &1217701808
 GameObject:

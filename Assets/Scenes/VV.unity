@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 1990713003}
@@ -439,12 +438,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &100096807
 MonoBehaviour:
@@ -599,7 +599,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: b90565c8a9b7f834abc6e47c096abd62, type: 2}
   - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 2010278894}
@@ -766,7 +765,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 1990713003}
@@ -935,7 +933,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 1990713003}
@@ -1104,7 +1101,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 1990713003}
@@ -1777,12 +1773,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &621495886
 MonoBehaviour:
@@ -2448,7 +2445,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 893715071}
@@ -3409,12 +3405,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1172841426
 MonoBehaviour:
@@ -4087,7 +4084,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 893715071}
@@ -5413,12 +5409,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!1 &1990713001
 GameObject:
@@ -5576,7 +5573,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 289950501}
@@ -5650,7 +5646,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
-  roomName: 
   roomClass: 
   nextRooms:
   - {fileID: 893715071}
@@ -6037,7 +6032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
-  roomName: 
   roomClass: 
   nextRooms: []
   explored: 0

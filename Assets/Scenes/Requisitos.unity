@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
-  roomName: Entrada
   roomClass: Entrada
   nextRooms:
   - {fileID: 1990713003}
@@ -657,7 +656,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
-  roomName: "Especifica\xE7\xE3o 3"
   roomClass: "Especifica\xE7\xE3o"
   nextRooms:
   - {fileID: 1963272666}
@@ -821,7 +819,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
-  roomName: "Elicita\xE7\xE3o 4"
   roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 893715071}
@@ -961,7 +958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185097611
@@ -1004,7 +1001,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 185097612}
+  m_TargetGraphic: {fileID: 1069288111}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1013,7 +1010,19 @@ MonoBehaviour:
         m_MethodName: HideUI
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1236995467}
+          m_ObjectArgument: {fileID: 884957664}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1236995469}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ShowUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 883097055}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1118,7 +1127,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
-  roomName: "Elicita\xE7\xE3o 3"
   roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 119516496}
@@ -1319,7 +1327,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
-  roomName: "Elicita\xE7\xE3o 2"
   roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 230071033}
@@ -1839,7 +1846,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "O projeto de Implementa\xE7\xE3o de Sistema ERP \xE9 realizado seguindo
-    4 est\xE1gios de desenvolvimento incremental: Engenharia de Requisitos, Projeto
+    4 est\xE1gios de desenvolvimento incremental:\n\nEngenharia de Requisitos, Projeto
     e Implementa\xE7\xE3o, Valida\xE7\xE3o e Verifica\xE7\xE3o e Evolu\xE7\xE3o."
 --- !u!222 &410816262
 CanvasRenderer:
@@ -1901,7 +1908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
-  roomName: Exit
   roomClass: Exit
   nextRooms: []
   explored: 0
@@ -2239,6 +2245,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489972479}
   m_CullTransparentMesh: 1
+--- !u!1 &538603204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 538603205}
+  - component: {fileID: 538603207}
+  - component: {fileID: 538603206}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &538603205
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538603204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1333990471}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &538603206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538603204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e4ab4b06219b95f488aa706912762ef6, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Continuar
+--- !u!222 &538603207
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538603204}
+  m_CullTransparentMesh: 1
 --- !u!1 &636483432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,12 +2376,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &636483435
 MonoBehaviour:
@@ -3276,7 +3362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879074397
@@ -3384,6 +3470,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879074395}
+  m_CullTransparentMesh: 1
+--- !u!1 &883097055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883097056}
+  - component: {fileID: 883097058}
+  - component: {fileID: 883097057}
+  m_Layer: 5
+  m_Name: Pt 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &883097056
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883097055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1267891427}
+  - {fileID: 1333990471}
+  m_Father: {fileID: 1236995468}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 700, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &883097057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883097055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5489559aacea8c3409c40dc163589e59, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &883097058
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883097055}
   m_CullTransparentMesh: 1
 --- !u!1 &883594643
 GameObject:
@@ -3601,7 +3764,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
-  roomName: "Elicita\xE7\xE3o 5"
   roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 289950501}
@@ -4179,7 +4341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069288110
@@ -4716,12 +4878,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1181010835
 MonoBehaviour:
@@ -5118,6 +5281,7 @@ RectTransform:
   - {fileID: 912046481}
   - {fileID: 489972480}
   - {fileID: 884957665}
+  - {fileID: 883097056}
   m_Father: {fileID: 81374960}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5138,13 +5302,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
+--- !u!1 &1267891426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267891427}
+  - component: {fileID: 1267891430}
+  - component: {fileID: 1267891429}
+  - component: {fileID: 1267891428}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1267891427
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267891426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883097056}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -140, y: -100.00001}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1267891428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267891426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1267891429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267891426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e4ab4b06219b95f488aa706912762ef6, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Alguns mapas possuem voltas e mais de um caminho para seguir, escolha
+    bem seu caminho ou caso se arrependa, pode voltar e completar uma \xE1rea,\n\nSe
+    voc\xEA chegar a 0 Or\xE7amento ou 0 Cronograma, voc\xEA perde o jogo!"
+--- !u!222 &1267891430
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267891426}
+  m_CullTransparentMesh: 1
 --- !u!1 &1295620180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,12 +5458,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!1 &1298975220
 GameObject:
@@ -5471,6 +5734,139 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321559310}
+  m_CullTransparentMesh: 1
+--- !u!1 &1333990470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333990471}
+  - component: {fileID: 1333990474}
+  - component: {fileID: 1333990473}
+  - component: {fileID: 1333990472}
+  m_Layer: 5
+  m_Name: Continue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1333990471
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333990470}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 538603205}
+  m_Father: {fileID: 883097056}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -150}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1333990472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333990470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 2bb5fa9049fd9024687ceb2c571a7fd0, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 185097612}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1236995469}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1236995467}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1333990473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333990470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8ab43b3cd10f9594c951a1c26f238bd2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1333990474
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333990470}
   m_CullTransparentMesh: 1
 --- !u!1 &1339993822
 GameObject:
@@ -6095,7 +6491,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
-  roomName: "Especifica\xE7\xE3o 2"
   roomClass: "Especifica\xE7\xE3o"
   nextRooms:
   - {fileID: 102516764}
@@ -6309,7 +6704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596706335
@@ -6832,9 +7227,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Em cada mapa voc\xEA deve fazer o caminho que achar mais apropriado.\n\nTome
-    mais tempo explorando cada sala encontrando mais oportunidades ou passando mais
-    r\xE1pido e acumulando menos pontos, por\xE9m evitando mais riscos."
+  m_Text: "Em cada mapa voc\xEA deve fazer o caminho que achar mais apropriado.\n\nPule
+    salas para gastar menos recursos, encontrando menos oportunidades e aumentando
+    a chance de riscos.\n\n Ou tome mais tempo, arriscando mais recursos por mais
+    recompensas."
 --- !u!222 &1706572205
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7300,12 +7696,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1855942945
 MonoBehaviour:
@@ -7584,7 +7981,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
-  roomName: "Valida\xE7\xE3o"
   roomClass: "Valida\xE7\xE3o"
   nextRooms:
   - {fileID: 413067186}
@@ -7842,7 +8238,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
-  roomName: "Elicita\xE7\xE3o 1"
   roomClass: "Elicita\xE7\xE3o"
   nextRooms:
   - {fileID: 289950501}
@@ -7913,7 +8308,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
-  roomName: "Especifica\xE7\xE3o 1"
   roomClass: "Especifica\xE7\xE3o"
   nextRooms:
   - {fileID: 413067186}
