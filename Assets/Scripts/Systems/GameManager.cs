@@ -14,12 +14,14 @@ public class GameManager : MonoBehaviour
     [Header("Game Infos")]
     public static int project;
     public static string projectName;
+    public static int difficulty;
 
     [Header("Risks Infos")]
     public List<Risk> allRisks = new List<Risk>();
     public List<Risk> project1Risks = new List<Risk>();
     public List<Risk> project2Risks = new List<Risk>();
     public static List<Risk> risks = new List<Risk>();
+    public static List<Risk> risksAux = new List<Risk>();
     public static List<Risk> risksIdentified = new List<Risk>();
     public static List<Risk> risksAssigned = new List<Risk>();
     public static List<Risk> risksCorrectlyIdentified = new List<Risk>();
@@ -76,7 +78,7 @@ public class GameManager : MonoBehaviour
             risk.probability = risk.baseProbability;
             risk.reaction = 0;
             risk.prevented = false;
-            risk.timesPrevented = 0;
+            risk.timesHappened = 0;
         }
 
         //reset opportunities bonuses
@@ -112,7 +114,9 @@ public class GameManager : MonoBehaviour
         projectName = "Implantação de Sistema ERP";
         // gameObject.GetComponent<Menus>().choseName.SetActive(true);
         // gameObject.GetComponent<Menus>().projects.SetActive(false);
-        LoadNextScene();
+        risks = project1Risks.ToList();
+        GameObject.Find("Choose Project").SetActive(false);
+        gameObject.GetComponent<Menus>().difficultyUI.SetActive(true);
     }
 
     //will be called by the button on the main menu screen to setup the App project
@@ -122,6 +126,26 @@ public class GameManager : MonoBehaviour
         projectName = "Desenvolvimento de App";
         // gameObject.GetComponent<Menus>().choseName.SetActive(true);
         // gameObject.GetComponent<Menus>().projects.SetActive(false);
+        risks = project2Risks.ToList();
+        GameObject.Find("Choose Project").SetActive(false);
+        gameObject.GetComponent<Menus>().difficultyUI.SetActive(true);
+    }
+
+    public void Hard()
+    {
+        difficulty = 1;
+        LoadNextScene();
+    }
+
+    public void Normal()
+    {
+        difficulty = 2;
+        LoadNextScene();
+    }
+
+    public void Easy()
+    {
+        difficulty = 3;
         LoadNextScene();
     }
 

@@ -34,7 +34,7 @@ public class Planning : MonoBehaviour
         if(risksToPlan.Count == 0) GameManager.LoadNextScene();
         else
         {
-            SetPreventions();
+            //SetPreventions();
             NextRiskToPlan();
         }
         //RandomizePreventions();
@@ -76,17 +76,17 @@ public class Planning : MonoBehaviour
         }
     }
 
-    public void SetPreventions()
-    {
-        foreach (Prevention prevention in GameManager.preventions)
-        {
-            GameObject preventDisp = Instantiate(preventDispPrefab, transform.position, transform.rotation);
-            preventDisp.GetComponent<PreventionDisplay>().prevention = prevention;
-            preventDisp.transform.SetParent(preventionsScreen.transform);
-            preventDisp.GetComponent<PreventionDisplay>().SetInfos();
-            preventionsScreen.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
-        }
-    }
+    // public void SetPreventions()
+    // {
+    //     foreach (Prevention prevention in GameManager.preventions)
+    //     {
+    //         GameObject preventDisp = Instantiate(preventDispPrefab, transform.position, transform.rotation);
+    //         preventDisp.GetComponent<PreventionDisplay>().prevention = prevention;
+    //         preventDisp.transform.SetParent(preventionsScreen.transform);
+    //         preventDisp.GetComponent<PreventionDisplay>().SetInfos();
+    //         preventionsScreen.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
+    //     }
+    // }
 
     // public void RandomizePreventions()
     // {

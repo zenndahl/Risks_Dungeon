@@ -7,12 +7,13 @@ using UnityEngine;
 public class Menus : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject choseProject;
+    public GameObject chooseProject;
+    public GameObject difficultyUI;
     public GameObject warningScreen;
     public GameObject scoreBoard;
     public GameObject creditsScreen;
     public GameObject projects;
-    public GameObject choseName;
+    public GameObject chooseName;
     public InputField playerName;
     private bool gameIsPaused = false;
 
@@ -73,7 +74,7 @@ public class Menus : MonoBehaviour
     //Main Menu Methods
     public void StartGame()
     {
-        ActivateChoseProjectUI();
+        ActivateChooseProjectUI();
         creditsScreen.SetActive(false);
         scoreBoard.SetActive(false);
     }
@@ -86,7 +87,7 @@ public class Menus : MonoBehaviour
     public void Scoreboard()
     {
         scoreBoard.SetActive(true);
-        choseProject.SetActive(false);
+        chooseProject.SetActive(false);
     }
 
     public void Options()
@@ -110,9 +111,9 @@ public class Menus : MonoBehaviour
     }
 
     //Choose Project Methods
-    public void ActivateChoseProjectUI()
+    public void ActivateChooseProjectUI()
     {
-        choseProject.SetActive(true);
+        chooseProject.SetActive(true);
         scoreBoard.SetActive(false);
     }
 

@@ -9,6 +9,11 @@ public class PreventionDisplay : MonoBehaviour
     public Text nameText;
     public Text descriptionText;
 
+    private void Start()
+    {
+        SetInfos();
+    }
+
     public void ShowDescription()
     {
         GameObject.Find("Describer/Text").GetComponent<Text>().text = prevention.description;

@@ -40,3 +40,8 @@ MonoBehaviour:
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

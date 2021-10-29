@@ -413,7 +413,7 @@ RectTransform:
   - {fileID: 1236558775}
   - {fileID: 1621319177}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 517437733}
   - component: {fileID: 517437732}
   m_Layer: 5
-  m_Name: Risks
+  m_Name: RisksAssessed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0%
+  m_Text: 0
 --- !u!222 &517437733
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1253,12 +1253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &788553403
 MonoBehaviour:
@@ -1433,101 +1434,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838448505}
   m_CullTransparentMesh: 1
---- !u!1 &949176836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 949176838}
-  - component: {fileID: 949176837}
-  - component: {fileID: 949176839}
-  m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &949176837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949176836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe1f03ae01bbb942b98f45d0e40ca3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  project1Risks: []
-  project2Risks: []
-  opportunitiesList:
-  - {fileID: 11400000, guid: d0244ce45268d0f49a9690f26a66c3f2, type: 2}
-  - {fileID: 11400000, guid: 820f5ec90b7a7b44a9a52fa5e57feac3, type: 2}
-  - {fileID: 11400000, guid: 9937dabffcedf12499b514b52e44478e, type: 2}
-  - {fileID: 11400000, guid: 950933d0ab71d9c4592169b67b0114e1, type: 2}
-  - {fileID: 11400000, guid: 4dc029389e4b61344bb1b9bb83379347, type: 2}
-  - {fileID: 11400000, guid: b9c84709d15615f4387ed620771e9fdd, type: 2}
-  - {fileID: 11400000, guid: 1ef96b8449e2bb049ab4be2cf5a923a6, type: 2}
-  - {fileID: 11400000, guid: f92a33a518d9e7c44acfe81d343e962c, type: 2}
-  - {fileID: 11400000, guid: a8d433a187cf5a34baca604347ed5703, type: 2}
-  - {fileID: 11400000, guid: c83a7f68332d94d4f9262cf6b84d5e28, type: 2}
-  - {fileID: 11400000, guid: c498f7a917e173346892b772dd8f09e3, type: 2}
-  - {fileID: 11400000, guid: 543aa23bb1653394c9b6b3358cb97597, type: 2}
-  - {fileID: 11400000, guid: ef4e7e03e7b202f4fb2f9c84c5628eeb, type: 2}
-  - {fileID: 11400000, guid: 88fd3f838b46b384da63d7521689ce1b, type: 2}
-  - {fileID: 11400000, guid: b02aef1aa72930840b945dd658b22e40, type: 2}
-  - {fileID: 11400000, guid: f7a76af8817b36d4fb49bff7da11968b, type: 2}
-  employeesList:
-  - {fileID: 11400000, guid: c437abf6114e0a343af6b7cd160a9e42, type: 2}
-  - {fileID: 11400000, guid: ea46d94d7e58f774388af128ec705e61, type: 2}
-  - {fileID: 11400000, guid: 0b247b50b3834d9478b03155797cb308, type: 2}
-  - {fileID: 11400000, guid: e8b79f7977745bb4aaf6041730bb9a6c, type: 2}
-  - {fileID: 11400000, guid: 06815f6b4fb0c2f40bf4bb36d7d42e74, type: 2}
-  - {fileID: 11400000, guid: 2a0210cbf3b0364429f378a0eeb1fd50, type: 2}
-  - {fileID: 11400000, guid: 6625019f7c9c7004b8f9e5b7c414c426, type: 2}
-  - {fileID: 11400000, guid: ed66f3cba09081b42ab837064b46c3b5, type: 2}
-  - {fileID: 11400000, guid: 0e54a92dc934d7a4ba1993bf2fa8df07, type: 2}
-  - {fileID: 11400000, guid: 0688e4c4a2599164cb3c929e296d0441, type: 2}
-  - {fileID: 11400000, guid: 88153d6866748484e90803fcb5855178, type: 2}
-  - {fileID: 11400000, guid: 8be37aa85a836dd4e9ebd04259ee4401, type: 2}
---- !u!4 &949176838
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949176836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 451.19812, y: 450.1166, z: -885.3381}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &949176839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949176836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
-  warningScreen: {fileID: 0}
-  scoreBoard: {fileID: 0}
-  creditsScreen: {fileID: 0}
-  projects: {fileID: 0}
-  choseName: {fileID: 0}
-  playerName: {fileID: 0}
 --- !u!1 &1009528878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,12 +1681,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1164462198
 MonoBehaviour:
@@ -2146,49 +2053,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298478242}
   m_CullTransparentMesh: 1
---- !u!1 &1348884780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1348884782}
-  - component: {fileID: 1348884781}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1348884781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348884780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 106b6d9ed2131fc41a7770310403cb74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1348884782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348884780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 733.6245, y: 374.43442, z: -1257.3663}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554472407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,7 +2377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1901215210
 GameObject:

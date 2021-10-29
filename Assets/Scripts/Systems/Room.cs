@@ -11,7 +11,6 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public Risk[] risksPossible;
-    public string roomName;
     public string roomClass;
     public Button[] nextRooms;
     public bool explored = false;
@@ -53,9 +52,6 @@ public class Room : MonoBehaviour
             // //if the player has the skill "Entusiasmo" the cost is decreased to a minimum of 1
             if(Player.entusiasm && !explored)
             {
-
-                // rand--;
-                // if(rand <= 0) rand++;
                 if(i == 0) Player.OperateScope(-(roomCost-1));
                 if(i == 1) Player.OperateMoney(-(roomCost-1));
                 if(i == 2) Player.OperateTime(-(roomCost-1));
@@ -72,26 +68,7 @@ public class Room : MonoBehaviour
 
     public void MoveToken()
     {
-        if(OnEnterRoom != null) OnEnterRoom();
-        MoveCost();
-
-        if(isCheckpoint) SCRUM.sprintLoops++;
-        if(isBreakpoint)
-        {
-            SCRUM.sprintLoops = 0;
-            SCRUM.sprints++;
-            GameObject rooms = GameObject.Find("Rooms");
-
-            //reset the explored rooms from the previous sprint
-            foreach (Transform child in rooms.transform)
-            {
-                child.GetComponent<Room>().explored = false;
-            }
-        }
-
-        //if a risk was randomized last room, when it enters a new room, it is activated
         GameManager.currentRoom = this;
-
         explored = true;
 
         //set the previous room to not have the player
@@ -104,13 +81,31 @@ public class Room : MonoBehaviour
                                                                   gameObject.transform.position.z    
                                                                 );
 
+        if(OnEnterRoom != null && !isLast) OnEnterRoom();
+        MoveCost();
+
+        if(isCheckpoint) SCRUM.sprintLoops++;
+        if(isBreakpoint)
+        {
+            GameObject.Find("Beholder").GetComponent<DungeonAgent>().sprintLoops = SCRUM.sprintLoops;
+            SCRUM.sprintLoops = 0;
+            SCRUM.sprints++;
+            GameObject rooms = GameObject.Find("Rooms");
+
+            //reset the explored rooms from the previous sprint
+            foreach (Transform child in rooms.transform)
+            {
+                child.GetComponent<Room>().explored = false;
+            }
+        }
+
         if(!isLast)
         {
             SetRooms();
-            RskOpp();
+            //RskOpp();
         }
 
-        if(isLast) 
+        if(isLast)
         {
             feedback.SetActive(true);
             feedback.GetComponent<Feedback>().PhaseFeedback();

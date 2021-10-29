@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 19
   type: 1
-  riskClass: Cliente
+  riskClass: Requisitos
   project: 0
   riskName: "Mudan\xE7a de Requisitos"
   riskDescription: "Cliente exigiu por novas funcionalidades ou mudan\xE7as em funcionalidades
@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b8db98e117bc7a44a418dc9405f2703, type: 2}
   - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
   - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
-  reaction: 0
+  reaction: 1
   prevented: 0
   timesPrevented: 0
   derivatives:
@@ -34,11 +34,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
   impactLevel: 5
   probLevel: 5
-  evaluatedProb: 
-  evaluatedImpact: 
+  evaluatedProb: Alta
+  evaluatedImpact: Muito Alto
   baseProbability: 0.9
-  probability: 0.9
+  probability: 0.79999995
   reincidence: 0.7
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
+  VH: 1
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

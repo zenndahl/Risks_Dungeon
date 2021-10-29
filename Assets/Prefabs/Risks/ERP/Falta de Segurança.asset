@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 29
   type: 2
-  riskClass: Planejamento
+  riskClass: Infra
   project: 1
   riskName: "Falta de Seguran\xE7a na Transfer\xEAncia"
   riskDescription: "Falta de protocolos de seguran\xE7a na transfer\xEAncia dos dados
@@ -40,3 +40,8 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

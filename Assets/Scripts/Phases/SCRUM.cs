@@ -6,6 +6,7 @@ using UnityEngine;
 public class SCRUM : MonoBehaviour
 {
     public static int sprints;
+    
     public static int sprintLoops;
 
     public static void SetSprintRooms(Room room)

@@ -16,7 +16,7 @@ public class TeamAgent : MonoBehaviour
     public TeamState teamState;
     public TeamState oldState;
 
-    private float teamMorale;
+    public float teamMorale;
     private float defuzzy;
     private float highMorale;
     private float normalMorale;
@@ -30,10 +30,6 @@ public class TeamAgent : MonoBehaviour
     private List<float> highList = new List<float>();
     private List<float> normalList = new List<float>();
     private List<float> lowList = new List<float>();
-
-    //events
-    public delegate void TeamStateChange(int teamState);
-    public static event TeamStateChange OnTeamStateChange;
 
     public enum TeamState
     {
@@ -64,14 +60,6 @@ public class TeamAgent : MonoBehaviour
         //normal3Morale = 0;
         lowMorale = 0;
         //low3Morale = 0;
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //RiskGameDisplay.OnDisplayDismissed += CalculateTeamMorale;
-        TeamAgent.OnTeamStateChange += SetTeamRisks;
     }
 
     void AtLeast3Rule()
@@ -126,9 +114,9 @@ public class TeamAgent : MonoBehaviour
     public void CalculateTeamMorale()
     {
         //fuzzy rules
-        highMorale = hM.Min();
-        normalMorale = nM.Min();
-        lowMorale = lM.Min();
+        highMorale = hM.Min(); //all the employees are with high motivation
+        normalMorale = nM.Min(); //all the employees are with normal motivation
+        lowMorale = lM.Min(); //all the employees are with low motivation
         //AtLeast3Rule();
 
         //defuzzyfication
@@ -161,19 +149,21 @@ public class TeamAgent : MonoBehaviour
 
         //see if the state has changed
         Perception();
-        Debug.Log(teamMorale);
     }
 
     void Perception()
     {
         //if the state change, do the actions
-        if(oldState != teamState) OnTeamStateChange((int)teamState);
+        if(oldState != teamState) Action((int)teamState);
         oldState = teamState;
     }
 
     //will set the team state by fuzzy logic
     public void SetTeamMorales(Employee employee)
     {
+        hM.Clear();
+        nM.Clear();
+        lM.Clear();
         //fuzzyfication of the morale
         float mH = evH(employee.morale);
         float mN = evN(employee.morale);
@@ -184,20 +174,18 @@ public class TeamAgent : MonoBehaviour
     }
 
     //actions
-    void SetTeamRisks(int state)
+    void Action(int state)
     {
-        //if the team is dedicated
-        if(state == 0)
+        foreach (Risk risk in GameManager.risks)
         {
-            foreach (Risk risk in GameObject.Find("GameManager").GetComponent<GameManager>().GetAllRisks())
+            //if the team is dedicated
+            if(state == 0)
             {
-                if(risk.riskClass == "Equipe") risk.DecreaseProb(1);
+                if(risk.riskClass == "Equipe" || risk.riskClass == "Produto") risk.DecreaseProb(1);
             }
-        }
-        //if the team is unmotivated
-        if(state == 0)
-        {
-            foreach (Risk risk in GameObject.Find("GameManager").GetComponent<GameManager>().GetAllRisks())
+
+            //if the team is unmotivated
+            if(state == 3)
             {
                 //increase prob of proudct and team risks
                 if(risk.riskClass == "Equipe" || risk.riskClass == "Produto") risk.IncreaseProb(1);

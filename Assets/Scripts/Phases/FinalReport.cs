@@ -30,10 +30,12 @@ public class FinalReport : MonoBehaviour
 
         Player.points = scope + ((money + time)/2);
 
+        float percent = (Player.preventCorrect * 100)/GameManager.risks.Count;
+
         //LeaderboardController.SubmitScore();
         //Player player = GameObject.Find("Player").GetComponent<Player>();
         if(points != null) points.text = Player.points.ToString();
-        risksPrevented.text = Player.preventCorrect.ToString();
+        risksPrevented.text = percent.ToString() + "%";
         risksActivated.text = Player.risksActivated.ToString();
         opportunitiesTaken.text = Player.opportunitiesTaken.ToString();
     }

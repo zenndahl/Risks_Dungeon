@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ffb6fd11e09eb0e4b932a3f27c9f3040, type: 2}
   - {fileID: 11400000, guid: 16a015cdaa6d6b543b9ff7a0a037705b, type: 2}
   - {fileID: 11400000, guid: 5da508e3fd6642a48824441d7afc042a, type: 2}
-  reaction: 0
+  reaction: 2
   prevented: 0
   timesPrevented: 0
   derivatives:
@@ -33,11 +33,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   impactLevel: 3
   probLevel: 2
-  evaluatedProb: 
-  evaluatedImpact: 
+  evaluatedProb: Moderada
+  evaluatedImpact: Muito Alto
   baseProbability: 0.3
   probability: 0.3
   reincidence: 0.3
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

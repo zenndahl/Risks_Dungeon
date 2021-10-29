@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 894096}
   m_Layer: 5
   m_Name: Room 0
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomClass: 
   nextRooms:
   - {fileID: 1990713003}
   explored: 0
@@ -484,12 +485,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &73460952
 MonoBehaviour:
@@ -980,7 +982,7 @@ GameObject:
   - component: {fileID: 119516495}
   m_Layer: 5
   m_Name: Room 4
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1026,6 +1028,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c28f35220bcf4de40a606e281d8cd73f, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  roomClass: Sprint
   nextRooms:
   - {fileID: 893715071}
   explored: 0
@@ -1301,7 +1304,7 @@ GameObject:
   - component: {fileID: 230071032}
   m_Layer: 5
   m_Name: Room 3
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1347,6 +1350,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c28f35220bcf4de40a606e281d8cd73f, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  roomClass: Sprint
   nextRooms:
   - {fileID: 119516496}
   explored: 0
@@ -1502,7 +1506,7 @@ GameObject:
   - component: {fileID: 289950500}
   m_Layer: 5
   m_Name: Room 2
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1546,6 +1550,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  roomClass: Sprint
   nextRooms:
   - {fileID: 230071033}
   explored: 0
@@ -3300,16 +3305,24 @@ PrefabInstance:
       value: EndGame
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115118574581, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510030115118574581, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510030115118574581, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115118574581, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115118574581, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -213
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115901341085, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_Pivot.x
@@ -3341,11 +3354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115901341085, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 800
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115901341085, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 700
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7510030115901341085, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3405,19 +3418,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116309015912, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -439.05
+      value: -344.05
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116309015912, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.47549438
+      value: -47.025
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116309015927, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 40
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116412586050, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_Text
       value: Finalizar Jogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510030116412586050, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116950859490, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_Text
@@ -3425,7 +3442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116950859490, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 40
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 7510030116950859491, guid: 8a8b2ea137124004c88d5acac210d5d9, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3466,7 +3483,7 @@ GameObject:
   - component: {fileID: 893715070}
   m_Layer: 5
   m_Name: Room 5
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3512,6 +3529,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c28f35220bcf4de40a606e281d8cd73f, type: 2}
   - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
+  roomClass: Sprint
   nextRooms:
   - {fileID: 2000806928}
   - {fileID: 289950501}
@@ -3805,7 +3823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &945888670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3842,12 +3860,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!1 &1002459616
 GameObject:
@@ -5815,6 +5834,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  teamState: 0
+  oldState: 0
+  teamMorale: 0
 --- !u!4 &1529974927
 Transform:
   m_ObjectHideFlags: 0
@@ -5977,7 +5999,7 @@ GameObject:
   - component: {fileID: 1542746943}
   m_Layer: 5
   m_Name: Room 7
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6014,6 +6036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomClass: "Sa\xEDda"
   nextRooms: []
   explored: 0
   isPlayerHere: 0
@@ -6398,12 +6421,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1605393864
 MonoBehaviour:
@@ -6625,12 +6649,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!1 &1670857382
 GameObject:
@@ -6684,12 +6709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1670857385
 MonoBehaviour:
@@ -7209,12 +7235,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1837828226
 MonoBehaviour:
@@ -7663,7 +7690,7 @@ GameObject:
   - component: {fileID: 1990713006}
   m_Layer: 5
   m_Name: Room 1
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7808,6 +7835,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
+  roomClass: Requisitos
   nextRooms:
   - {fileID: 289950501}
   explored: 0
@@ -8005,7 +8033,7 @@ GameObject:
   - component: {fileID: 2000806927}
   m_Layer: 5
   m_Name: Room 6
-  m_TagString: Interactble
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8054,6 +8082,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
   - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
+  roomClass: Incremento
   nextRooms:
   - {fileID: 1542746944}
   - {fileID: 1990713003}

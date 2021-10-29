@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 21
   type: 1
-  riskClass: Planejamento
+  riskClass: Requisitos
   project: 0
   riskName: "M\xE1 Especifica\xE7\xE3o de Requisitos"
   riskDescription: "Requisitos do projeto n\xE3o foram definidos completamente ou
@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f16f4beded1cdd24e8d7bfcf0d6f5b04, type: 2}
   - {fileID: 11400000, guid: 4c5c38ba35d07b9498d1d34d48333781, type: 2}
   - {fileID: 11400000, guid: f6f24e527b0701f4c9a24779a0b623a5, type: 2}
-  reaction: 0
+  reaction: 1
   prevented: 0
   timesPrevented: 0
   derivatives:
@@ -38,11 +38,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d9e3fa2c54f2df4a8216a7fcc27c0e0, type: 2}
   impactLevel: 4
   probLevel: 5
-  evaluatedProb: 
-  evaluatedImpact: 
+  evaluatedProb: Muito Alta
+  evaluatedImpact: Muito Baixo
   baseProbability: 0.9
-  probability: 1
+  probability: 0.9
   reincidence: 0.7
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
+  VH: 0.6666666
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

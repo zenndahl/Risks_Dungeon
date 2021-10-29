@@ -1,105 +1,226 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DungeonAgent : MonoBehaviour
 {
-    [Flags]
-    public enum RequirementsState
-    {
-        init = 0,
-        e1 = 1,
-        e2 = 2,
-        e3 = 4,
-        end = 8,
-        R1 = e1 | e2 | e3,
-        R2 = e1 | e2,
-        R3 = e1 | e3,
-        R4 = e2 | e3,
-    }
+    [SerializeField] private List<Risk> risksPossible = new List<Risk>();
 
-    [Flags]
-    public enum ImplementationState
-    {
-        init = 0,
-        p1 = 1,
-        p2 = 2,
-        p3 = 4,
-        p4 = 8,
-        end = 16,
-        I1 = p1 | p2 | p3 | p4,
-        I2 = p1 | p2 | p3,
-        I3 = p1 | p2 | p4,
-        I4 = p2 | p3 | p4,
-        I5 = p1 | p2,
-        I6 = p1 | p3,
-        I7 = p1 | p4,
-        I8 = p2 | p3,
-        I9 = p2 | p4,
-        I10 = p3 | p4,
-    }
+    //states
+    private bool elicitation = false;
+    private bool especification = false;
+    private bool validation = false;
+    private bool arquitecture = false;
+    private bool components = false;
+    private bool DB = false;
+    private bool impInterface = false;
+    private bool testComponents = false;
+    private bool testSystem = false;
+    private bool testClient = false;
+    private bool evoRequirements = false;
+    private bool evoSystem = false;
+    private bool evoChanges = false;
+    private bool evoNew = false;
 
-    [Flags]
-    public enum VVState
-    {
-        init = 0,
-        v1 = 1,
-        v2 = 2,
-        v3 = 4,
-        end = 8,
-        VV1 = v1 | v2 | v3,
-        VV2 = v1 | v2,
-        VV3 = v1 | v3,
-        VV4 = v2 | v3
-    }
+    //scrum
+    private bool scrumReq = false;
+    private bool scrumSprint = false;
+    private bool scrumIncrement = false;
 
-    [Flags]
-    public enum EvolutionState
-    {
-        init = 0,
-        ev1 = 1,
-        ev2 = 2,
-        ev3 = 4,
-        ev4 = 8,
-        end = 16,
-        EVO1 = ev1 | ev2 | ev3 | ev4,
-        EVO2 = ev1 | ev2 | ev3,
-        EVO3 = ev1 | ev2 | ev4,
-        EVO4 = ev2 | ev3 | ev4,
-        EVO5 = ev1 | ev2,
-        EVO6 = ev1 | ev3,
-        EVO7 = ev1 | ev4,
-        EVO8 = ev2 | ev3,
-        EVO9 = ev2 | ev4,
-        EVO = ev3 | ev4
-    }
+    //state verification auxiliars
+    int auxDg;
+    int auxReq;
+    int auxImp;
+    int auxVV;
+    int auxEvo;
+    int auxScrum;
 
-    [Flags]
-    public enum DungeonState
-    {
-        //dungeon state will only consider the full states
-        init = 0,
-        d1 = 1,
-        d2 = 2,
-        d3 = 4,
-        d4 = 8,
-        end = 16,
-        D1 = d1 | d2 | d3 | d4,
-        D2 = d1 | d2 | d3,
-        D3 = d1 | d2 | d4,
-        D4 = d2 | d3 | d4,
-        D5 = d1 | d2,
-        D6 = d1 | d3,
-        D7 = d1 | d4,
-        D8 = d2 | d3,
-        D9 = d2 | d4,
-        D10 = d3 | d4
-    }
+    //scrum auxiliars
+    public int sprintLoops;
+
+    //events
+    public delegate void DungeonActionComplete();
+    public static DungeonActionComplete OnDungeonActionCompleted;
 
     private void Start()
     {
-        DungeonState state = DungeonState.D2;
-        if((state & DungeonState.d4) == DungeonState.d4) Debug.Log(state);
+        //subscribing for events
+        RoomsAgent.OnPhaseCompleted += See;
+        //RoomsAgent.OnPhaseNotCompleted += NegativeActions;
+
+        //add the team risks as possible
+        foreach (Risk risk in GameManager.risks)
+        {
+            if(risk.riskClass == "Equipe") risksPossible.Add(risk);
+        }
+    }
+
+    void See(string phase)
+    {
+        if(phase == "Elicitação") elicitation = true;
+        if(phase == "Especificação") especification = true;
+        if(phase == "Validação") validation = true;
+        if(phase == "Arquitetura") arquitecture = true;
+        if(phase == "Componentes") components = true;
+        if(phase == "BancoDeDados") DB = true;
+        if(phase == "Interface") impInterface = true;
+        if(phase == "TesteComp") testComponents = true;
+        if(phase == "Sistema") testSystem = true;
+        if(phase == "Cliente") testClient = true;
+        if(phase == "EvoReq") evoRequirements = true;
+        if(phase == "EvoSis") evoSystem = true;
+        if(phase == "EvoMudanças") evoChanges = true;
+        if(phase == "Novo") evoNew = true;
+
+
+        if(phase == "Requisitos") scrumReq = true;
+        if(phase == "Sprint") scrumSprint = true;
+        if(phase == "Incremento") scrumIncrement = true;
+
+        Perception();
+    }
+
+    void Perception()
+    {
+        //reseting the risks possible
+        risksPossible.Clear();
+
+        //selecting the possible risks based on the game phase
+        foreach (Risk risk in GameManager.risks)
+        {
+            if((elicitation || especification || validation || evoRequirements || scrumReq) && 
+            (risk.riskClass == "Requisitos" || risk.riskClass == "Planejamento" || risk.riskClass == "Gerência" || risk.riskClass == "Direção"))
+            {
+                if(!risksPossible.Contains(risk)) risksPossible.Add(risk);
+            }
+
+            if((arquitecture || components ||testComponents || impInterface || scrumSprint) && 
+            (risk.riskClass == "Produto" || risk.riskName == "Mudança de Requisitos" || risk.riskClass == "Gerência") || risk.riskClass == "Direção")
+            {
+                if(!risksPossible.Contains(risk)) risksPossible.Add(risk);
+            }
+
+            if((DB || testSystem || evoSystem) && 
+            (risk.riskClass == "Infra" || risk.riskClass == "Produto") || risk.riskClass == "Gerência" || risk.riskClass == "Direção")
+            {
+                if(!risksPossible.Contains(risk)) risksPossible.Add(risk);
+            }
+
+            if((testClient || evoChanges || evoNew || scrumSprint) &&
+            (risk.riskClass == "Externo" || risk.riskClass == "Direção"))
+            {
+                if(!risksPossible.Contains(risk)) risksPossible.Add(risk);
+            }
+        }
+
+        Action();
+    }
+
+    void Action()
+    {
+        foreach (Risk risk in risksPossible)
+        {
+            if(GameManager.project == 1)
+            {
+                if(risk.riskClass == "Requisitos")
+                {
+                    if((elicitation || especification || validation || evoRequirements) &&
+                    RoomsAgent.previousPhaseCompleted) risk.DecreaseProb(1);
+                    else risk.IncreaseProb(1);
+                }
+
+                if(risk.riskClass == "Planejamento")
+                {
+                    if(elicitation ||arquitecture || evoSystem
+                    &&
+                    RoomsAgent.previousPhaseCompleted) risk.DecreaseProb(1);
+                    else risk.IncreaseProb(1);
+                }
+
+                if(risk.riskClass == "Produto" )
+                {
+                    if(components || testComponents || evoSystem || evoNew &&
+                    RoomsAgent.previousPhaseCompleted) risk.DecreaseProb(1);
+                    else risk.IncreaseProb(1);
+                }
+
+                if(risk.riskClass == "Infra")
+                {
+                    if(DB || testSystem && RoomsAgent.previousPhaseCompleted) risk.DecreaseProb(1);
+                    else risk.IncreaseProb(1);
+                }
+
+                if(impInterface)
+                {
+                    if(risk.riskName == "Mudança de Requisitos" || risk.riskName == "Dificuldade de Integração" &&
+                    RoomsAgent.previousPhaseCompleted) 
+                        risk.DecreaseProb(1);
+                }
+                else if(risk.riskName == "Mudança de Requisitos" || risk.riskName == "Dificuldade de Integração") risk.IncreaseProb(1);
+
+                if(risk.riskClass == "Externo")
+                {
+                    if(testComponents || evoChanges || evoNew &&
+                    RoomsAgent.previousPhaseCompleted) risk.DecreaseProb(1);
+                    else risk.IncreaseProb(1);
+                }
+            }
+            else
+            {
+                //when the sprint ends, all the risks probability decreases
+                //more loops = less probability
+                if(scrumSprint)
+                {
+                    int mod;
+                    mod = sprintLoops/2;
+                    if(mod < 1) mod = 1;
+                    if(mod > 4) mod = 4;
+                    risk.DecreaseProb(mod);
+                    
+                }
+
+                if(scrumIncrement)
+                {
+                    int mod;
+                    mod = SCRUM.sprints;
+                    if(mod > 4) mod = 4;
+
+                    if(risk.riskClass == "Externo" || risk.riskClass == "Produto")
+                    {
+                        risk.DecreaseProb(mod);   
+                    }
+                }
+            }
+        }
+
+        //reset the variables so that the actions dont trigger multiple times
+        if(elicitation == true) elicitation = false;
+        if(especification == true) especification = false;
+        if(validation == true) validation = false;
+        if(arquitecture == true) arquitecture = false;
+        if(components == true) components = false;
+        if(DB == true) DB = false;
+        if(impInterface == true) impInterface = false;
+        if(testComponents == true) testComponents = false;
+        if(testSystem == true) testSystem = false;
+        if(testClient == true) testClient = false;
+        if(evoRequirements == true) evoRequirements = false;
+        if(evoSystem == true) evoSystem = false;
+        if(evoChanges == true) evoChanges = false;
+        if(evoNew == true) evoNew = false;
+
+        OnDungeonActionCompleted();
+    }
+
+    public void SetRiskPossible(Risk risk)
+    {
+        risksPossible.Add(risk);
+    }
+
+    public List<Risk> GetRisksPossible()
+    {
+        return risksPossible;
     }
 }

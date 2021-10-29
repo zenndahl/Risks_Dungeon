@@ -18,16 +18,13 @@ public class Identification : MonoBehaviour
     {
         foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetAllRisks())
         {
-            //set all events subscriptions of the risks
-            risk.Subscribe();
-
             //instantiating and setting the parent for the risk
             GameObject rskDisplay = Instantiate(riskDisplayPrefab, transform.position, transform.rotation);
             GameObject rskList = GameObject.Find("Risk List/Risks");
             rskDisplay.transform.SetParent(rskList.transform);
 
             //set spacing between risks
-            rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
+            //rskList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
 
             //assigning the risk to the display
             rskDisplay.GetComponent<RiskDisplay>().risk = risk;
@@ -74,7 +71,7 @@ public class Identification : MonoBehaviour
         //display correctly feedbakc of identified risks and the current resources of the player
         feedbackScreen.GetComponent<Feedback>().DisplayFeedback("identificou", correctlyId);
 
-        GameManager.risks = GameManager.risksIdentified.ToList();
+        GameManager.risksAux = GameManager.risksIdentified.ToList();
         
     }
 }

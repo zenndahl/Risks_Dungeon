@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 42
   type: 1
-  riskClass: Planejamento
+  riskClass: Equipe
   project: 2
   riskName: "Inexperi\xEAncia com Metodologias \xC1geis"
   riskDescription: "Equipe e/ou ger\xEAncia com pouco experi\xEAncia com o modelo
@@ -41,3 +41,8 @@ MonoBehaviour:
   scopeCost: 3
   moneyCost: 3
   timeCost: 3
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 894096}
   m_Layer: 5
   m_Name: Room 0
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomName: 
+  roomClass: "In\xEDcio"
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 1963272666}
@@ -654,7 +656,7 @@ GameObject:
   - component: {fileID: 102516763}
   m_Layer: 5
   m_Name: Room 8
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -693,13 +695,14 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
   - {fileID: 11400000, guid: c746ff6b02c73014b9701f64b11dabbd, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  roomName: 
+  roomClass: Componentes
   nextRooms:
   - {fileID: 893715071}
   - {fileID: 2000806928}
@@ -974,7 +977,7 @@ GameObject:
   - component: {fileID: 119516495}
   m_Layer: 5
   m_Name: Room 4
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,11 +1016,12 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: 
+  roomClass: Arquitetura
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 289950501}
@@ -1217,7 +1221,7 @@ GameObject:
   - component: {fileID: 229237924}
   m_Layer: 5
   m_Name: Room 14
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1292,7 +1296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
@@ -1307,6 +1310,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
+  roomName: 
+  roomClass: BancoDeDados
   nextRooms:
   - {fileID: 1978105999}
   - {fileID: 1299232559}
@@ -1389,7 +1394,7 @@ GameObject:
   - component: {fileID: 230071032}
   m_Layer: 5
   m_Name: Room 3
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1428,11 +1433,12 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: 
+  roomClass: Arquitetura
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 289950501}
@@ -1553,7 +1559,7 @@ GameObject:
   - component: {fileID: 289950500}
   m_Layer: 5
   m_Name: Room 2
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1592,11 +1598,12 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: Arquitetura 2
+  roomClass: Arquitetura
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 230071033}
@@ -2157,7 +2164,7 @@ GameObject:
   - component: {fileID: 413067185}
   m_Layer: 5
   m_Name: Room 10
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2197,13 +2204,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: 
+  roomClass: Interface
   nextRooms:
   - {fileID: 1963272666}
   - {fileID: 901610425}
@@ -2588,7 +2596,7 @@ GameObject:
   - component: {fileID: 607563035}
   m_Layer: 5
   m_Name: Room 12
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2665,13 +2673,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: 
+  roomClass: Interface
   nextRooms:
   - {fileID: 1963272666}
   - {fileID: 413067186}
@@ -3313,7 +3322,7 @@ GameObject:
   - component: {fileID: 893715070}
   m_Layer: 5
   m_Name: Room 5
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3352,13 +3361,14 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
   - {fileID: 11400000, guid: c746ff6b02c73014b9701f64b11dabbd, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  roomName: 
+  roomClass: Componentes
   nextRooms:
   - {fileID: 230071033}
   - {fileID: 2000806928}
@@ -3479,7 +3489,7 @@ GameObject:
   - component: {fileID: 901610426}
   m_Layer: 5
   m_Name: Room 11
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3556,13 +3566,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: 
+  roomClass: Interface
   nextRooms:
   - {fileID: 1963272666}
   - {fileID: 413067186}
@@ -4733,7 +4744,7 @@ GameObject:
   - component: {fileID: 1299232560}
   m_Layer: 5
   m_Name: Room 15
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4808,7 +4819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
@@ -4823,6 +4833,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
+  roomName: 
+  roomClass: BancoDeDados
   nextRooms:
   - {fileID: 1978105999}
   - {fileID: 229237923}
@@ -5779,7 +5791,7 @@ GameObject:
   - component: {fileID: 1542746943}
   m_Layer: 5
   m_Name: Room 7
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5818,13 +5830,14 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
   - {fileID: 11400000, guid: c746ff6b02c73014b9701f64b11dabbd, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  roomName: 
+  roomClass: Componentes
   nextRooms:
   - {fileID: 893715071}
   - {fileID: 2000806928}
@@ -6476,7 +6489,7 @@ GameObject:
   - component: {fileID: 1944219036}
   m_Layer: 5
   m_Name: Room 16
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6514,7 +6527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
@@ -6529,6 +6541,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
+  roomName: 
+  roomClass: BancoDeDados
   nextRooms:
   - {fileID: 1978105999}
   - {fileID: 229237923}
@@ -6649,7 +6663,7 @@ GameObject:
   - component: {fileID: 1963272665}
   m_Layer: 5
   m_Name: Room 9
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6689,13 +6703,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: 
+  roomClass: Interface
   nextRooms:
   - {fileID: 413067186}
   - {fileID: 901610425}
@@ -6815,7 +6830,7 @@ GameObject:
   - component: {fileID: 1978106000}
   m_Layer: 5
   m_Name: Room 13
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6890,7 +6905,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
@@ -6905,6 +6919,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
+  roomName: 
+  roomClass: BancoDeDados
   nextRooms:
   - {fileID: 229237923}
   - {fileID: 1299232559}
@@ -6988,7 +7004,7 @@ GameObject:
   - component: {fileID: 1990713006}
   m_Layer: 5
   m_Name: Room 1
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7121,11 +7137,12 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  roomName: Arquitetura 1
+  roomClass: Arquitetura
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 230071033}
@@ -7284,7 +7301,7 @@ GameObject:
   - component: {fileID: 2000806927}
   m_Layer: 5
   m_Name: Room 6
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7323,13 +7340,14 @@ MonoBehaviour:
   risksPossible:
   - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
   - {fileID: 11400000, guid: c746ff6b02c73014b9701f64b11dabbd, type: 2}
-  - {fileID: 11400000, guid: 6c2b223f9f968104da20a7a772b8068d, type: 2}
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 365b0879beddc174791dcc9ce9573dc7, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
+  roomName: 
+  roomClass: Componentes
   nextRooms:
   - {fileID: 893715071}
   - {fileID: 1542746944}
@@ -7449,7 +7467,7 @@ GameObject:
   - component: {fileID: 2010278893}
   m_Layer: 5
   m_Name: Room 17
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7486,6 +7504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomName: 
+  roomClass: "Sa\xEDda"
   nextRooms: []
   explored: 0
   isPlayerHere: 0

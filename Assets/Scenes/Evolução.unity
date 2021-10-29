@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 894096}
   m_Layer: 5
   m_Name: Room 0
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomClass: 
   nextRooms:
   - {fileID: 1990713003}
   explored: 0
@@ -595,7 +596,7 @@ GameObject:
   - component: {fileID: 119516495}
   m_Layer: 5
   m_Name: Room 4
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,6 +642,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76e0f8db06f98d140a8d9bd7600b83b7, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
+  roomClass: Novo
   nextRooms:
   - {fileID: 893715071}
   explored: 0
@@ -1143,7 +1145,7 @@ GameObject:
   - component: {fileID: 230071032}
   m_Layer: 5
   m_Name: Room 3
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1188,6 +1190,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 547edeb13db9f9240b7d996f4d1cddf7, type: 2}
   - {fileID: 11400000, guid: 09df3cce04eb2794088a7c4b2f683720, type: 2}
+  roomClass: "EvoMudan\xE7as"
   nextRooms:
   - {fileID: 119516496}
   explored: 0
@@ -1400,7 +1403,7 @@ GameObject:
   - component: {fileID: 289950500}
   m_Layer: 5
   m_Name: Room 2
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1442,6 +1445,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
   - {fileID: 11400000, guid: 2b99a8b8e8fd89f45a81006f28d82bb3, type: 2}
   - {fileID: 11400000, guid: 09df3cce04eb2794088a7c4b2f683720, type: 2}
+  roomClass: EvoSis
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 230071033}
@@ -2773,6 +2777,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 81374960}
     m_Modifications:
+    - target: {fileID: 6612003774907263887, guid: 3224d02bc5276e446be2919430718708, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6612003775664864741, guid: 3224d02bc5276e446be2919430718708, type: 3}
       propertyPath: m_Name
       value: Phase Feedback
@@ -2987,7 +2995,7 @@ GameObject:
   - component: {fileID: 893715070}
   m_Layer: 5
   m_Name: Room 5
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3028,6 +3036,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 91cae64692ec03846a806a5f94017420, type: 2}
   - {fileID: 11400000, guid: 64b3ce017650e574ca48a8b8b0933642, type: 2}
   - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
+  roomClass: Novo
   nextRooms:
   - {fileID: 2010278894}
   - {fileID: 289950501}
@@ -5467,7 +5476,7 @@ GameObject:
   - component: {fileID: 1990713006}
   m_Layer: 5
   m_Name: Room 1
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5604,6 +5613,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
+  roomClass: EvoReq
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 119516496}
@@ -5628,7 +5638,7 @@ GameObject:
   - component: {fileID: 2010278893}
   m_Layer: 5
   m_Name: Room 6
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5665,6 +5675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomClass: 
   nextRooms: []
   explored: 0
   isPlayerHere: 0

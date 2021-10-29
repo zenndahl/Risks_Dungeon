@@ -112,8 +112,8 @@ public class Evaluation : MonoBehaviour
             closelyEvaluated++;
         }
 
-        GameManager.risks.Remove(risk);
-        if(!GameManager.risks.Any()) FinishEvaluation();
+        GameManager.risksAux.Remove(risk);
+        if(!GameManager.risksAux.Any()) FinishEvaluation();
         
     }
     void FinishEvaluation()

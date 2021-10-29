@@ -33,7 +33,7 @@ public class RiskGameDisplay : RiskDisplay
         Menus.DisableInteractbles();
         if(risk != null) nameText.text = risk.id + " - " + risk.riskName;
         impactText.text = risk.impactLevel.ToString();
-        probText.text = (risk.probability * 100) + "%";
+        probText.text = (((float)System.Math.Round(risk.probability * 100f) / 100f) * 100) + "%";
         ShowDescription();
     }
 

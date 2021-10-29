@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 36
   type: 1
-  riskClass: Cliente
+  riskClass: Requisitos
   project: 2
   riskName: Conflito do Cliente
   riskDescription: "Diferentes setores da organiza\xE7\xE3o do cliente est\xE3o em
@@ -32,11 +32,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
   impactLevel: 2
   probLevel: 2
-  evaluatedProb: 
-  evaluatedImpact: 
+  evaluatedProb: Moderada
+  evaluatedImpact: Alto
   baseProbability: 0.3
   probability: 0.3
   reincidence: 0.3
   scopeCost: 2
   moneyCost: 2
   timeCost: 2
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

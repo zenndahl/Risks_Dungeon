@@ -78,9 +78,9 @@ public class Player : MonoBehaviour
 
     void ResetVariables()
     {
-        scope = 10;
-        money = 10;
-        time = 10;
+        scope = 1000;
+        money = 1000;
+        time = 1000;
         combatPower = 1;
         entusiasm = false;
         disciplin = false;

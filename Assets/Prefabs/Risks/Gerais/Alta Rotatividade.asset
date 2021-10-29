@@ -33,11 +33,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   impactLevel: 2
   probLevel: 1
-  evaluatedProb: 
-  evaluatedImpact: 
+  evaluatedProb: Baixa
+  evaluatedImpact: Baixo
   baseProbability: 0.1
   probability: 0.1
   reincidence: 0.1
   scopeCost: 2
   moneyCost: 2
   timeCost: 2
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

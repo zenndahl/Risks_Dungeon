@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactble
   - Phase
+  - Room
   layers:
   - Default
   - TransparentFX

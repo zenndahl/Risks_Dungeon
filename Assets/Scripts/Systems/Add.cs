@@ -21,6 +21,7 @@ public class Add : MonoBehaviour
             //cloning the display object selected to the selected objects list
             Transform cloned = Instantiate(selected.transform, selected.transform);
             if(toAddList != null) cloned.SetParent(toAddList.transform);
+            cloned.GetChild(1).gameObject.GetComponent<Button>().interactable = false;
 
             //get employee from display
             Employee employee = selected.GetComponent<EmployeeDisplay>().employee;
@@ -43,9 +44,8 @@ public class Add : MonoBehaviour
             id.AddId(selected.GetComponent<RiskDisplay>().risk);
             selected.transform.SetParent(toAddList.transform);
 
-            //selected.GetComponent<RectTransform>().offsetMin += new Vector2(0,20);
-            selected.transform.parent.gameObject.GetComponent<RectTransform>().offsetMin += new Vector2(0,100);
-            toAddList.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
+            // selected.transform.parent.gameObject.GetComponent<RectTransform>().offsetMin += new Vector2(0,100);
+            // GameObject.Find("RisksId").GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
         }
         selected = null;
     }
@@ -68,7 +68,7 @@ public class Add : MonoBehaviour
     public static void AddToMatrix()
     {
         Risk risk = selected.GetComponent<RiskDisplay>().risk;
-        if(risk != null)
+        if(risk != null && matrixCell != null)
         {
             MatrixRiskDisplay matrixRiskDisplay = matrixCell.GetComponent<MatrixRiskDisplay>();
             matrixRiskDisplay.SetMatrixCell(risk);

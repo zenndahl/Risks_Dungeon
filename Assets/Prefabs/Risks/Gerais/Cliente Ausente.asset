@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   type: 1
-  riskClass: Cliente
+  riskClass: Externo
   project: 0
   riskName: "Cliente ou Usu\xE1rio Ausente"
   riskDescription: "Pouca participa\xE7\xE3o do usu\xE1rio ou cliente no planejamento
@@ -23,7 +23,7 @@ MonoBehaviour:
   preventions:
   - {fileID: 11400000, guid: 5453311f042a3e149859df72f7508141, type: 2}
   - {fileID: 11400000, guid: f0bfd3e6643c57d41bcf33053e4b49dc, type: 2}
-  reaction: 0
+  reaction: 1
   prevented: 0
   timesPrevented: 0
   derivatives:
@@ -34,11 +34,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64b3ce017650e574ca48a8b8b0933642, type: 2}
   impactLevel: 4
   probLevel: 4
-  evaluatedProb: 
-  evaluatedImpact: 
+  evaluatedProb: Muito Alta
+  evaluatedImpact: Muito Alto
   baseProbability: 0.7
-  probability: 0.5
+  probability: 0.7
   reincidence: 0.5
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

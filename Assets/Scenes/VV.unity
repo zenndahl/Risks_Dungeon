@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 894096}
   m_Layer: 5
   m_Name: Room 0
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 1990713003}
   explored: 0
@@ -553,7 +555,7 @@ GameObject:
   - component: {fileID: 102516763}
   m_Layer: 5
   m_Name: Room 8
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,6 +599,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: b90565c8a9b7f834abc6e47c096abd62, type: 2}
   - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 2010278894}
   - {fileID: 289950501}
@@ -715,7 +719,7 @@ GameObject:
   - component: {fileID: 119516495}
   m_Layer: 5
   m_Name: Room 4
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,6 +766,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 289950501}
@@ -882,7 +888,7 @@ GameObject:
   - component: {fileID: 230071032}
   m_Layer: 5
   m_Name: Room 3
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -929,6 +935,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 289950501}
@@ -1049,7 +1057,7 @@ GameObject:
   - component: {fileID: 289950500}
   m_Layer: 5
   m_Name: Room 2
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,6 +1104,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 1990713003}
   - {fileID: 230071033}
@@ -2391,7 +2401,7 @@ GameObject:
   - component: {fileID: 893715070}
   m_Layer: 5
   m_Name: Room 5
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2438,6 +2448,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 893715071}
   - {fileID: 2000806928}
@@ -4028,7 +4040,7 @@ GameObject:
   - component: {fileID: 1542746943}
   m_Layer: 5
   m_Name: Room 7
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4075,6 +4087,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 893715071}
   - {fileID: 2000806928}
@@ -5421,7 +5435,7 @@ GameObject:
   - component: {fileID: 1990713006}
   m_Layer: 5
   m_Name: Room 1
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5562,6 +5576,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 289950501}
   - {fileID: 230071033}
@@ -5587,7 +5603,7 @@ GameObject:
   - component: {fileID: 2000806927}
   m_Layer: 5
   m_Name: Room 6
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5634,6 +5650,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
+  roomName: 
+  roomClass: 
   nextRooms:
   - {fileID: 893715071}
   - {fileID: 2000806928}
@@ -5982,7 +6000,7 @@ GameObject:
   - component: {fileID: 2010278893}
   m_Layer: 5
   m_Name: Room 9
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6019,6 +6037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
+  roomName: 
+  roomClass: 
   nextRooms: []
   explored: 0
   isPlayerHere: 0

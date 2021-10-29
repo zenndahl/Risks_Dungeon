@@ -56,8 +56,9 @@ public class Opportunity : ScriptableObject
 
     public void ActivateOpportunity()
     {
-        //apply resource bonus
         Player.opportunitiesTaken++;
+
+        //apply resource bonus
         Player.OperateScope(scopeBonus);
         Player.OperateMoney(moneyBonus);
         Player.OperateTime(timeBonus);

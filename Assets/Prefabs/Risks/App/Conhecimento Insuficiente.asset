@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 37
   type: 2
-  riskClass: Equipe
+  riskClass: Requisitos
   project: 2
   riskName: "Produto n\xE3o Familiar"
   riskDescription: "Falta de conhecimento sobre o dom\xEDnio do produto em desenvolvimento"
@@ -46,3 +46,8 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

@@ -26,8 +26,8 @@ public class Risk : ScriptableObject
     //the action planned to be take once the risk occurs, 1 - mitigate, 2 - assign, 3 - accept
     public int reaction;
     public bool prevented = false;
-    //updates the times the risk has been prevented, therefore decreasing its probability
-    public int timesPrevented;
+    //updates the times the risk has happened, therefore decreasing its probability
+    public int timesHappened = 0;
     //risks that have its probability increased if this risk is activated
     public Risk[] derivatives;
     //impact and prob level goes from 1 to 5, matchin the scale: very low, low, medium, high, very high
@@ -50,6 +50,13 @@ public class Risk : ScriptableObject
     public int moneyCost;
     public int timeCost;
 
+    //fuzzy variables
+    public float VH;
+    public float H;
+    public float M;
+    public float L;
+    public float VL;
+
     //event variables
     public delegate void ActivatingRisk(Risk risk);
     public static event ActivatingRisk OnActivateRisk;
@@ -59,11 +66,7 @@ public class Risk : ScriptableObject
     {
         //text.text = riskName;
         probability = baseProbability;
-    }
-
-    public void Subscribe()
-    {
-        
+        timesHappened = 0;
     }
 
     public void IncreaseProb(int mult)
@@ -81,9 +84,6 @@ public class Risk : ScriptableObject
     {
         if(OnActivateRisk != null) OnActivateRisk(this);
 
-        //Player player = GameObject.Find("Player").GetComponent<Player>();
-        Player.risksActivated++;
-
         GameObject rskDisplay = GameObject.Find("Risk Game Display");
         rskDisplay.GetComponent<RiskGameDisplay>().risk = this;
         rskDisplay.GetComponent<RiskGameDisplay>().ShowRiskInfos();
@@ -95,12 +95,18 @@ public class Risk : ScriptableObject
         if(reaction == 2) AssignRisk();
         if(reaction == 3) AcceptRisk();
 
-        probability = reincidence;
+        //ajusting the probability by the times the risk happened
+        if(timesHappened == 1) probability = reincidence;
+        if(timesHappened > 3) DecreaseProb(1);
 
-        //when a risk happens, its derivatives will have more chances to happen too
+        Player.risksActivated++;
+        timesHappened++;
+
+        //when a risk happens, its derivatives will have a chance to happen 
         foreach (Risk risk in derivatives)
         {
-            risk.IncreaseProb(1);
+            //risk.IncreaseProb(1);
+            GameObject.Find("Beholder").GetComponent<DungeonAgent>().SetRiskPossible(risk);
         }
     }
 
@@ -130,7 +136,6 @@ public class Risk : ScriptableObject
         //if the player has the skill organized, add 1 to the impact reduction
         if(Player.organized)
         {
-            Debug.Log("Organizado");
             mod++;
         }
         

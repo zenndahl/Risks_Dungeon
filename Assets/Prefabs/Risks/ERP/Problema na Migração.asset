@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 35
   type: 2
-  riskClass: Produto
+  riskClass: Infra
   project: 1
   riskName: "Problema na Migra\xE7\xE3o"
   riskDescription: "Migra\xE7\xE3o para novo sistema encontrando muitos obst\xE1culos
@@ -39,3 +39,8 @@ MonoBehaviour:
   scopeCost: 5
   moneyCost: 5
   timeCost: 5
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0

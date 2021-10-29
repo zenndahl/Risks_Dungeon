@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 38
   type: 2
-  riskClass: "Ger\xEAncia"
+  riskClass: Planejamento
   project: 2
   riskName: Design Incremental
   riskDescription: "Equipe e ger\xEAncia n\xE3o conseguem seguir com efici\xEAncia
@@ -42,3 +42,8 @@ MonoBehaviour:
   scopeCost: 4
   moneyCost: 4
   timeCost: 4
+  VH: 0
+  H: 0
+  M: 0
+  L: 0
+  VL: 0
