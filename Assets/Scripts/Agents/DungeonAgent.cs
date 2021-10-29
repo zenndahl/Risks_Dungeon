@@ -44,6 +44,11 @@ public class DungeonAgent : MonoBehaviour
     public delegate void DungeonActionComplete();
     public static DungeonActionComplete OnDungeonActionCompleted;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start()
     {
         //subscribing for events

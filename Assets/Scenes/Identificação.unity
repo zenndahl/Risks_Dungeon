@@ -2291,8 +2291,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quando identificar todos os riscos que considera importantes para o projeto,
-    clique em "Finalizar"
+  m_Text: "Quando identificar todos os riscos que considera importantes para o projeto,
+    clique em \"Finalizar\" para seguir para a pr\xF3xima fase."
 --- !u!222 &457197172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2586,7 +2586,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Voc\xEA inicia com 01 ponto de cada recurso.\nAo final do jogo, os recursos
+  m_Text: "Voc\xEA inicia com 10 pontos de cada recurso.\nAo final do jogo, os recursos
     restantes ser\xE3o usados para calcular sua pontua\xE7\xE3o!"
 --- !u!222 &492426107
 CanvasRenderer:

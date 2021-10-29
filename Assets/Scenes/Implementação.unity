@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
-  roomName: 
   roomClass: "In\xEDcio"
   nextRooms:
   - {fileID: 1990713003}
@@ -701,7 +700,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
-  roomName: 
   roomClass: Componentes
   nextRooms:
   - {fileID: 893715071}
@@ -1020,7 +1018,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: 
   roomClass: Arquitetura
   nextRooms:
   - {fileID: 1990713003}
@@ -1310,7 +1307,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
-  roomName: 
   roomClass: BancoDeDados
   nextRooms:
   - {fileID: 1978105999}
@@ -1437,7 +1433,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: 
   roomClass: Arquitetura
   nextRooms:
   - {fileID: 1990713003}
@@ -1602,7 +1597,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: Arquitetura 2
   roomClass: Arquitetura
   nextRooms:
   - {fileID: 1990713003}
@@ -1760,12 +1754,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &317883239
 MonoBehaviour:
@@ -2210,7 +2205,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: 
   roomClass: Interface
   nextRooms:
   - {fileID: 1963272666}
@@ -2404,12 +2398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!1 &535609951
 GameObject:
@@ -2679,7 +2674,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: 
   roomClass: Interface
   nextRooms:
   - {fileID: 1963272666}
@@ -3367,7 +3361,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
-  roomName: 
   roomClass: Componentes
   nextRooms:
   - {fileID: 230071033}
@@ -3572,7 +3565,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: 
   roomClass: Interface
   nextRooms:
   - {fileID: 1963272666}
@@ -3694,12 +3686,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &906095025
 MonoBehaviour:
@@ -4833,7 +4826,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
-  roomName: 
   roomClass: BancoDeDados
   nextRooms:
   - {fileID: 1978105999}
@@ -4955,12 +4947,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff3bddcb7f9e9c41802ea1ae1294197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choseProject: {fileID: 0}
+  chooseProject: {fileID: 0}
+  difficultyUI: {fileID: 0}
   warningScreen: {fileID: 0}
   scoreBoard: {fileID: 0}
   creditsScreen: {fileID: 0}
   projects: {fileID: 0}
-  choseName: {fileID: 0}
+  chooseName: {fileID: 0}
   playerName: {fileID: 0}
 --- !u!114 &1306872116
 MonoBehaviour:
@@ -5836,7 +5829,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
-  roomName: 
   roomClass: Componentes
   nextRooms:
   - {fileID: 893715071}
@@ -6074,7 +6066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb54487c1bed6234ab58c2714a8d3385, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5075de59f0380e142b064cd97ca03dbe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6541,7 +6533,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
-  roomName: 
   roomClass: BancoDeDados
   nextRooms:
   - {fileID: 1978105999}
@@ -6709,7 +6700,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c34be4d6b14016741868d768bce3b634, type: 2}
   - {fileID: 11400000, guid: c79eab8105f372442b44a3ab42c3dfd2, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: 
   roomClass: Interface
   nextRooms:
   - {fileID: 413067186}
@@ -6919,7 +6909,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff07a61b95ef15546a0f6a60ace731b9, type: 2}
   - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
-  roomName: 
   roomClass: BancoDeDados
   nextRooms:
   - {fileID: 229237923}
@@ -7141,7 +7130,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
   - {fileID: 11400000, guid: 23e0d8952fe97b144b31540a3f0e5ab4, type: 2}
   - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
-  roomName: Arquitetura 1
   roomClass: Arquitetura
   nextRooms:
   - {fileID: 289950501}
@@ -7346,7 +7334,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1da0adbedfb78a549b53fcdb815ae295, type: 2}
   - {fileID: 11400000, guid: 99259a9fb4f008349a5f26fca80bba09, type: 2}
   - {fileID: 11400000, guid: 0e25ac0769bbcbb4eb98174cfd3ddcf0, type: 2}
-  roomName: 
   roomClass: Componentes
   nextRooms:
   - {fileID: 893715071}
@@ -7504,7 +7491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   risksPossible: []
-  roomName: 
   roomClass: "Sa\xEDda"
   nextRooms: []
   explored: 0
