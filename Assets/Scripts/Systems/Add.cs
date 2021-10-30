@@ -67,16 +67,19 @@ public class Add : MonoBehaviour
 
     public static void AddToMatrix()
     {
-        Risk risk = selected.GetComponent<RiskDisplay>().risk;
-        if(risk != null && matrixCell != null)
+        if(selected != null)
         {
-            MatrixRiskDisplay matrixRiskDisplay = matrixCell.GetComponent<MatrixRiskDisplay>();
-            matrixRiskDisplay.SetMatrixCell(risk);
-            Evaluation eval = GameObject.Find("Evaluation").GetComponent<Evaluation>();
-            eval.Evaluate(risk, matrixRiskDisplay);
-            selected.transform.GetChild(0).GetComponent<Button>().interactable = false;
-            selected = null;
-            matrixCell = null;
+            Risk risk = selected.GetComponent<RiskDisplay>().risk;
+            if(matrixCell != null)
+            {
+                MatrixRiskDisplay matrixRiskDisplay = matrixCell.GetComponent<MatrixRiskDisplay>();
+                matrixRiskDisplay.SetMatrixCell(risk);
+                Evaluation eval = GameObject.Find("Evaluation").GetComponent<Evaluation>();
+                eval.Evaluate(risk, matrixRiskDisplay);
+                selected.transform.GetChild(0).GetComponent<Button>().interactable = false;
+                selected = null;
+                matrixCell = null;
+            }
         }
     }
 
