@@ -16,15 +16,19 @@ MonoBehaviour:
   skillName: Adaptabilidade
   skillDescription: "Combate riscos relacionados a mudan\xE7as"
   combat:
-  - {fileID: 11400000, guid: de82d2693c246a14988f31716498e64d, type: 2}
-  - {fileID: 11400000, guid: 34a48fe8317cdeb45afa0330d5a55313, type: 2}
-  - {fileID: 11400000, guid: 5aea441f87a767c4da19b20d9919bfef, type: 2}
+  - {fileID: 11400000, guid: c174727c9e8b69e4eb4b603eac58cb21, type: 2}
+  - {fileID: 11400000, guid: 2b121c53123af3b42bc832d1abc84818, type: 2}
+  - {fileID: 11400000, guid: 6ba8905bdda5bdc4bbe839ca256704cf, type: 2}
   - {fileID: 11400000, guid: 932a93386756f3e48b33e4865181d964, type: 2}
-  - {fileID: 11400000, guid: f1f77889ca79e674787fa2b2eccd59e2, type: 2}
-  - {fileID: 11400000, guid: c71ddeb2016458842a7bc7ccee6656aa, type: 2}
-  - {fileID: 11400000, guid: afc1cabac9f13e143bc2982692fde932, type: 2}
+  - {fileID: 11400000, guid: 46682a9aae51b8444ad1e79c72fa1abf, type: 2}
+  - {fileID: 11400000, guid: 07798b52a9ed5de44b6320d27ab610cd, type: 2}
+  - {fileID: 11400000, guid: c28f35220bcf4de40a606e281d8cd73f, type: 2}
   - {fileID: 11400000, guid: d6f614d3c1e636b4b9932a26047a0493, type: 2}
-  - {fileID: 11400000, guid: 6cee61079c3f7b94f887851dbbc8d5c4, type: 2}
-  - {fileID: 11400000, guid: 4a91e114c7835f642b67719acd3ef5bf, type: 2}
-  - {fileID: 11400000, guid: 56921a853442b814ebc3b99b7e8b19f1, type: 2}
-  - {fileID: 11400000, guid: 13e857060d720c14db92106549bf0691, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  - {fileID: 11400000, guid: 2fffeb8ad14ae79499380f2c66276148, type: 2}
+  - {fileID: 11400000, guid: 85068db82e34c634b9d23dddf5e82080, type: 2}
+  - {fileID: 11400000, guid: 16ccf7bc452a25641a48045bc3a660af, type: 2}
+  - {fileID: 11400000, guid: 09df3cce04eb2794088a7c4b2f683720, type: 2}
+  - {fileID: 11400000, guid: 59291d0e9cec54e40926f2dd019a6ae2, type: 2}
+  - {fileID: 0}

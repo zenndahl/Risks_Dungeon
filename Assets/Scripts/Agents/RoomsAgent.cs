@@ -118,4 +118,8 @@ public class RoomsAgent : MonoBehaviour
 
         OnPhaseCompleted(roomState.ToString());
     }
+
+    private void OnDestroy() {
+        Room.OnEnterRoom -= See;
+    }
 }

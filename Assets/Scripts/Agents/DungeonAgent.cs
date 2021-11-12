@@ -228,4 +228,8 @@ public class DungeonAgent : MonoBehaviour
     {
         return risksPossible;
     }
+
+    private void OnDestroy() {
+        RoomsAgent.OnPhaseCompleted -= See;
+    }
 }

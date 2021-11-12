@@ -17,10 +17,13 @@ MonoBehaviour:
   skillDescription: "Combate riscos relacionados a falta de comunica\xE7\xE3o e de
     problemas na equipe"
   combat:
-  - {fileID: 11400000, guid: dd074ff8c26f86341bb3ddf4b6a7bace, type: 2}
-  - {fileID: 11400000, guid: 7b11732dfe3b2de4ab9fa7d32573843f, type: 2}
+  - {fileID: 11400000, guid: c983837afb9fbc443ad7312f0c84b360, type: 2}
+  - {fileID: 11400000, guid: 663d5316ca4b33249aca94e6fae316dc, type: 2}
   - {fileID: 11400000, guid: cbded6dd71e001a49b47ce419a3fe6d9, type: 2}
-  - {fileID: 11400000, guid: 184080296a7fd984a8a64d159fe98742, type: 2}
-  - {fileID: 11400000, guid: db857a6f45de99b4b86faf2e6ae493b7, type: 2}
+  - {fileID: 11400000, guid: d616f647c65a3674bbbc11dd7b71cff5, type: 2}
+  - {fileID: 11400000, guid: c746ff6b02c73014b9701f64b11dabbd, type: 2}
   - {fileID: 11400000, guid: b90565c8a9b7f834abc6e47c096abd62, type: 2}
-  - {fileID: 11400000, guid: 861cb6ab158c9aa438581695b4b42afe, type: 2}
+  - {fileID: 11400000, guid: 5f3fcce73ad263241af587d544b81beb, type: 2}
+  - {fileID: 11400000, guid: bcfe6c6d3eb5ec04e8653f781a06c5e3, type: 2}
+  - {fileID: 11400000, guid: 09df3cce04eb2794088a7c4b2f683720, type: 2}
+  - {fileID: 11400000, guid: 64b3ce017650e574ca48a8b8b0933642, type: 2}

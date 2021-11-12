@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RisksAgent : MonoBehaviour
 {
+    private static RisksAgent _instance;
     [Header("Curves")]
     [SerializeField] private AnimationCurve veryHigh;
     [SerializeField] private AnimationCurve high;
@@ -23,10 +24,21 @@ public class RisksAgent : MonoBehaviour
     private Risk riskChosen;
     private Risk previousRisk;
 
-    void Start()
+    void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
         DungeonAgent.OnDungeonActionCompleted += See;
-        Room.OnEnterRoom += Perception;
+        Room.OnEnterRoom += CallWait;
     }
 
     void See()
@@ -37,7 +49,6 @@ public class RisksAgent : MonoBehaviour
     //will choose a risk
     void Perception()
     {
-        StartCoroutine(Wait());
         foreach (Risk risk in risksPossible)
         {
             risk.VH = evVH(risk.probability);
@@ -151,9 +162,15 @@ public class RisksAgent : MonoBehaviour
         }
     }
 
+    void CallWait()
+    {
+        StartCoroutine(Wait());
+    }
+
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+        Perception();
     }
 
     public static void DrawOpportunity()
@@ -163,5 +180,10 @@ public class RisksAgent : MonoBehaviour
         GameObject oppDisplay = GameObject.Find("Opportunity Display");
         oppDisplay.GetComponent<OpportunityDisplay>().opportunity = GameManager.opportunities[randOpp];
         oppDisplay.GetComponent<OpportunityDisplay>().ShowDescription();
+    }
+
+    private void OnDestroy() {
+        DungeonAgent.OnDungeonActionCompleted -= See;
+        Room.OnEnterRoom -= CallWait;
     }
 }

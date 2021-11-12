@@ -44,6 +44,16 @@ public class Menus : MonoBehaviour
         Application.Quit();
     }
 
+    public void QuitMenu()
+    {
+        warningScreen.SetActive(true);
+    }
+
+    public void ExitQuitMenu()
+    {
+        warningScreen.SetActive(false);
+    }
+
     bool TogglePause()
     {
         if(gameIsPaused) return false;
@@ -76,19 +86,20 @@ public class Menus : MonoBehaviour
     {
         ActivateChooseProjectUI();
         creditsScreen.SetActive(false);
-        scoreBoard.SetActive(false);
+        //scoreBoard.SetActive(false);
     }
  
-    public void SetPlayerName()
-    {
-        Player.playerName = playerName.text;
-    }
+    // public void SetPlayerName()
+    // {
+    //     Player.playerName = playerName.text;
+    // }
 
-    public void Scoreboard()
-    {
-        scoreBoard.SetActive(true);
-        chooseProject.SetActive(false);
-    }
+    // public void Scoreboard()
+    // {
+    //     scoreBoard.SetActive(true);
+    //     difficultyUI.SetActive(false);
+    //     chooseProject.SetActive(false);
+    // }
 
     public void Options()
     {
@@ -97,6 +108,8 @@ public class Menus : MonoBehaviour
 
     public void Credits()
     {
+        chooseProject.SetActive(false);
+        difficultyUI.SetActive(false);
         creditsScreen.SetActive(true);
     }
 

@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     [Header("Opportunities Infos")]
     public List<Opportunity> opportunitiesList = new List<Opportunity>();
     public static List<Opportunity> opportunities = new List<Opportunity>();
-    public static List<Opportunity> opportunitiesPossible = new List<Opportunity>();
 
     [Header("Scene Infos")]
     public static string currentScene;
@@ -63,9 +62,14 @@ public class GameManager : MonoBehaviour
         nextScene = "Selecionar Equipe";
         SceneManager.sceneLoaded += OnSceneLoaded;
         opportunities = opportunitiesList;
-        opportunitiesPossible = opportunitiesList;
         employees = employeesList;
         preventions = preventionsList;
+        preventionsMade.Clear();
+        risksIdentified.Clear();
+        risksAssigned.Clear();
+        risksAux.Clear();
+        risks.Clear();
+        risksInSequence = 0;
         ResetScripts();
     }
 
@@ -105,6 +109,29 @@ public class GameManager : MonoBehaviour
 
         //when a new scene is loaded, set the next and reset the current
         SetScenes(scene);
+
+        //set initial resources based on the difficulty
+        if(scene.name == "Selecionar Equipe")
+        {
+            if(difficulty == 1)
+            {
+                Player.OperateScope(10);
+                Player.OperateMoney(10);
+                Player.OperateTime(10);
+            }
+            if(difficulty == 2)
+            {
+                Player.OperateScope(20);
+                Player.OperateMoney(20);
+                Player.OperateTime(20);
+            }
+            if(difficulty == 3)
+            {
+                Player.OperateScope(30);
+                Player.OperateMoney(30);
+                Player.OperateTime(30);
+            }
+        }
     }
     
     //will be called by the button on the main menu screen to setup the ERP project
