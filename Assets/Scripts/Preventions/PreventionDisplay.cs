@@ -28,9 +28,4 @@ public class PreventionDisplay : MonoBehaviour
     {
         if(prevention != null) nameText.text = prevention.preventionName;
     }
-
-    // public void ResetInfos()
-    // {
-    //     nameText.text = prevention.preventionName;
-    // }
 }

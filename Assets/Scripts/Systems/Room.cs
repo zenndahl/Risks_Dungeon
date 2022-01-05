@@ -20,6 +20,7 @@ public class Room : MonoBehaviour
     public bool isBreakpoint;
     private int roomCost = 2;
     public GameObject feedback;
+    private Player player;
 
     //event variables
     public delegate void EnterRoom();
@@ -27,6 +28,10 @@ public class Room : MonoBehaviour
 
     private Color allowed = new Color(102, 231, 99, 200);
     //private Color notAllowed = new Color(251, 60, 63, 200);
+
+    private void Start() {
+        player = Player.PlayerInstance;
+    }
 
     public void ChangeHoverColor(int op)
     {
@@ -43,24 +48,22 @@ public class Room : MonoBehaviour
     //to get to a room, a random value between 1 and 4 will be charged from the player resources
     void MoveCost()
     {
-        //Player player = GameObject.Find("Player").GetComponent<Player>();
-
         for(int i = 0; i < 3; i++)
         {
             //there will be a random value for each resource individually
             // int rand = Random.Range(1,4);
             // //if the player has the skill "Entusiasmo" the cost is decreased to a minimum of 1
-            if(Player.entusiasm && !explored)
+            if(player.entusiasm && !explored)
             {
-                if(i == 0) Player.OperateScope(-(roomCost-1));
-                if(i == 1) Player.OperateMoney(-(roomCost-1));
-                if(i == 2) Player.OperateTime(-(roomCost-1));
+                if(i == 0) player.OperateScope(-(roomCost-1));
+                if(i == 1) player.OperateMoney(-(roomCost-1));
+                if(i == 2) player.OperateTime(-(roomCost-1));
             }
             else
             {
-                if(i == 0) Player.OperateScope(-roomCost);
-                if(i == 1) Player.OperateMoney(-roomCost);
-                if(i == 2) Player.OperateTime(-roomCost);
+                if(i == 0) player.OperateScope(-roomCost);
+                if(i == 1) player.OperateMoney(-roomCost);
+                if(i == 2) player.OperateTime(-roomCost);
             }
 
         }
@@ -68,7 +71,7 @@ public class Room : MonoBehaviour
 
     public void MoveToken()
     {
-        GameManager.currentRoom = this;
+        GameManager.Instance.currentRoom = this;
         explored = true;
 
         //set the previous room to not have the player
@@ -102,7 +105,6 @@ public class Room : MonoBehaviour
         if(!isLast)
         {
             SetRooms();
-            //RskOpp();
         }
 
         if(isLast)
@@ -128,40 +130,10 @@ public class Room : MonoBehaviour
             button.GetComponent<Room>().ChangeHoverColor(0);
             button.interactable = true;
             //the scrum project has its own settings
-            if(GameManager.project == 2)
+            if(GameManager.Instance.project == 2)
             {
                 SCRUM.SetSprintRooms(this);
             }
         }
-    }
-
-    public void RskOpp()
-    {
-        //will randomly chose one of the risks possible
-        int randIndex = Random.Range(0,risksPossible.Length);
-
-        //will draw the probability
-        float randProb = Random.Range(0f,1f);
-
-        //if the probability draw is less than the probability of the risk to happen, it happens
-        if(randProb <= risksPossible[randIndex].probability)
-        {
-            risksPossible[randIndex].ActivateRisk();
-            GameManager.risksInSequence++;
-        }
-        else
-        {
-            Room.DrawOpportunity();
-            GameManager.risksInSequence = 0;
-        }
-    }
-
-    public static void DrawOpportunity()
-    {
-        //will randomly chose one of the opportunities
-        int randOpp = Random.Range(0,GameManager.opportunities.Count);
-        GameObject oppDisplay = GameObject.Find("Opportunity Display");
-        oppDisplay.GetComponent<OpportunityDisplay>().opportunity = GameManager.opportunities[randOpp];
-        oppDisplay.GetComponent<OpportunityDisplay>().ShowDescription();
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DungeonAgent : MonoBehaviour
@@ -37,6 +36,8 @@ public class DungeonAgent : MonoBehaviour
     int auxEvo;
     int auxScrum;
 
+    private GameManager gameManager;
+
     //scrum auxiliars
     public int sprintLoops;
 
@@ -51,15 +52,10 @@ public class DungeonAgent : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
         //subscribing for events
         RoomsAgent.OnPhaseCompleted += See;
         //RoomsAgent.OnPhaseNotCompleted += NegativeActions;
-
-        //add the team risks as possible
-        foreach (Risk risk in GameManager.risks)
-        {
-            if(risk.riskClass == "Equipe") risksPossible.Add(risk);
-        }
     }
 
     void See(string phase)
@@ -89,11 +85,20 @@ public class DungeonAgent : MonoBehaviour
 
     void Perception()
     {
+        //add the team risks as possible
+        foreach (Risk risk in GameManager.Instance.allRisks)
+        {
+            if(risk.riskClass == "Equipe") 
+            {
+                if(!risksPossible.Contains(risk))
+                    risksPossible.Add(risk);
+            }
+        }
         //reseting the risks possible
         risksPossible.Clear();
 
         //selecting the possible risks based on the game phase
-        foreach (Risk risk in GameManager.risks)
+        foreach (Risk risk in gameManager.risks)
         {
             if((elicitation || especification || validation || evoRequirements || scrumReq) && 
             (risk.riskClass == "Requisitos" || risk.riskClass == "Planejamento" || risk.riskClass == "Gerência" || risk.riskClass == "Direção"))
@@ -127,7 +132,7 @@ public class DungeonAgent : MonoBehaviour
     {
         foreach (Risk risk in risksPossible)
         {
-            if(GameManager.project == 1)
+            if(gameManager.project == 1)
             {
                 if(risk.riskClass == "Requisitos")
                 {

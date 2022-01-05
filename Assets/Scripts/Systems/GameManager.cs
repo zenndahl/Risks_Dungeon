@@ -8,62 +8,70 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // public static GameManager _instance;
-    // public static GameManager Instance { get { return _instance; } }
+    public static GameManager _instance;
+    public static GameManager Instance
+    {
+        get{
+            return _instance;
+        }
+    }
 
     [Header("Game Infos")]
-    public static int project;
-    public static string projectName;
-    public static int difficulty;
+    public int project;
+    public int difficulty;
 
     [Header("Risks Infos")]
     public List<Risk> allRisks = new List<Risk>();
     public List<Risk> project1Risks = new List<Risk>();
     public List<Risk> project2Risks = new List<Risk>();
-    public static List<Risk> risks = new List<Risk>();
-    public static List<Risk> risksAux = new List<Risk>();
-    public static List<Risk> risksIdentified = new List<Risk>();
-    public static List<Risk> risksAssigned = new List<Risk>();
-    public static List<Risk> risksCorrectlyIdentified = new List<Risk>();
-    public static List<Risk> risksCorrectlyEvaluated = new List<Risk>();
-    public static List<Risk> risksCorrectlyPlanned = new List<Risk>();
+    public List<Risk> risks = new List<Risk>();
+    public List<Risk> risksAux = new List<Risk>();
+    public List<Risk> risksIdentified = new List<Risk>();
+    public List<Risk> risksAssigned = new List<Risk>();
+    // public static List<Risk> risksCorrectlyIdentified = new List<Risk>();
+    // public static List<Risk> risksCorrectlyEvaluated = new List<Risk>();
+    // public static List<Risk> risksCorrectlyPlanned = new List<Risk>();
 
     [Header("Preventions Infos")]
-    public static List<Prevention> preventionsMade = new List<Prevention>();
     public List<Prevention> preventionsList = new List<Prevention>();
-    public static List<Prevention> preventions = new List<Prevention>();
+    //public static List<Prevention> preventions = new List<Prevention>();
+    public List<Prevention> preventionsMade = new List<Prevention>();
 
     [Header("Opportunities Infos")]
     public List<Opportunity> opportunitiesList = new List<Opportunity>();
-    public static List<Opportunity> opportunities = new List<Opportunity>();
-
-    [Header("Scene Infos")]
-    public static string currentScene;
-    public static string nextScene;
+    public List<Opportunity> opportunitiesAux = new List<Opportunity>();
 
     [Header("Select Team Infos")]
     public List<Employee> employeesList = new List<Employee>();
-    public static List<Employee> employees = new List<Employee>();
+    public List<Employee> employeesAux = new List<Employee>();
+
+    [Header("Scene Infos")]
+    public string currentScene;
+    public string nextScene;
 
     [Header("Rooms Infos")]
-    public static Room currentRoom;
-    public static int risksInSequence;
+    public Room currentRoom;
+    public int risksInSequence;
+
+    private Player player;
 
 
     private void Awake()
     {
+        _instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
     {
+        player = Player.PlayerInstance;
         //HighScores.UploadScore("Gian", 100);
         currentScene = "Menu Principal";
         nextScene = "Selecionar Equipe";
         SceneManager.sceneLoaded += OnSceneLoaded;
-        opportunities = opportunitiesList;
-        employees = employeesList;
-        preventions = preventionsList;
+        opportunitiesAux = opportunitiesList;
+        employeesAux = employeesList;
+        //preventions = preventionsList;
         preventionsMade.Clear();
         risksIdentified.Clear();
         risksAssigned.Clear();
@@ -86,14 +94,14 @@ public class GameManager : MonoBehaviour
         }
 
         //reset opportunities bonuses
-        foreach (Opportunity opportunity in opportunities)
+        foreach (Opportunity opportunity in opportunitiesAux)
         {
             opportunity.scopeBonus = opportunity.baseScopeBonus;
             opportunity.moneyBonus = opportunity.baseMoneyBonus;
             opportunity.timeBonus = opportunity.baseTimeBonus;
         }
 
-        foreach (Employee emp in employees)
+        foreach (Employee emp in employeesAux)
         {
             emp.morale = 0.5f;
         }
@@ -103,7 +111,7 @@ public class GameManager : MonoBehaviour
     {
         if(GameObject.Find("Token/Icon"))
         {
-            GameObject.Find("Token/Icon").GetComponent<Image>().sprite = Player.icon;
+            GameObject.Find("Token/Icon").GetComponent<Image>().sprite = player.icon;
             GameObject.Find("Room 0").GetComponent<Room>().SetRooms();
         }
 
@@ -115,21 +123,21 @@ public class GameManager : MonoBehaviour
         {
             if(difficulty == 1)
             {
-                Player.OperateScope(10);
-                Player.OperateMoney(10);
-                Player.OperateTime(10);
+                player.OperateScope(10);
+                player.OperateMoney(10);
+                player.OperateTime(10);
             }
             if(difficulty == 2)
             {
-                Player.OperateScope(20);
-                Player.OperateMoney(20);
-                Player.OperateTime(20);
+                player.OperateScope(20);
+                player.OperateMoney(20);
+                player.OperateTime(20);
             }
             if(difficulty == 3)
             {
-                Player.OperateScope(30);
-                Player.OperateMoney(30);
-                Player.OperateTime(30);
+                player.OperateScope(30);
+                player.OperateMoney(30);
+                player.OperateTime(30);
             }
         }
     }
@@ -138,7 +146,6 @@ public class GameManager : MonoBehaviour
     public void ERPProject()
     {
         project = 1;
-        projectName = "Implantação de Sistema ERP";
         // gameObject.GetComponent<Menus>().choseName.SetActive(true);
         // gameObject.GetComponent<Menus>().projects.SetActive(false);
         risks = project1Risks.ToList();
@@ -150,7 +157,6 @@ public class GameManager : MonoBehaviour
     public void AppProject()
     {
         project = 2;
-        projectName = "Desenvolvimento de App";
         // gameObject.GetComponent<Menus>().choseName.SetActive(true);
         // gameObject.GetComponent<Menus>().projects.SetActive(false);
         risks = project2Risks.ToList();
@@ -217,7 +223,7 @@ public class GameManager : MonoBehaviour
         if(scene.name == "VV") nextScene = "Evolução";
     }
 
-    public static void LoadNextScene()
+    public void LoadNextScene()
     {
         SceneManager.LoadScene(nextScene);
     }

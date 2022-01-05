@@ -505,10 +505,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe1f03ae01bbb942b98f45d0e40ca3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  project: 0
+  difficulty: 0
   allRisks: []
   project1Risks: []
   project2Risks: []
+  risks: []
+  risksAux: []
+  risksIdentified: []
+  risksAssigned: []
   preventionsList: []
+  preventionsMade: []
   opportunitiesList:
   - {fileID: 11400000, guid: d0244ce45268d0f49a9690f26a66c3f2, type: 2}
   - {fileID: 11400000, guid: 820f5ec90b7a7b44a9a52fa5e57feac3, type: 2}
@@ -525,6 +532,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88fd3f838b46b384da63d7521689ce1b, type: 2}
   - {fileID: 11400000, guid: b02aef1aa72930840b945dd658b22e40, type: 2}
   - {fileID: 11400000, guid: f7a76af8817b36d4fb49bff7da11968b, type: 2}
+  opportunitiesAux: []
   employeesList:
   - {fileID: 11400000, guid: c437abf6114e0a343af6b7cd160a9e42, type: 2}
   - {fileID: 11400000, guid: ea46d94d7e58f774388af128ec705e61, type: 2}
@@ -538,6 +546,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0688e4c4a2599164cb3c929e296d0441, type: 2}
   - {fileID: 11400000, guid: 88153d6866748484e90803fcb5855178, type: 2}
   - {fileID: 11400000, guid: 8be37aa85a836dd4e9ebd04259ee4401, type: 2}
+  employeesAux: []
+  currentScene: 
+  nextScene: 
+  currentRoom: {fileID: 0}
+  risksInSequence: 0
 --- !u!4 &73460953
 Transform:
   m_ObjectHideFlags: 0
@@ -6864,6 +6877,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106b6d9ed2131fc41a7770310403cb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scope: 0
+  time: 0
+  money: 0
+  points: 0
+  team: []
+  icon: {fileID: 0}
+  combatPower: 1
+  entusiasm: 0
+  disciplin: 0
+  organized: 0
+  preventCorrect: 0
+  risksActivated: 0
+  opportunitiesTaken: 0
 --- !u!4 &1769384781
 Transform:
   m_ObjectHideFlags: 0
@@ -8546,6 +8572,18 @@ PrefabInstance:
       propertyPath: risk
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1164568729135170450, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
+      propertyPath: planningMessage
+      value: 
+      objectReference: {fileID: 8307657626852741377}
+    - target: {fileID: 1200507185256386809, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388347486709176377, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1572974265336725833, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -8561,6 +8599,10 @@ PrefabInstance:
     - target: {fileID: 1925110315368791375, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: RiskGameDisplay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576929846037904812, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6951996234479696525, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
       propertyPath: m_Name
@@ -8667,5 +8709,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84393a68e5339847a66f6a9e04187e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8307657626852741377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7758817650507004735, guid: c997145a6ef9739479bd6456d9f6b663, type: 3}
+  m_PrefabInstance: {fileID: 8307657626852741374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

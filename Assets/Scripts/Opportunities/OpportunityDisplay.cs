@@ -14,6 +14,11 @@ public class OpportunityDisplay : MonoBehaviour
     public Text effectText;
     public Text bonusText;
     public Text costText;
+    private Player player;
+
+    private void Start() {
+        player = Player.PlayerInstance;
+    }
 
     public void ShowDescription()
     {
@@ -95,7 +100,7 @@ public class OpportunityDisplay : MonoBehaviour
 
     public void TakeNewEmployee()
     {
-        Player.team.Add(Add.selected.GetComponent<Employee>());
+        player.team.Add(Add.selected.GetComponent<Employee>());
         baseUI.SetActive(true);
         ResetDisplay();
     }
@@ -103,19 +108,19 @@ public class OpportunityDisplay : MonoBehaviour
     //methods for the opportunity "Diversificar ..."
     public void DrawNewOpportunity()
     {
-        Room.DrawOpportunity();
+        //Room.DrawOpportunity();
         ResetDisplay();
     }
 
     public void DiversifyToScope()
     {
-        Player.OperateScope(2);
+        player.OperateScope(2);
         ResetDisplay();
     }
 
     public void DiversifyToTime()
     {
-        Player.OperateTime(2);
+        player.OperateTime(2);
         ResetDisplay();
     }
 

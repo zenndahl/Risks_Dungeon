@@ -9,9 +9,11 @@ public class FinalReport : MonoBehaviour
     public Text risksPrevented;
     public Text risksActivated;
     public Text opportunitiesTaken;
+    private Player player;
 
     void Start()
     {
+        player = Player.PlayerInstance;
         DisplayFinalReport();
     }
 
@@ -24,19 +26,19 @@ public class FinalReport : MonoBehaviour
 
     public void DisplayFinalReport()
     {
-        int scope = GameObject.Find("Player").GetComponent<Player>().GetResource("scope");
-        int money = GameObject.Find("Player").GetComponent<Player>().GetResource("money");
-        int time = GameObject.Find("Player").GetComponent<Player>().GetResource("time");
+        int scope = player.GetResource("scope");
+        int money = player.GetResource("money");
+        int time = player.GetResource("time");
 
-        Player.points = scope + ((money + time)/2);
+        player.points = scope + ((money + time)/2);
 
-        float percent = (Player.preventCorrect * 100)/GameManager.risks.Count;
+        float percent = (player.preventCorrect * 100)/GameManager.Instance.risks.Count;
 
         //LeaderboardController.SubmitScore();
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        if(points != null) points.text = Player.points.ToString();
+        if(points != null) points.text = player.points.ToString();
         risksPrevented.text = percent.ToString() + "%";
-        risksActivated.text = Player.risksActivated.ToString();
-        opportunitiesTaken.text = Player.opportunitiesTaken.ToString();
+        risksActivated.text = player.risksActivated.ToString();
+        opportunitiesTaken.text = player.opportunitiesTaken.ToString();
     }
 }

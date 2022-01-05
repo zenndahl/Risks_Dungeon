@@ -10,7 +10,7 @@ public class Feedback : MonoBehaviour
 
     void DisplayResources()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player player = Player.PlayerInstance;
         feedbackText_2.text = "Seus recursos:" + 
                                             "\nEscopo: " + player.GetResource("scope").ToString() +
                                             "\n Orçamento: " + player.GetResource("money").ToString() +

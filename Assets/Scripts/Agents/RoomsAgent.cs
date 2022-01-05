@@ -53,7 +53,7 @@ public class RoomsAgent : MonoBehaviour
 
     void See()
     {
-        playerLocation = GameManager.currentRoom;
+        playerLocation = GameManager.Instance.currentRoom;
 
         //set the phase state based on the player location, project 1
         if(playerLocation.roomClass == "Elicitação") roomState = Phase.Elicitação;

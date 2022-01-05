@@ -10,6 +10,11 @@ public class Add : MonoBehaviour
     //public GameObject list;
     public GameObject toAddList;
     public GameObject describer;
+    private Player player;
+
+    private void Start() {
+        player = Player.PlayerInstance;
+    }
 
     public void AddEmployee()
     {
@@ -28,7 +33,7 @@ public class Add : MonoBehaviour
 
             //set the employees available and the employees the player already picked
             ts.SetEmployeeLists(employee);
-            Player.SetEmployees(employee);
+            player.SetEmployees(employee);
 
             //randomize new employees for the player to choose
             ts.RandomizeSkills();
@@ -89,7 +94,7 @@ public class Add : MonoBehaviour
         {
             if(describer != null) describer.SetActive(true); //show the description plate
             Sprite icon = selected.transform.GetComponent<Image>().sprite;
-            Player.icon = icon;
+            player.icon = icon;
 
             //disable the button
             selected.GetComponent<Button>().enabled = false;

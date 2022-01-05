@@ -11,7 +11,7 @@ public class DisplayResources : MonoBehaviour
 
     private void Update()
     {
-        Player player = GameObject.Find("Player").GetComponent<Player>();
+        Player player = Player.PlayerInstance;
         scopeValue.text = player.GetResource("scope").ToString();
         moneyValue.text = player.GetResource("money").ToString();
         timeValue.text = player.GetResource("time").ToString();

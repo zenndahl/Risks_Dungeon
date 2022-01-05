@@ -176,7 +176,7 @@ public class TeamAgent : MonoBehaviour
     //actions
     void Action(int state)
     {
-        foreach (Risk risk in GameManager.risks)
+        foreach (Risk risk in GameManager.Instance.risks)
         {
             //if the team is dedicated
             if(state == 0)

@@ -10,6 +10,6 @@ public class Prevention : ScriptableObject
 
     public void Prevent()
     {
-        GameManager.preventionsMade.Add(this);
+        GameManager.Instance.preventionsMade.Add(this);
     }
 }

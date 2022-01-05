@@ -17,6 +17,12 @@ public class Menus : MonoBehaviour
     public InputField playerName;
     private bool gameIsPaused = false;
 
+    private GameManager gameManager;
+
+    private void Start() {
+        gameManager = GameManager.Instance;
+    }
+
     private void Update()
     {
         if(Input.GetButtonDown("Cancel"))
@@ -40,7 +46,7 @@ public class Menus : MonoBehaviour
 
     public void Quit()
     {
-        //GameObject.Find("GameManager").GetComponent<ScoreManager>().SaveScore();
+        //gameManager.gameObject.GetComponent<ScoreManager>().SaveScore();
         Application.Quit();
     }
 
@@ -137,12 +143,12 @@ public class Menus : MonoBehaviour
 
     public void NextLevel()
     {
-        GameManager.LoadNextScene();
+        gameManager.LoadNextScene();
     }
 
     public void Reshuffle()
     {
-        //GameManager._instance.RandomizeSkills();
+        //gameManager.RandomizeSkills();
     }
 
     public void FinishId()
@@ -175,8 +181,8 @@ public class Menus : MonoBehaviour
 
     public void EndGame()
     {
-        GameManager.nextScene = "Final";
-        GameManager.LoadNextScene();
+        gameManager.nextScene = "Final";
+        gameManager.LoadNextScene();
     }
 
     public static void GameOver()

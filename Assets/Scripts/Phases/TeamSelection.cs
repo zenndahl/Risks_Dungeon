@@ -11,10 +11,12 @@ public class TeamSelection : MonoBehaviour
     public EmployeeDisplay[] displays;
     private List<Employee> employees = new List<Employee>();
     private int maxRange = 12;
+    private Player player;
 
     private void Start()
     {
-        employees = GameManager.employees;
+        player = Player.PlayerInstance;
+        employees = GameManager.Instance.employeesAux;
         RandomizeSkills();
     }
 
@@ -40,7 +42,7 @@ public class TeamSelection : MonoBehaviour
     public void SetEmployeeLists(Employee employee)
     {
         employees.Remove(employee);
-        if(Player.team.Count() == 4) FinishTeamSelection();
+        if(player.team.Count() == 4) FinishTeamSelection();
         maxRange--;
     }
 
@@ -53,7 +55,7 @@ public class TeamSelection : MonoBehaviour
         }
         iconSelectionScreen.SetActive(true);
 
-        foreach (Employee employee in Player.team)
+        foreach (Employee employee in player.team)
         {
             //activate the employee skills
             employee.skill.ActivateSkill();

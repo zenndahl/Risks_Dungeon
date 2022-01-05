@@ -5,24 +5,32 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     
-    public static string playerName;
-    [SerializeField] private static int scope;
-    [SerializeField] private static int time ;
-    [SerializeField] private static int money;
-    public static int points;
-    public static List<Employee> team = new List<Employee>();
-    public static Sprite icon;
-    public static int combatPower = 1;
-    public static bool entusiasm;
-    public static bool disciplin;
-    public static bool organized;
-
-    public static int preventCorrect;
-    public static int risksActivated;
-    public static int opportunitiesTaken;
+    //public static string playerName;
+    private static Player _playerInstance;
+    public static Player PlayerInstance
+    {
+        get
+        {
+            return _playerInstance;
+        }
+    }
+    [SerializeField] private int scope;
+    [SerializeField] private int time ;
+    [SerializeField] private int money;
+    public int points;
+    public List<Employee> team = new List<Employee>();
+    public Sprite icon;
+    public int combatPower = 1;
+    public bool entusiasm;
+    public bool disciplin;
+    public bool organized;
+    public int preventCorrect;
+    public int risksActivated;
+    public int opportunitiesTaken;
 
     private void Awake()
     {
+        _playerInstance = this;
         ResetVariables();
         DontDestroyOnLoad(this);
     }
@@ -34,36 +42,36 @@ public class Player : MonoBehaviour
         }
     }
 
-    public static void SetEmployees(Employee employee)
+    public void SetEmployees(Employee employee)
     {
         team.Add(employee);
     }
 
-    public static void IncreaseResources(int value)
+    public void IncreaseResources(int value)
     {
         scope += value;
         money += value;
         time  += value;
     }
 
-    public static void DecreaseResources(int value)
+    public void DecreaseResources(int value)
     {
         scope -= value;
         money -= value;
         time  -= value;
     }
 
-    public static void OperateScope(int value)
+    public void OperateScope(int value)
     {
         scope += value;
     }
 
-    public static void OperateMoney(int value)
+    public void OperateMoney(int value)
     {
          money += value;
     }
 
-    public static void OperateTime(int value)
+    public void OperateTime(int value)
     {
         time += value;
     }

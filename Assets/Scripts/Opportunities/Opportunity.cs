@@ -6,7 +6,6 @@ using UnityEngine;
 public class Opportunity : ScriptableObject 
 {
     [Header("Opportunity Infos")]
-    public int id;
     public string opportunityName;
     //abstract of the effect
     public string opportunityEffect;
@@ -56,21 +55,21 @@ public class Opportunity : ScriptableObject
 
     public void ActivateOpportunity()
     {
-        Player.opportunitiesTaken++;
+        Player.PlayerInstance.opportunitiesTaken++;
 
         //apply resource bonus
-        Player.OperateScope(scopeBonus);
-        Player.OperateMoney(moneyBonus);
-        Player.OperateTime(timeBonus);
+        Player.PlayerInstance.OperateScope(scopeBonus);
+        Player.PlayerInstance.OperateMoney(moneyBonus);
+        Player.PlayerInstance.OperateTime(timeBonus);
 
         //check ans apply the extra effects if has any
         if(makePrevention) prevention.Prevent();
-        if(increasePower) Player.combatPower++;
+        if(increasePower) Player.PlayerInstance.combatPower++;
         if(increaseBonus) IncreaseBonus();
-        if(newOpportunity) Room.DrawOpportunity();
+        //if(newOpportunity) Room.DrawOpportunity();
         if(decreaseCosts)
         {
-            foreach (Opportunity opp in GameManager.opportunities)
+            foreach (Opportunity opp in GameManager.Instance.opportunitiesAux)
             {
                 opp.DeacreaseCosts();
             }
@@ -79,7 +78,7 @@ public class Opportunity : ScriptableObject
         //if the opportunity is not repeatable, remove it from the list
         if(!repeatable)
         {
-            GameManager.opportunities.Remove(this);
+            GameManager.Instance.opportunitiesAux.Remove(this);
         }
     }
 }

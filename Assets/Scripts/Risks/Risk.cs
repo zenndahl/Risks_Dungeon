@@ -22,10 +22,9 @@ public class Risk : ScriptableObject
     //the sprite to show in the dungeon when the risk activates
     public Sprite sprite; 
     public Prevention[] preventions;
-
+    public bool prevented;
     //the action planned to be take once the risk occurs, 1 - mitigate, 2 - assign, 3 - accept
     public int reaction;
-    public bool prevented = false;
     //updates the times the risk has happened, therefore decreasing its probability
     public int timesHappened = 0;
     //risks that have its probability increased if this risk is activated
@@ -84,22 +83,21 @@ public class Risk : ScriptableObject
     {
         if(OnActivateRisk != null) OnActivateRisk(this);
 
-        GameObject rskDisplay = GameObject.Find("Risk Game Display");
-        rskDisplay.GetComponent<RiskGameDisplay>().risk = this;
-        rskDisplay.GetComponent<RiskGameDisplay>().ShowRiskInfos();
-        
-
         //check wich reaction is assigned to this risk and apply the correct action
         if(reaction == 0) CheckDisciplin();
         if(reaction == 1) ApplyMitigation();
         if(reaction == 2) AssignRisk();
         if(reaction == 3) AcceptRisk();
 
+        GameObject rskDisplay = GameObject.Find("Risk Game Display");
+        rskDisplay.GetComponent<RiskGameDisplay>().risk = this;
+        rskDisplay.GetComponent<RiskGameDisplay>().ShowRiskInfos();
+
         //ajusting the probability by the times the risk happened
         if(timesHappened == 1) probability = reincidence;
         if(timesHappened > 3) DecreaseProb(1);
 
-        Player.risksActivated++;
+        Player.PlayerInstance.risksActivated++;
         timesHappened++;
 
         //when a risk happens, its derivatives will have a chance to happen 
@@ -112,11 +110,11 @@ public class Risk : ScriptableObject
 
     void CheckDisciplin()
     {
-        if(Player.disciplin)
+        if(Player.PlayerInstance.disciplin)
         {
-            Player.OperateScope(-(scopeCost - 1));
-            Player.OperateMoney(-(moneyCost - 1));
-            Player.OperateTime(-(timeCost - 1));
+            Player.PlayerInstance.OperateScope(-(scopeCost - 1));
+            Player.PlayerInstance.OperateMoney(-(moneyCost - 1));
+            Player.PlayerInstance.OperateTime(-(timeCost - 1));
         }
         else AcceptRisk();
     }
@@ -124,22 +122,24 @@ public class Risk : ScriptableObject
     public void ApplyMitigation()
     {
         int mod = 0;
-        foreach (Employee employee in Player.team)
+        foreach (Employee employee in Player.PlayerInstance.team)
         {
             if(employee.skill.combat.Contains(this))
             {
+                GameObject rskDisplay = GameObject.Find("Risk Game Display");
+                rskDisplay.GetComponent<RiskGameDisplay>().skillsActivated.Add(employee.skill);
                 mod++;
                 break;
             }
         }
 
         //if the player has the skill organized, add 1 to the impact reduction
-        if(Player.organized)
+        if(Player.PlayerInstance.organized)
         {
             mod++;
         }
         
-        mod *= Player.combatPower;
+        mod *= Player.PlayerInstance.combatPower;
 
         //the minimum cost for a risk is 0, else it will add resouces
         if(scopeCost - mod < 0) mod = scopeCost;
@@ -147,22 +147,22 @@ public class Risk : ScriptableObject
         if(timeCost - mod < 0) mod = timeCost;
 
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        Player.OperateScope(-(scopeCost - mod));
-        Player.OperateMoney(-(moneyCost - mod));
-        Player.OperateTime(-(timeCost - mod));
+        Player.PlayerInstance.OperateScope(-(scopeCost - mod));
+        Player.PlayerInstance.OperateMoney(-(moneyCost - mod));
+        Player.PlayerInstance.OperateTime(-(timeCost - mod));
     }
 
     public void AssignRisk()
     {
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        Player.DecreaseResources(moneyCost+2);
+        Player.PlayerInstance.DecreaseResources(moneyCost+2);
     }
 
     void AcceptRisk()
     {
         //Player player = GameObject.Find("Player").GetComponent<Player>();
-        Player.OperateScope(-scopeCost);
-        Player.OperateMoney(-moneyCost);
-        Player.OperateTime(-timeCost);
+        Player.PlayerInstance.OperateScope(-scopeCost);
+        Player.PlayerInstance.OperateMoney(-moneyCost);
+        Player.PlayerInstance.OperateTime(-timeCost);
     }
 }

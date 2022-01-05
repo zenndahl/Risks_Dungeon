@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Skill", menuName = "Risks Dungeon/Skill", order = 0)]
 public class Skill : ScriptableObject
 {
-    public int id;
     public string skillName;
     public string skillDescription;
     public List<Risk> combat = new List<Risk>();
@@ -14,27 +13,27 @@ public class Skill : ScriptableObject
     {
         if(skillName == "Dedicação")
         {
-            Player.combatPower++;
+            Player.PlayerInstance.combatPower++;
         }
         if(skillName == "Inovação")
         {
-            foreach (Opportunity opportunity in GameManager.opportunities)
+            foreach (Opportunity opportunity in GameManager.Instance.opportunitiesAux)
             {
                 opportunity.Inovate();
             }
         }
         if(skillName == "Organização")
         {
-            Player.organized = true;
+            Player.PlayerInstance.organized = true;
         }
         if(skillName == "Disciplina")
         {
-            Player.disciplin = true;
+            Player.PlayerInstance.disciplin = true;
         }
 
         if(skillName == "Entusiasmo")
         {
-            Player.entusiasm = true;
+            Player.PlayerInstance.entusiasm = true;
         }
     }
 }

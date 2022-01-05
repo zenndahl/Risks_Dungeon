@@ -27,11 +27,16 @@ public class Planning : MonoBehaviour
     public GameObject reactionScreen;
     public RiskDisplay riskDisplay;
     public GameObject preventionsDisplay;
+
+    private Player player;
+    private GameManager gameManager;
     
     void Start()
     {
-        risksToPlan = GameManager.risksIdentified.ToList();
-        if(risksToPlan.Count == 0) GameManager.LoadNextScene();
+        gameManager = GameManager.Instance;
+        player = Player.PlayerInstance;
+        risksToPlan = gameManager.risksIdentified.ToList();
+        if(risksToPlan.Count == 0) gameManager.LoadNextScene();
         else
         {
             //SetPreventions();
@@ -76,52 +81,6 @@ public class Planning : MonoBehaviour
         }
     }
 
-    // public void SetPreventions()
-    // {
-    //     foreach (Prevention prevention in GameManager.preventions)
-    //     {
-    //         GameObject preventDisp = Instantiate(preventDispPrefab, transform.position, transform.rotation);
-    //         preventDisp.GetComponent<PreventionDisplay>().prevention = prevention;
-    //         preventDisp.transform.SetParent(preventionsScreen.transform);
-    //         preventDisp.GetComponent<PreventionDisplay>().SetInfos();
-    //         preventionsScreen.GetComponent<RectTransform>().offsetMin -= new Vector2(0,100);
-    //     }
-    // }
-
-    // public void RandomizePreventions()
-    // {
-    //     List<int> randomList = new List<int>();
-    //     int randNum;
-    //     int randNum2;
-
-    //     //get the preventions display objects under the planning parent and randomize the preventions displayed
-    //     foreach (GameObject goPD in preventionsDisplays)
-    //     {
-    //         PreventionDisplay pd = goPD.GetComponent<PreventionDisplay>();
-    //         randNum = Random.Range(0,maxRange);
-            
-    //         while(randomList.Contains(randNum))
-    // 	        randNum = Random.Range(0,maxRange);
-    //         randomList.Add(randNum);
-
-    //         pd.prevention = preventions[randNum];
-            
-    //         //need to reset the display for the new employee to be shown in the display
-    //         pd.ResetInfos();
-    //     }
-
-    //     //chose randomly a display to set an correct prevention for the risk on planning
-    //     randNum = Random.Range(0, riskOnPlanning.preventions.Length);
-    //     while(randomList.Contains(randNum))
-    //         randNum = Random.Range(0,riskOnPlanning.preventions.Length);
-    //     randomList.Add(randNum);
-        
-    //     randNum2 = Random.Range(0,2);
-    //     PreventionDisplay pvD = preventionsDisplays[randNum2].GetComponent<PreventionDisplay>();
-    //     pvD.prevention = riskOnPlanning.preventions[randNum];
-    //     pvD.ResetInfos();
-    // }
-
     public void SetPrevention(Prevention prevention)
     {
         preventionSelected = prevention;
@@ -130,19 +89,20 @@ public class Planning : MonoBehaviour
     void Mitigate()
     {        
         //planning for mitigation costs 1 money and 2 time
-        Player.OperateMoney(-1);
-        Player.OperateTime(-2);
+        player.OperateMoney(-1);
+        player.OperateTime(-2);
 
         //if the prevention is correct, add the prevention to the preventions list and apply the prevention
         if(riskOnPlanning.preventions.Contains(preventionSelected))
         {
             //if the prevention is right, set the reaction to the risk as mitigate
-            GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 1;
+            gameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 1;
             //reward for correctly planning a risk
-            Player.OperateScope(1);
-            Player.preventCorrect++;
-            GameManager.preventionsMade.Add(preventionSelected);
-            GameManager.risksCorrectlyPlanned.Add(riskOnPlanning);
+            player.OperateScope(1);
+            player.preventCorrect++;
+            riskOnPlanning.prevented = true;
+            gameManager.preventionsMade.Add(preventionSelected);
+            //gameManager.risksCorrectlyPlanned.Add(riskOnPlanning);
             correctlyPlanned++;
 
             //get the risks list, find the current risk on planning and decrease its probability
@@ -186,15 +146,15 @@ public class Planning : MonoBehaviour
         //add to the assigned risks list (assigned risks cost money when the risk occurs)
         if(reaction == 2) 
         {
-            GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 2;
-            GameManager.risksAssigned.Add(riskOnPlanning);
+            gameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 2;
+            gameManager.risksAssigned.Add(riskOnPlanning);
             assigned++;
         }
 
         //set the risk to the "accept" reaction
         if (reaction == 3)
         {
-            GameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 3;
+            gameManager.risksIdentified.Find(risk => risk == riskOnPlanning).reaction = 3;
         }
 
         //check if there is another risk to plan, if not, finish the planning
@@ -219,7 +179,7 @@ public class Planning : MonoBehaviour
     {
         if(riskOnPlanning.type == riskType)
         {
-            Player.IncreaseResources(5);
+            player.IncreaseResources(5);
             correctlyTyped++;
         }
     }
@@ -231,12 +191,12 @@ public class Planning : MonoBehaviour
         feedbackScreen.SetActive(true);
 
         //decrease the probability of the risks if the employees have skills that do so
-        if(GameManager.project == 1)
+        if(gameManager.project == 1)
         {
             foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject1Risks())
             {   
                 //activate the preventions from the team 
-                foreach (Employee employee in Player.team)
+                foreach (Employee employee in player.team)
                 {
                     //for each risk of the project, if the employees combat them, their probability is reduced
                     if(employee.skill.combat.Contains(risk))
@@ -246,11 +206,11 @@ public class Planning : MonoBehaviour
                 }
             }
         }
-        if(GameManager.project == 2)
+        if(gameManager.project == 2)
         {
             foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetProject2Risks())
             {   
-                foreach (Employee employee in Player.team)
+                foreach (Employee employee in player.team)
                 {
                     //for each risk of the project, if the employees combat them, their probability is reduced
                     if(employee.skill.combat.Contains(risk))

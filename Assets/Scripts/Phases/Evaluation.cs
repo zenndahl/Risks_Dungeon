@@ -10,17 +10,21 @@ public class Evaluation : MonoBehaviour
     //public GameObject cellRisksList;
     private int correctlyEvaluated = 0;
     private int closelyEvaluated = 0;
+    private Player player;
+    private GameManager gameManager;
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
+        player = Player.PlayerInstance;
         SetUpEvaluation();
     }
 
     void SetUpEvaluation()
     {
-        if(GameManager.risksIdentified.Count == 0) GameManager.LoadNextScene();
+        if(gameManager.risksIdentified.Count == 0) gameManager.LoadNextScene();
         GameObject rskList = GameObject.Find("Risk List/Risks");
-        foreach (Risk rsk in GameManager.risksIdentified)
+        foreach (Risk rsk in gameManager.risksIdentified)
         {
             //instantiating and setting the parent for the risk
             GameObject rskDisplay = Instantiate(riskDisplayPrefab, rskList.transform);
@@ -97,23 +101,23 @@ public class Evaluation : MonoBehaviour
         //else he gets no points
         if(risk.impactLevel == matrixRiskDisplay.impact && risk.probLevel == matrixRiskDisplay.prob)
         {
-            GameManager.risksCorrectlyEvaluated.Add(risk);
-            Player.IncreaseResources(5);
+            //GameManager.risksCorrectlyEvaluated.Add(risk);
+            player.IncreaseResources(5);
             correctlyEvaluated++;
         }
         else if(risk.impactLevel - matrixRiskDisplay.impact < 2)
         {
-            Player.IncreaseResources(3);
+            player.IncreaseResources(3);
             closelyEvaluated++;
         } 
         else if(risk.probLevel - matrixRiskDisplay.prob < 2)
         {
-            Player.IncreaseResources(3);
+            player.IncreaseResources(3);
             closelyEvaluated++;
         }
 
-        GameManager.risksAux.Remove(risk);
-        if(!GameManager.risksAux.Any()) FinishEvaluation();
+        gameManager.risksAux.Remove(risk);
+        if(!gameManager.risksAux.Any()) FinishEvaluation();
         
     }
     void FinishEvaluation()

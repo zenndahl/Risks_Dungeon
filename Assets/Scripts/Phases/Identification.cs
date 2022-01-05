@@ -8,15 +8,18 @@ public class Identification : MonoBehaviour
     public GameObject feedbackScreen;
     public GameObject riskDisplayPrefab;
     private int correctlyId = 0;
-
+    private Player player;
+    private GameManager gameManager;
     private void Start()
     {
+        gameManager = GameManager.Instance;
+        player = Player.PlayerInstance;
         SetRisksToId();
     }
 
     public void SetRisksToId()
     {
-        foreach (Risk risk in GameObject.Find("Game Manager").GetComponent<GameManager>().GetAllRisks())
+        foreach (Risk risk in gameManager.GetAllRisks())
         {
             //instantiating and setting the parent for the risk
             GameObject rskDisplay = Instantiate(riskDisplayPrefab, transform.position, transform.rotation);
@@ -36,12 +39,12 @@ public class Identification : MonoBehaviour
 
     public void AddId(Risk risk)
     {
-        GameManager.risksIdentified.Add(risk);
+        gameManager.risksIdentified.Add(risk);
     }
 
     public void RemoveId(Risk risk)
     {
-        GameManager.risksIdentified.Remove(risk);
+        gameManager.risksIdentified.Remove(risk);
     }
 
     public void FinishIdentification()
@@ -50,18 +53,18 @@ public class Identification : MonoBehaviour
         GameObject.Find("Identification").SetActive(false);
         //Player player = GameObject.Find("Player").GetComponent<Player>();
 
-        foreach (Risk risk in GameManager.risksIdentified)
+        foreach (Risk risk in gameManager.risksIdentified)
         {
             //check if the risk identified is general or for the selected project and adds the resources if it is
-            if(risk.project == 0 || risk.project == GameManager.project)
+            if(risk.project == 0 || risk.project == gameManager.project)
             {
-                Player.IncreaseResources(5);
-                GameManager.risksCorrectlyIdentified.Add(risk);
+                player.IncreaseResources(5);
+                //gameManager.risksCorrectlyIdentified.Add(risk);
                 correctlyId++;
             }
             else //if the risk is identified incorrectly decrease the player resources
             {
-                Player.DecreaseResources(1);
+                player.DecreaseResources(1);
             }
         }
 
@@ -71,7 +74,7 @@ public class Identification : MonoBehaviour
         //display correctly feedbakc of identified risks and the current resources of the player
         feedbackScreen.GetComponent<Feedback>().DisplayFeedback("identificou", correctlyId);
 
-        GameManager.risksAux = GameManager.risksIdentified.ToList();
+        gameManager.risksAux = gameManager.risksIdentified.ToList();
         
     }
 }

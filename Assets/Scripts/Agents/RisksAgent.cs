@@ -24,6 +24,8 @@ public class RisksAgent : MonoBehaviour
     private Risk riskChosen;
     private Risk previousRisk;
 
+    private GameManager gameManager;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -39,6 +41,10 @@ public class RisksAgent : MonoBehaviour
 
         DungeonAgent.OnDungeonActionCompleted += See;
         Room.OnEnterRoom += CallWait;
+    }
+
+    private void Start() {
+        gameManager = GameManager.Instance;
     }
 
     void See()
@@ -79,7 +85,7 @@ public class RisksAgent : MonoBehaviour
         //will set each fuzzy values of the risks, then get the risk with the higher value based on the difficulty
 
         
-        switch (GameManager.difficulty)
+        switch (gameManager.difficulty)
         {
             //hard
             case 1:
@@ -153,12 +159,12 @@ public class RisksAgent : MonoBehaviour
         {
             riskChosen.ActivateRisk();
             previousRisk = riskChosen;
-            GameManager.risksInSequence++;
+            gameManager.risksInSequence++;
         }
         else //else an opportunity is drawn
         {
-            RisksAgent.DrawOpportunity();
-            GameManager.risksInSequence = 0;
+            DrawOpportunity();
+            gameManager.risksInSequence = 0;
         }
     }
 
@@ -173,12 +179,12 @@ public class RisksAgent : MonoBehaviour
         Perception();
     }
 
-    public static void DrawOpportunity()
+    public void DrawOpportunity()
     {
         //will randomly chose one of the opportunities
-        int randOpp = Random.Range(0,GameManager.opportunities.Count);
+        int randOpp = Random.Range(0,gameManager.opportunitiesAux.Count);
         GameObject oppDisplay = GameObject.Find("Opportunity Display");
-        oppDisplay.GetComponent<OpportunityDisplay>().opportunity = GameManager.opportunities[randOpp];
+        oppDisplay.GetComponent<OpportunityDisplay>().opportunity = gameManager.opportunitiesAux[randOpp];
         oppDisplay.GetComponent<OpportunityDisplay>().ShowDescription();
     }
 
